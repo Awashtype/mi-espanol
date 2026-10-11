@@ -408,8 +408,17 @@ async function syncPublishedCards(){
 }
 init();fillDeck();syncPublishedCards();syncPublishedAudio();
 if('serviceWorker' in navigator&&location.protocol==='https:'){
- navigator.serviceWorker.register('./sw.js',{scope:'./'}).then(reg=>{
-   reg.update().catch(()=>{});
+ let refreshStarted=false;
+ navigator.serviceWorker.addEventListener('controllerchange',()=>{
+   // An updated offline worker is now controlling this page: load its fresh app shell.
+   if(!refreshStarted){refreshStarted=true;location.reload()}
+ });
+ navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'}).then(reg=>{
+   const checkForUpdates=()=>{if(navigator.onLine)reg.update().catch(()=>{})};
+   checkForUpdates();
+   // Installed apps may stay open for days instead of triggering a normal page navigation.
+   document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')checkForUpdates()});
+   window.addEventListener('focus',checkForUpdates);
  }).catch(err=>console.info('Offline installation not available:',err.message));
 }
 window.addEventListener('online',()=>{syncPublishedCards();syncPublishedAudio()});
