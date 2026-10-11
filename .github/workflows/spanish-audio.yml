@@ -1,0 +1,42 @@
+name: Generate Spanish Audio
+on:
+  push:
+    branches: [main]
+    paths: ['cards.json', 'scripts/generate_audio.py', '.github/workflows/spanish-audio.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  id-token: write
+concurrency:
+  group: spanish-audio-main
+  cancel-in-progress: false
+jobs:
+  audio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+          token_format: access_token
+          access_token_lifetime: 300s
+          create_credentials_file: false
+          export_environment_variables: false
+        id: auth
+      - name: Generate only missing recordings
+        env:
+          GOOGLE_CLOUD_PROJECT: mi-espanol-511317
+          GOOGLE_OAUTH_ACCESS_TOKEN: ${{ steps.auth.outputs.access_token }}
+        run: python3 scripts/generate_audio.py
+      - name: Publish audio pack
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mi_espanol_google_audio.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update generated Spanish audio"
+            git push
+          fi
