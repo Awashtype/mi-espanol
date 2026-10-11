@@ -132,7 +132,6 @@ function storeClip(key,encoded){return new Promise((resolve,reject)=>{const t=au
 function getClip(key){return new Promise(resolve=>{if(!audioDB){resolve(null);return;}const t=audioDB.transaction('clips','readonly');const r=t.objectStore('clips').get(key);r.onsuccess=()=>resolve(r.result||null);r.onerror=()=>resolve(null)});}
 function countClips(){return new Promise(resolve=>{if(!audioDB){resolve(0);return;}const r=audioDB.transaction('clips','readonly').objectStore('clips').count();r.onsuccess=()=>resolve(r.result);r.onerror=()=>resolve(0)});}
 function cancelAudio(){audioSeq++;if(currentAudio){currentAudio.pause();currentAudio.removeAttribute('src');currentAudio=null;}}
-function cardDirection(){return deck[pos]?._pass==='production'?'en':$('direction').value;}
 function spanishVisible(){return cardDirection()==='es' ? !revealed : revealed;}
 async function speakSpanish(force=false){
  const c=deck[pos];if(!c||!spanishVisible())return;
@@ -180,53 +179,97 @@ async function syncPublishedAudio(){
   }catch(err){console.info('Using offline audio; automatic audio sync unavailable:',err.message)}
 }
 function clearScratch(){$('scratch').value=''}
-function fillDeck(){clearScratch();const tier=$('tier').value,scope=$('scope').value;deck=state.cards.filter(x=>(tier==='all'||x.type===tier)&&(scope!=='due'||isDue(x))).map(x=>{const r=state.reviews[x.id];return r?.pendingProductionOn===today()?{...x,_pass:'production',_recognitionGrade:r.recognitionGrade}:x}).sort((a,b)=>Number(a._pass==='production')-Number(b._pass==='production')||['word','expression','sentence'].indexOf(a.type)-['word','expression','sentence'].indexOf(b.type));pos=0;revealed=false;visited=new Set();renderCard()}
-function renderCard(){const c=deck[pos];const recognitionLeft=deck.filter(x=>x._pass!=='production').length, productionLeft=deck.length-recognitionLeft;$('queueCount').textContent=recognitionLeft&&productionLeft?recognitionLeft+' first · '+productionLeft+' second':productionLeft?productionLeft+' to translate':recognitionLeft+' remaining';document.querySelectorAll('[data-grade]').forEach(b=>b.disabled=!c);$('deleteCard').disabled=!c;$('deleteCard').classList.toggle('hidden',!c);$('back').disabled=pos===0;$('next').disabled=!c||pos>=deck.length-1;$('flip').disabled=!c;if(!c){$('question').textContent='Session complete 🎉';$('questionLabel').textContent='All caught up';queueSpeech();return}const dir=cardDirection();$('questionLabel').textContent=revealed?'ANSWER':dir==='en'?'ENGLISH → SPANISH':'ESPAÑOL → ENGLISH';$('question').innerHTML=(revealed?(dir==='en'?highlighted(c):esc(c.en)):(dir==='en'?esc(c.en):highlighted(c)));$('flip').textContent=revealed?'Hide':'Reveal';queueSpeech();}
-function toggle(){if(!deck.length)return;revealed=!revealed;renderCard()}
-function projectInterval(c,g){const r=state.reviews[c.id]||{step:-1};const intervals=[1,3,7,14,30,60];if(g==='again')return 0;if(g==='hard')return Math.max(1,Math.ceil((intervals[Math.min(Math.max(0,r.step??-1),5)]||1)/2));return intervals[Math.min(5,Math.max(0,(r.step??-1)+(g==='easy'?2:1)))]}
+function cardDirection(){return deck[pos]?._direction||$('direction').value}
+function nextCandidates(){
+  ensureDaily();
+  const tier=$('tier').value,scope=$('scope').value,preference=$('direction').value;
+  const eligible=state.cards.filter(c=>tier==='all'||c.type===tier);
+  const due=[],fresh=[];
+  for(const c of eligible){
+    const rec=getRecord(c.id);
+    if(scope==='all'){
+      const direction=dueDirection(c)||preference;
+      due.push({...c,_direction:direction,_tries:0,_failed:false});
+    }else if(rec?.introducedOn){
+      const direction=dueDirection(c);
+      if(direction)due.push({...c,_direction:direction,_tries:0,_failed:false});
+    }else fresh.push({...c,_direction:preference,_tries:0,_failed:false});
+  }
+  const byType=(a,b)=>typeRank(a)-typeRank(b);
+  due.sort(byType);fresh.sort(byType);
+  return [...due,...fresh.slice(0,scope==='all'?fresh.length:Math.max(0,state.daily.newLimit-introducedToday()))].sort(byType);
+}
+function saveSession(){
+  ensureDaily();
+  state.session={date:today(),tier:$('tier').value,scope:$('scope').value,direction:$('direction').value,pos,revealed,queue:deck.map(c=>({id:c.id,dir:c._direction,tries:c._tries||0,failed:!!c._failed}))};
+  save();
+}
+function fillDeck(forceNew=false){
+  clearScratch();ensureDaily();
+  const snapshot=state.session;
+  const canRestore=!forceNew&&snapshot?.date===today()&&snapshot.tier===$('tier').value&&snapshot.scope===$('scope').value&&snapshot.direction===$('direction').value;
+  if(canRestore){
+    const lookup=new Map(state.cards.map(c=>[c.id,c]));
+    deck=(snapshot.queue||[]).map(q=>lookup.has(q.id)?{...lookup.get(q.id),_direction:q.dir||'es',_tries:q.tries||0,_failed:!!q.failed}:null).filter(Boolean);
+    pos=Math.min(Math.max(0,snapshot.pos||0),Math.max(0,deck.length-1));
+    revealed=!!snapshot.revealed;
+    // Cards published since the previous visit can join without moving your position.
+    const existing=new Set(deck.map(c=>c.id));
+    for(const c of nextCandidates())if(!existing.has(c.id)){deck.push(c);existing.add(c.id)}
+  }else{
+    deck=nextCandidates();pos=0;revealed=false;visited=new Set();
+  }
+  saveSession();renderCard();
+}
+function renderCard(){
+  const c=deck[pos];
+  $('queueCount').textContent=deck.length+' remaining';
+  document.querySelectorAll('[data-grade]').forEach(b=>b.disabled=!c);
+  $('deleteCard').disabled=!c;$('deleteCard').classList.toggle('hidden',!c);
+  $('back').disabled=pos===0;$('next').disabled=!c||pos>=deck.length-1;$('flip').disabled=!c;
+  if(!c){$('question').textContent='Session complete 🎉';$('questionLabel').textContent='All caught up';$('flip').textContent='Reveal';queueSpeech();return}
+  const dir=cardDirection();
+  $('questionLabel').textContent=revealed?'ANSWER':dir==='en'?'ENGLISH → SPANISH':'ESPAÑOL → ENGLISH';
+  $('question').innerHTML=(revealed?(dir==='en'?highlighted(c):esc(c.en)):(dir==='en'?esc(c.en):highlighted(c)));
+  $('flip').textContent=revealed?'Hide':'Reveal';queueSpeech();
+}
+function toggle(){if(!deck.length)return;revealed=!revealed;saveSession();renderCard()}
 let gradingLock=false;
 function grade(g){
- if(gradingLock)return;
- const c=deck[pos];if(!c)return;
- gradingLock=true;setTimeout(()=>gradingLock=false,280);
- // Recognition passes rated Good/Easy return for English-to-Spanish production.
- // Don't advance persistent spaced repetition until the production pass is graded.
- // Remove each answered queue entry before rendering so repeated clicks cannot re-grade it.
- const firstPass=($('direction').value==='es' && c._pass!=='production');
- if(firstPass && (g==='good'||g==='easy')){
-  const review=state.reviews[c.id]||{count:0,step:-1};
-  review.recognizedOn=today();
-  review.pendingProductionOn=today();
-  review.recognitionGrade=g;
-  state.reviews[c.id]=review;save();
+  if(gradingLock)return;
+  const c=deck[pos];if(!c)return;
+  gradingLock=true;setTimeout(()=>gradingLock=false,280);
+  const r=getRecord(c.id,true);
+  if(!r.introducedOn)r.introducedOn=today();
+  const dir=c._direction,other=dir==='es'?'en':'es',current=r.dirs[dir];
+  const tries=(c._tries||0)+(g==='again'?1:0);
+  current.count=(current.count||0)+1;
+  current.last=today();current.lastGrade=g;
+  if(g==='again'){
+    current.step=-1;current.due=today();current.interval=0;
+  }else if(g==='hard'){
+    current.step=Math.max(0,current.step??-1);
+    current.interval=c._failed?1:Math.max(1,Math.ceil(INTERVALS[current.step]/2));
+    current.due=localDatePlus(current.interval);
+  }else{
+    current.step=Math.min(INTERVALS.length-1,Math.max(-1,current.step??-1)+(g==='easy'?3:2));
+    current.interval=c._failed?1:INTERVALS[current.step];
+    current.due=localDatePlus(current.interval);
+  }
+  // The opposite direction is introduced tomorrow, not immediately.
+  if(g!=='again'&&!r.dirs[other].due&&!r.dirs[other].last)
+    r.dirs[other].due=localDatePlus(1);
+  visited.add(c.id);
   deck.splice(pos,1);
-  deck.push({...c,_pass:'production',_recognitionGrade:g});
+  if(g==='again'&&tries<3){
+    deck.push({...c,_tries:tries,_failed:true});
+  }else if(g==='again'){
+    current.due=localDatePlus(1);
+    current.interval=1;
+  }
   if(pos>=deck.length)pos=Math.max(0,deck.length-1);
-  revealed=false;clearScratch();renderCard();return;
- }
- const r=state.reviews[c.id]||{count:0,step:-1};
- const intervals=[1,3,7,14,30,60];
- if(g==='again'){
-  r.step=0;r.interval=0;r.due=today();
- }else if(g==='hard'){
-  r.step=Math.max(0,r.step);r.interval=projectInterval(c,g);r.due=localDatePlus(r.interval);
- }else{
-  r.step=Math.min(5,(r.step??-1)+(g==='easy'?2:1));
-  r.interval=intervals[Math.max(0,r.step)];r.due=localDatePlus(r.interval);
- }
- r.count=(r.count||0)+1;r.last=today();r.lastGrade=g;r.recognizedOn=today();
- if(g==='again'&&c._pass==='production')r.pendingProductionOn=today();
- else delete r.pendingProductionOn;
- if(!r.pendingProductionOn)delete r.recognitionGrade;
- state.reviews[c.id]=r;save();visited.add(c.id);
- // Remove the current card. Wrong answers go behind every other outstanding card.
- deck.splice(pos,1);
- if(g==='again')deck.push(c);
- if(pos>=deck.length)pos=Math.max(0,deck.length-1);
- revealed=false;clearScratch();renderCard();
-
+  revealed=false;clearScratch();saveSession();renderCard();
 }
-
 function removeCard(id){const c=state.cards.find(x=>x.id===id);if(!c)return;if(!confirm('Delete this card permanently?\n\n'+c.en+' → '+c.es+'\n\nThis also removes its review history.'))return;state.deleted.push(id);state.cards=state.cards.filter(x=>x.id!==id);delete state.reviews[id];save();const i=deck.findIndex(x=>x.id===id);if(i!==-1){deck.splice(i,1);if(pos>=deck.length)pos=Math.max(0,deck.length-1);}revealed=false;clearScratch();renderCard();renderLibrary()}
 function updateStats(){$('totalStat').textContent=state.cards.length;$('dueStat').textContent=state.cards.filter(isDue).length;$('learnedStat').textContent=state.cards.filter(c=>{const r=state.reviews[c.id];return r&&(r.last===today()||r.recognizedOn===today())}).length}
 function renderLibrary(){let term=$('search').value.toLowerCase(),tier=$('listTier').value;let cards=state.cards.filter(c=>(tier==='all'||c.type===tier)&&[c.en,c.es,c.note].some(x=>x.toLowerCase().includes(term)));cards.sort((a,b)=>['word','expression','sentence'].indexOf(a.type)-['word','expression','sentence'].indexOf(b.type));const target=$('cardList');target.replaceChildren();let last='';for(const c of cards){if(c.type!==last){let h=document.createElement('h3');h.textContent=({word:'1 · Words',expression:'2 · Expressions',sentence:'3 · Sentences'})[c.type];h.style.margin='22px 0 5px';target.append(h);last=c.type}const row=document.createElement('div');row.className='list-row';const a=document.createElement('div'),b=document.createElement('div');const s=document.createElement('small');s.textContent=c.note;a.innerHTML='';const en=document.createElement('b'),es=document.createElement('b');en.textContent=c.en;es.innerHTML=highlighted(c);a.append(en,document.createElement('br'),s);b.append(es);const next=state.reviews[c.id];if(next){const sm=document.createElement('small');sm.textContent=' · Due '+next.due;b.append(document.createElement('br'),sm)}const del=document.createElement('button');del.className='btn-sm';del.textContent='Delete';del.title='Delete this card';del.style.cssText='color:#a54238;margin-top:7px';del.onclick=()=>removeCard(c.id);b.append(document.createElement('br'),del);row.append(a,b);target.append(row)}if(!cards.length)target.textContent='No matching cards.'}
