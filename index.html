@@ -108,14 +108,19 @@ function init(){
 }
 function merge(items,persist=true){
   let added=0;
-  const existing=new Set(state.cards.map(x=>(x.en+'|'+x.es).toLowerCase()));
+  const existing=new Map(state.cards.map(x=>[(x.en+'|'+x.es).toLowerCase(),x]));
   for(const x of items){
     if(!x||state.deleted.includes(x.id)||typeof x.en!=='string'||typeof x.es!=='string'||!x.en.trim()||!x.es.trim())continue;
     const key=(x.en.trim()+'|'+x.es.trim()).toLowerCase();
-    if(existing.has(key))continue;
+    if(existing.has(key)){
+      // Published grammar metadata may arrive for cards already studied: keep their progress and text.
+      const card=existing.get(key);
+      if(Array.isArray(x.grammar))card.grammar=x.grammar;
+      continue;
+    }
     const type=TYPES.includes(x.type)?x.type:'expression';
-    state.cards.push({id:x.id&&!state.cards.some(c=>c.id===x.id)?x.id:'U'+Date.now().toString(36)+String(added).padStart(3,'0'),type,category:x.category||'new',en:x.en.trim(),es:x.es.trim(),note:x.note||'',focus:x.focus||''});
-    existing.add(key);added++;
+    const card={id:x.id&&!state.cards.some(c=>c.id===x.id)?x.id:'U'+Date.now().toString(36)+String(added).padStart(3,'0'),type,category:x.category||'new',en:x.en.trim(),es:x.es.trim(),note:x.note||'',focus:x.focus||'',grammar:Array.isArray(x.grammar)?x.grammar:[]};
+    state.cards.push(card);existing.set(key,card);added++;
   }
   if(persist)save();
   return added;
@@ -125,21 +130,77 @@ const CHUNKS=[
 'responder a','responder a los','me podés mandar','cuando puedas','le agradecería que','me enviara','le pido disculpas por','gracias por','se me complicó','sin que','sin parecer','sin darme cuenta','me cuesta','prestar atención','distinguir entre','dependiendo del contexto','de forma natural','soy consciente de que','no me acuerdo de','lo que','lo de la','lo del','aprender a','al aire libre','música en vivo','hasta la medianoche','busco un barrio que','quiero expresiones que','me permitan','me permita','con un tono','como cuando','tenía que','de la misma manera que','compañeros de trabajo','a la brevedad','quedo a su disposición','¿sería posible','¿me pasás','tomar como referencia','busco ejemplos de','se retrasó','me dijiste','que tenga','que pueda','que haya resuelto','a un correo','de los correos','tengo que','qué pasó con','un lugar donde','que sirva','que tenga','que suenen','que no suenen'];
 const orderedChunks=[...CHUNKS].sort((a,b)=>b.length-a.length);
 function esc(s){return String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
-function highlighted(c){
- const str=c.es||'';
- if(c.type==='word')return esc(str);
- const desired=Array.isArray(c.focus)?c.focus:(typeof c.focus==='string'&&c.focus.trim()?c.focus.split(';').map(x=>x.trim()):orderedChunks);
- let spans=[];
- for(const phrase of desired){if(!phrase||!phrase.trim())continue;
-   const needle=phrase.toLocaleLowerCase('es');const lower=str.toLocaleLowerCase('es');let start=0,i;
-   while((i=lower.indexOf(needle,start))!==-1){let end=i+phrase.length;
-     if((i===0||!/[\p{L}]/u.test(str[i-1]))&&(end===str.length||!/[\p{L}]/u.test(str[end]))&&!spans.some(([a,b])=>i<b&&end>a))spans.push([i,end]);
-     start=i+1;
-   }
+const GRAMMAR_TENSES=['present','past','future','conditional'];
+const GRAMMAR_FORMS=['preterite','imperfect'];
+const GRAMMAR_MOODS=['indicative','subjunctive','imperative'];
+const GRAMMAR_ASPECTS=['perfect','progressive'];
+function grammarLabel(g){
+ const parts=[];
+ if(GRAMMAR_TENSES.includes(g.tense))parts.push(g.tense[0].toUpperCase()+g.tense.slice(1));
+ if(GRAMMAR_FORMS.includes(g.form))parts.push(g.form==='preterite'?'Pretérito':'Imperfecto');
+ if(GRAMMAR_MOODS.includes(g.mood))parts.push(g.mood[0].toUpperCase()+g.mood.slice(1));
+ if(GRAMMAR_ASPECTS.includes(g.aspect))parts.push(g.aspect==='perfect'?'Perfect':'Progressive');
+ return parts.join(' · ');
+}
+function grammarRanges(c){
+ const str=c.es||'',found=[];
+ if(!Array.isArray(c.grammar))return found;
+ for(const g of c.grammar){
+  if(!g||typeof g.text!=='string'||!g.text||!(GRAMMAR_TENSES.includes(g.tense)||GRAMMAR_MOODS.includes(g.mood)))continue;
+  const occurrence=Number.isInteger(g.occurrence)&&g.occurrence>=0&&g.occurrence<15?g.occurrence:0;
+  let at=-1,from=0;
+  for(let n=0;n<=occurrence;n++){at=str.indexOf(g.text,from);if(at<0)break;from=at+g.text.length}
+  if(at<0)continue;
+  const end=at+g.text.length;
+  if(found.some(x=>at<x.end&&end>x.start))continue;
+  found.push({start:at,end,g});
  }
- spans.sort((a,b)=>a[0]-b[0]);let out='',last=0;
- for(const [a,b] of spans){out+=esc(str.slice(last,a))+'<mark class="chunk">'+esc(str.slice(a,b))+'</mark>';last=b;}
- return out+esc(str.slice(last));
+ return found.sort((a,b)=>a.start-b.start);
+}
+function annotatedPart(str,start,end,grammar){
+ const cuts=new Set([start,end]);
+ for(const r of grammar){
+  if(r.start<end&&r.end>start){cuts.add(Math.max(start,r.start));cuts.add(Math.min(end,r.end))}
+ }
+ const pts=[...cuts].sort((a,b)=>a-b);
+ let out='';
+ for(let i=0;i<pts.length-1;i++){
+  const a=pts[i],b=pts[i+1],r=grammar.find(x=>x.start<=a&&x.end>=b);
+  if(!r){out+=esc(str.slice(a,b));continue}
+  const g=r.g,classes=['g-verb'];
+  if(GRAMMAR_TENSES.includes(g.tense))classes.push('g-'+g.tense);
+  if(GRAMMAR_FORMS.includes(g.form))classes.push('g-form-'+g.form);
+  if(GRAMMAR_MOODS.includes(g.mood)&&g.mood!=='indicative')classes.push('g-mood-'+g.mood);
+  out+='<span class="'+classes.join(' ')+'" title="'+esc(grammarLabel(g))+'">'+esc(str.slice(a,b))+'</span>';
+  if(b===r.end&&GRAMMAR_ASPECTS.includes(g.aspect))
+   out+='<sup class="aspect-pill">'+(g.aspect==='perfect'?'PERF':'PROG')+'</sup>';
+ }
+ return out;
+}
+// Phrases always have a warm accent; tense/mood colors appear only in answer view.
+function highlighted(c,withGrammar=false){
+ const str=c.es||'';
+ const grammar=withGrammar?grammarRanges(c):[];
+ const desired=Array.isArray(c.focus)?c.focus:(typeof c.focus==='string'&&c.focus.trim()?c.focus.split(';').map(x=>x.trim()):orderedChunks);
+ const phrases=[];
+ if(c.type!=='word')for(const phrase of desired){
+  if(typeof phrase!=='string'||!phrase.trim())continue;
+  const needle=phrase.toLocaleLowerCase('es'),lower=str.toLocaleLowerCase('es');let from=0,i;
+  while((i=lower.indexOf(needle,from))!==-1){
+   const end=i+phrase.length;
+   if((i===0||!/[^\W\d_]/u.test(str[i-1]))&&(end===str.length||!/[^\W\d_]/u.test(str[end]))&&!phrases.some(p=>i<p.end&&end>p.start))
+    phrases.push({start:i,end});
+   from=i+1;
+  }
+ }
+ phrases.sort((a,b)=>a.start-b.start);
+ let result='',last=0;
+ for(const p of phrases){
+  result+=annotatedPart(str,last,p.start,grammar);
+  result+='<mark class="chunk">'+annotatedPart(str,p.start,p.end,grammar)+'</mark>';
+  last=p.end;
+ }
+ return result+annotatedPart(str,last,str.length,grammar);
 }
 function localDatePlus(days){const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()+days);return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
 const INTERVALS=[1,3,7,14,30,60,120,240];
@@ -192,6 +253,8 @@ async function speakSpanish(force=false){
  try{const player=new Audio('data:audio/mpeg;base64,'+b64);currentAudio=player;await player.play();}catch(e){if(seq===audioSeq){console.debug('Audio playback blocked until a tap or unavailable:',e)}}
 }
 function queueSpeech(){const c=deck[pos],visible=!!c&&spanishVisible();$('playAudio').disabled=!visible;if(!visible){speechLastKey='';cancelAudio();return;}speakSpanish();}
+$('grammarLens').checked=localStorage.getItem('mi-espanol-grammar-lens')!=='off';
+$('grammarLens').onchange=()=>{localStorage.setItem('mi-espanol-grammar-lens',$('grammarLens').checked?'on':'off');renderCard();renderLibrary()};
 $('autoAudio').checked=localStorage.getItem('mi-espanol-auto-audio')!=='off';
 $('autoAudio').onchange=()=>{localStorage.setItem('mi-espanol-auto-audio',$('autoAudio').checked?'on':'off');if(!$('autoAudio').checked)cancelAudio();else{speechLastKey='';speakSpanish();}};
 $('playAudio').onclick=()=>{speechLastKey='';speakSpanish(true)};
@@ -269,7 +332,14 @@ function renderCard(){
   if(!c){$('question').textContent='Session complete 🎉';$('questionLabel').textContent='All caught up';queueSpeech();return}
   const dir=cardDirection();
   $('questionLabel').textContent=revealed?'ANSWER':dir==='en'?'ENGLISH → SPANISH':'ESPAÑOL → ENGLISH';
-  $('question').innerHTML=(revealed?(dir==='en'?highlighted(c):esc(c.en)):(dir==='en'?esc(c.en):highlighted(c)));
+  const annotated=revealed&&$('grammarLens').checked&&grammarRanges(c).length>0;
+  $('question').innerHTML=(revealed?(dir==='en'?highlighted(c,annotated):esc(c.en)):(dir==='en'?esc(c.en):highlighted(c)));
+  const details=$('grammarDetails');
+  details.classList.toggle('hidden',!annotated);
+  if(annotated){
+    const labels=[...new Set(grammarRanges(c).map(r=>grammarLabel(r.g)).filter(Boolean))];
+    details.innerHTML=(dir==='es'?'<div class="g-example">'+highlighted(c,true)+'</div>':'')+labels.map(v=>'<span class="g-chip">'+esc(v)+'</span>').join('');
+  }else details.textContent='';
   queueSpeech();
 }
 function toggle(){if(!deck.length)return;revealed=!revealed;saveSession();renderCard()}
@@ -313,7 +383,7 @@ function updateStats(){
   $('dailyIntro').textContent='Up to '+state.daily.newLimit+' new items today · '+introducedToday()+' started';
 
 }
-function renderLibrary(){let term=$('search').value.toLowerCase(),tier=$('listTier').value;let cards=state.cards.filter(c=>(tier==='all'||c.type===tier)&&[c.en,c.es,c.note].some(x=>x.toLowerCase().includes(term)));cards.sort((a,b)=>['word','expression','sentence'].indexOf(a.type)-['word','expression','sentence'].indexOf(b.type));const target=$('cardList');target.replaceChildren();let last='';for(const c of cards){if(c.type!==last){let h=document.createElement('h3');h.textContent=({word:'1 · Words',expression:'2 · Expressions',sentence:'3 · Sentences'})[c.type];h.style.margin='22px 0 5px';target.append(h);last=c.type}const row=document.createElement('div');row.className='list-row';const a=document.createElement('div'),b=document.createElement('div');const s=document.createElement('small');s.textContent=c.note;a.innerHTML='';const en=document.createElement('b'),es=document.createElement('b');en.textContent=c.en;es.innerHTML=highlighted(c);a.append(en,document.createElement('br'),s);b.append(es);const next=getRecord(c.id);if(next?.introducedOn){const sm=document.createElement('small');sm.textContent=' · Recognition: '+(next.dirs.es.due||'not scheduled')+' · Production: '+(next.dirs.en.due||'not scheduled');b.append(document.createElement('br'),sm)}const del=document.createElement('button');del.className='btn-sm';del.textContent='Delete';del.title='Delete this card';del.style.cssText='color:#a54238;margin-top:7px';del.onclick=()=>removeCard(c.id);b.append(document.createElement('br'),del);row.append(a,b);target.append(row)}if(!cards.length)target.textContent='No matching cards.'}
+function renderLibrary(){let term=$('search').value.toLowerCase(),tier=$('listTier').value;let cards=state.cards.filter(c=>(tier==='all'||c.type===tier)&&[c.en,c.es,c.note].some(x=>x.toLowerCase().includes(term)));cards.sort((a,b)=>['word','expression','sentence'].indexOf(a.type)-['word','expression','sentence'].indexOf(b.type));const target=$('cardList');target.replaceChildren();let last='';for(const c of cards){if(c.type!==last){let h=document.createElement('h3');h.textContent=({word:'1 · Words',expression:'2 · Expressions',sentence:'3 · Sentences'})[c.type];h.style.margin='22px 0 5px';target.append(h);last=c.type}const row=document.createElement('div');row.className='list-row';const a=document.createElement('div'),b=document.createElement('div');const s=document.createElement('small');s.textContent=c.note;a.innerHTML='';const en=document.createElement('b'),es=document.createElement('b');en.textContent=c.en;es.innerHTML=highlighted(c,$('grammarLens').checked);a.append(en,document.createElement('br'),s);b.append(es);const next=getRecord(c.id);if(next?.introducedOn){const sm=document.createElement('small');sm.textContent=' · Recognition: '+(next.dirs.es.due||'not scheduled')+' · Production: '+(next.dirs.en.due||'not scheduled');b.append(document.createElement('br'),sm)}const del=document.createElement('button');del.className='btn-sm';del.textContent='Delete';del.title='Delete this card';del.style.cssText='color:#a54238;margin-top:7px';del.onclick=()=>removeCard(c.id);b.append(document.createElement('br'),del);row.append(a,b);target.append(row)}if(!cards.length)target.textContent='No matching cards.'}
 function download(name,content,mime){const blob=new Blob([content],{type:mime});const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}
 document.querySelectorAll('nav button').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b===btn));for(let page of ['study','library','settings'])$(page+'Page').classList.toggle('hidden',page!==btn.dataset.page);if(btn.dataset.page!=='study')cancelAudio();else{speechLastKey='';queueSpeech()}if(btn.dataset.page==='library')renderLibrary()});for(const id of ['tier','scope','direction'])$(id).onchange=()=>fillDeck(true);
 $('moreNew').onclick=()=>{ensureDaily();state.daily.newLimit+=10;fillDeck()};
@@ -326,11 +396,10 @@ async function syncPublishedCards(){
     const payload=await response.json();
     if(!Array.isArray(payload.cards))throw new Error('Invalid card data');
     const added=merge(payload.cards);
-    if(added){
-      fillDeck();
-      renderLibrary();
-      console.info(added+' newly published Spanish cards added.');
-    }
+    if(added)fillDeck();
+    else renderCard();
+    renderLibrary();
+    if(added)console.info(added+' newly published Spanish cards added.');
   }catch(error){console.info('Using offline cards; sync unavailable:',error.message)}
 }
 init();fillDeck();syncPublishedCards();syncPublishedAudio();
