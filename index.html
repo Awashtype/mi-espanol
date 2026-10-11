@@ -229,7 +229,6 @@ function renderCard(){
   const c=deck[pos];
   $('queueCount').textContent=deck.length+' remaining';
   document.querySelectorAll('[data-grade]').forEach(b=>b.disabled=!c);
-  $('deleteCard').disabled=!c;$('deleteCard').classList.toggle('hidden',!c);
   $('grading').classList.toggle('hidden',!c||!revealed);
   $('morePanel').classList.toggle('hidden',!!c||$('scope').value!=='due'||$('tier').value!=='all'||introducedToday()<state.daily.newLimit||unseenCount()===0);
   $('tapHint').textContent=!c?'':revealed?'How well did you remember?':'Tap card to reveal';
