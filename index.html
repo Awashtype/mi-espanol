@@ -76,6 +76,25 @@ $('audioPackFile').onchange=async e=>{
 };
 openAudioDB().then(async()=>{$('audioPackStatus').textContent=`${await countClips()} Google recordings available offline.`;speechLastKey='';queueSpeech();}).catch(err=>{$('audioPackStatus').textContent='Offline audio unavailable here: '+err.message;});
 
+async function syncPublishedAudio(){
+  if(location.protocol==='file:')return;
+  try{
+    if(!audioDB)await openAudioDB();
+    const response=await fetch('./mi_espanol_google_audio.json',{cache:'no-store'});
+    if(!response.ok)return;
+    const pack=await response.json();
+    if(pack.format!=='mi-espanol-audio-v1'||!Array.isArray(pack.items))return;
+    let added=0;
+    for(const item of pack.items){
+      if(!item.es||typeof item.audio!=='string'||!/^[A-Za-z0-9+/=]+$/.test(item.audio))continue;
+      const key=audioKey(item.es);
+      if(await getClip(key))continue;
+      await storeClip(key,item.audio);added++;
+    }
+    $('audioPackStatus').textContent=(await countClips())+' Google recordings available offline.';
+    if(added){speechLastKey='';queueSpeech()}
+  }catch(err){console.info('Using offline audio; automatic audio sync unavailable:',err.message)}
+}
 function clearScratch(){$('scratch').value=''}
 function fillDeck(){clearScratch();const tier=$('tier').value,scope=$('scope').value;deck=state.cards.filter(x=>(tier==='all'||x.type===tier)&&(scope!=='due'||isDue(x))).sort((a,b)=>['word','expression','sentence'].indexOf(a.type)-['word','expression','sentence'].indexOf(b.type));pos=0;revealed=false;visited=new Set();renderCard()}
 function renderCard(){const c=deck[pos];$('queueCount').textContent=deck.length+' remaining';document.querySelectorAll('[data-grade]').forEach(b=>b.disabled=!c);$('deleteCard').disabled=!c;$('deleteCard').classList.toggle('hidden',!c);$('back').disabled=pos===0;$('next').disabled=!c||pos>=deck.length-1;$('flip').disabled=!c;if(!c){$('question').textContent='Session complete 🎉';$('questionLabel').textContent='All caught up';queueSpeech();return}const dir=cardDirection();$('questionLabel').textContent=revealed?'ANSWER':dir==='en'?'ENGLISH → SPANISH':'ESPAÑOL → ENGLISH';$('question').innerHTML=(revealed?(dir==='en'?highlighted(c):esc(c.en)):(dir==='en'?esc(c.en):highlighted(c)));$('flip').textContent=revealed?'Hide':'Reveal';queueSpeech();}
@@ -139,5 +158,5 @@ async function syncPublishedCards(){
     }
   }catch(error){console.info('Using offline cards; sync unavailable:',error.message)}
 }
-init();fillDeck();syncPublishedCards();
+init();fillDeck();syncPublishedCards();syncPublishedAudio();
 </script></body></html>
