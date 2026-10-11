@@ -39,7 +39,7 @@
 <div class="grammar-swatch"><span class="grammar-sample g-verb g-present">he hablado</span><sup class="aspect-pill">PERF</sup><p>Perfect · small PERF marker</p></div>
 <div class="grammar-swatch"><span class="grammar-sample g-verb g-past g-form-imperfect">estaba hablando</span><sup class="aspect-pill">PROG</sup><p>Progressive · small PROG marker</p></div>
 </div>
-<p class="muted" style="font-size:13px;margin-top:14px">Fixed expressions use a separate warm underline: <mark class="chunk">sin darme cuenta</mark>. Grammar markings are added only when a card has verified labels; an unmarked verb isn't necessarily unimportant.</p>
+<p class="muted" style="font-size:13px;margin-top:14px">A verb’s form does not always describe when an event happens: <em>enviara</em> is an imperfect subjunctive form in a present polite request. Fixed expressions use a separate warm underline: <mark class="chunk">sin darme cuenta</mark>. Grammar markings are added only when a card has verified labels; an unmarked verb isn't necessarily unimportant.</p>
 <hr style="border:0;border-top:1px solid #eceae4;margin:24px 0">
 <h2>Backup your progress</h2>
 <p class="muted" style="font-size:14px">Your reviews are stored on this device, not synchronized across devices yet. Save a backup before installing the Home Screen app, switching phones, or clearing browser data.</p>
@@ -136,7 +136,7 @@ const GRAMMAR_MOODS=['indicative','subjunctive','imperative'];
 const GRAMMAR_ASPECTS=['perfect','progressive'];
 function grammarLabel(g){
  const parts=[];
- if(GRAMMAR_TENSES.includes(g.tense))parts.push(g.tense[0].toUpperCase()+g.tense.slice(1));
+ if(GRAMMAR_TENSES.includes(g.tense))parts.push(g.tense==='past'&&g.mood==='subjunctive'?'Past-form':g.tense[0].toUpperCase()+g.tense.slice(1));
  if(GRAMMAR_FORMS.includes(g.form))parts.push(g.form==='preterite'?'Pretérito':'Imperfecto');
  if(GRAMMAR_MOODS.includes(g.mood))parts.push(g.mood[0].toUpperCase()+g.mood.slice(1));
  if(GRAMMAR_ASPECTS.includes(g.aspect))parts.push(g.aspect==='perfect'?'Perfect':'Progressive');
@@ -183,12 +183,12 @@ function highlighted(c,withGrammar=false){
  const grammar=withGrammar?grammarRanges(c):[];
  const desired=Array.isArray(c.focus)?c.focus:(typeof c.focus==='string'&&c.focus.trim()?c.focus.split(';').map(x=>x.trim()):orderedChunks);
  const phrases=[];
- if(c.type!=='word')for(const phrase of desired){
+ for(const phrase of desired){
   if(typeof phrase!=='string'||!phrase.trim())continue;
   const needle=phrase.toLocaleLowerCase('es'),lower=str.toLocaleLowerCase('es');let from=0,i;
   while((i=lower.indexOf(needle,from))!==-1){
    const end=i+phrase.length;
-   if((i===0||!/[^\W\d_]/u.test(str[i-1]))&&(end===str.length||!/[^\W\d_]/u.test(str[end]))&&!phrases.some(p=>i<p.end&&end>p.start))
+   if((i===0||!/[\p{L}]/u.test(str[i-1]))&&(end===str.length||!/[\p{L}]/u.test(str[end]))&&!phrases.some(p=>i<p.end&&end>p.start))
     phrases.push({start:i,end});
    from=i+1;
   }
