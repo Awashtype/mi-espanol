@@ -94,6 +94,24 @@ When asked to summarize or save a Spanish study session:
 9. For previously discussed grammar, create actual useful examples **when warranted**, not a large memorization list of isolated inflections.
 10. If an item is already present but the user has forgotten it, **let spaced repetition handle it**. Don't add duplicates to make it appear sooner.
 
+### AI editorial deduplication is mandatory (no new script required)
+
+**The assistant preparing a study-session summary is responsible for semantic deduplication before publishing any cards.** This is an expected part of the AI's reasoning and editorial work, **not** a feature the user needs to build in Python, run in the browser, or pay for via an additional semantic-detection service.
+
+In a long lesson (including a multi-hour conversation with many vocabulary drills), first collect all candidate material, then **group it into word families and shared learning objectives** before choosing the final small set of cards:
+
+1. **Normalize mentally by lemma and construction:** recognize inflected or reflexive variants, word order, English paraphrases, synonyms, and overlapping sentence patterns. E.g., `darse cuenta`, `darme cuenta`, and `me di cuenta` are related forms of the same expression, not three unrelated vocabulary items.
+2. **Identify what is actually new for this learner:** is the key goal to know the expression `darse cuenta de`, to conjugate it in the preterite (`me di cuenta`), or to use it in a particular sentence? The underlying expression can normally be **one card**, with a short `note` explaining other forms if helpful.
+3. **Create a separate card only for a distinct, worthwhile learning objective**: for example, if the user repeatedly struggles to produce `me di cuenta` in the past tense, a sentence specifically training that form can be justified. It needs an identifiable grammar contrast or production challenge, not merely different wording.
+4. **Avoid teaching the same thing three times:** do not add three cards that only differ by subject pronoun, agreement, pronoun placement, tense, or slight English translation unless the grammatical distinction was itself a genuine learning problem. Likewise, do not save both a phrase and a near-identical sentence unless the sentence adds substantial transfer value.
+5. **Do not over-deduplicate:** words can share a root yet differ in meaning, register, grammatical behavior, or a key construction. Keep distinct cards when those differences matter; evaluate semantics and pedagogy, not just string similarity.
+6. **Check against both the proposed batch and existing cards.json:** an existing card may already teach the target construction. If so, prefer using it, augmenting a safe `note` or `grammar` annotation when warranted, rather than adding a new duplicate.
+7. **Make the final selection intentionally concise.** Keep a few representative high-value examples, label each Essential / Useful / Extra, and discard redundant candidates. When publishing, briefly mention that related forms were consolidated if useful.
+
+**Explicit user preference:** "When we spend three hours practicing vocabulary and sentences, don't turn three almost-identical forms into three separate cards. Organize them intelligently yourself."
+
+The code's exact text-pair matching remains a technical safety net, **not a substitute for this human/AI editorial check**. No new automatic duplicate-detection system is necessary for this workflow.
+
 Repeated areas to watch from Spanish discussions: **pretérito vs imperfecto**, **ser/estar/ir/andar**, present vs past, future vs conditional for conjecture/probability, **indicative vs subjunctive**, imperative forms (including vos), agreement, perfect/progressive constructions, time expressions, reported speech, and the differences between common colloquial and formal Spanish. This is guidance for noticing actual errors, **not** a directive to fabricate drills on every topic.
 
 ## 5. Regional conventions, translations, and pronunciation-friendly text
@@ -293,7 +311,7 @@ Before editing:
 - [ ] Assign **essential / useful / extra** thoughtfully. Never equate "new/interesting" with Essential.
 - [ ] Confirm the Spanish is correct, natural, accented, and appropriate for the intended Argentine/formal context.
 - [ ] Choose the right **type** (word/expression/sentence) independently of priority.
-- [ ] Check exact **and semantic** duplicates, stable IDs, and already-deleted concepts.
+- [ ] **Actively consolidate related inflected forms, paraphrases, and shared constructions into one pedagogical card when appropriate;** create a second only if it targets a genuinely different grammar or production problem. Check exact **and semantic** duplicates in both the proposed batch and existing cards.json, stable IDs, and already-deleted concepts.
 - [ ] Annotate only linguistically verified verb forms with exact text, tense, form, mood, aspect; include occurrence if required.
 - [ ] Use natural chunk/focus highlighting only where useful. Don't auto-label all verbs or assign unverified tenses.
 - [ ] For new gender-paired entries, use **comma + space**, not slash, for pronunciation.
@@ -312,7 +330,7 @@ When committing:
 
 **Implemented:** published vocabulary cards with priority labels; default Essential-first study; optional Extras-only study; type filters; curated grammar metadata; fixed-expression highlights; pink subjunctive styling; offline Google TTS playback; compact replay and delete controls; daily limits; two-way reviews; local JSON backup/restore; installable PWA.
 
-**Not implemented:** automatic frequency estimation using a corpus, automatic semantic duplicate detection, universal grammatical tagging for new cards, a personalized vocabulary gap diagnostic, real-time synchronization between browser and Home Screen app, or synchronized cross-device accounts. These are possible future improvements, **not current capabilities**. Don't describe them as already functioning.
+**Not implemented in the app:** automatic frequency estimation using a corpus, code-driven semantic duplicate detection, universal grammatical tagging for new cards, a personalized vocabulary gap diagnostic, real-time synchronization between browser and Home Screen app, or synchronized cross-device accounts. **However, AI editorial semantic deduplication when organizing lessons is required now** (see Section 4); it does not need an app feature or Python script. Don't describe the other aspirational features as already functioning.
 
 ---
 
