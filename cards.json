@@ -20,7 +20,8 @@
           "form": "imperfect",
           "mood": "subjunctive"
         }
-      ]
+      ],
+      "priority": "useful"
     },
     {
       "id": "R002",
@@ -35,7 +36,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R003",
@@ -50,7 +52,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R004",
@@ -58,7 +61,8 @@
       "category": "formal",
       "en": "Sorry for the delay.",
       "es": "Perdón por la demora.",
-      "note": "demora = delay"
+      "note": "demora = delay",
+      "priority": "essential"
     },
     {
       "id": "R005",
@@ -74,7 +78,8 @@
           "form": "preterite",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R006",
@@ -94,7 +99,8 @@
           "tense": "present",
           "mood": "subjunctive"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R007",
@@ -109,7 +115,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R008",
@@ -129,7 +136,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R009",
@@ -143,7 +151,8 @@
           "text": "Bancame",
           "mood": "imperative"
         }
-      ]
+      ],
+      "priority": "useful"
     },
     {
       "id": "R010",
@@ -159,7 +168,8 @@
           "form": "preterite",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "useful"
     },
     {
       "id": "R011",
@@ -175,7 +185,8 @@
           "form": "preterite",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "extra"
     },
     {
       "id": "R012",
@@ -190,7 +201,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "useful"
     },
     {
       "id": "R013",
@@ -205,7 +217,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "useful"
     },
     {
       "id": "R014",
@@ -213,7 +226,8 @@
       "category": "informal",
       "en": "What a bummer!",
       "es": "¡Qué bajón!",
-      "note": "Argentine casual"
+      "note": "Argentine casual",
+      "priority": "useful"
     },
     {
       "id": "R015",
@@ -221,7 +235,8 @@
       "category": "informal",
       "en": "Absolutely, I’m in!",
       "es": "¡De una!",
-      "note": "Enthusiastic agreement"
+      "note": "Enthusiastic agreement",
+      "priority": "useful"
     },
     {
       "id": "R016",
@@ -243,7 +258,8 @@
           "form": "preterite",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R017",
@@ -259,7 +275,8 @@
           "form": "preterite",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R018",
@@ -280,7 +297,8 @@
           "form": "preterite",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R019",
@@ -300,7 +318,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R020",
@@ -320,7 +339,8 @@
           "tense": "present",
           "mood": "subjunctive"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R021",
@@ -340,7 +360,8 @@
           "tense": "present",
           "mood": "subjunctive"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R022",
@@ -360,7 +381,8 @@
           "tense": "present",
           "mood": "subjunctive"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R023",
@@ -380,7 +402,8 @@
           "tense": "present",
           "mood": "subjunctive"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R024",
@@ -402,7 +425,8 @@
           "form": "preterite",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R025",
@@ -422,7 +446,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R026",
@@ -437,7 +462,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "useful"
     },
     {
       "id": "R027",
@@ -457,7 +483,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R028",
@@ -472,7 +499,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "useful"
     },
     {
       "id": "R029",
@@ -480,7 +508,8 @@
       "category": "expression",
       "en": "Without realizing it",
       "es": "Sin darme cuenta",
-      "note": "common phrase"
+      "note": "common phrase",
+      "priority": "essential"
     },
     {
       "id": "R030",
@@ -495,7 +524,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "R031",
@@ -503,7 +533,8 @@
       "category": "daily",
       "en": "An outdoor market",
       "es": "Un mercado al aire libre",
-      "note": "al aire libre"
+      "note": "al aire libre",
+      "priority": "essential"
     },
     {
       "id": "R032",
@@ -511,7 +542,8 @@
       "category": "daily",
       "en": "Live music",
       "es": "Música en vivo",
-      "note": "useful restaurant description"
+      "note": "useful restaurant description",
+      "priority": "essential"
     },
     {
       "id": "R033",
@@ -519,7 +551,8 @@
       "category": "daily",
       "en": "A cozy and lively neighborhood",
       "es": "Un barrio acogedor y animado",
-      "note": "adjectives"
+      "note": "adjectives",
+      "priority": "useful"
     },
     {
       "id": "R034",
@@ -527,7 +560,8 @@
       "category": "daily",
       "en": "A steak with fried eggs",
       "es": "Un bife a caballo",
-      "note": "Argentine dish"
+      "note": "Argentine dish",
+      "priority": "extra"
     },
     {
       "id": "R035",
@@ -535,7 +569,8 @@
       "category": "daily",
       "en": "People experiencing homelessness",
       "es": "Personas en situación de calle",
-      "note": "Common Argentine expression"
+      "note": "Common Argentine expression",
+      "priority": "useful"
     },
     {
       "id": "V001",
@@ -543,7 +578,8 @@
       "category": "work",
       "en": "a response",
       "es": "una respuesta",
-      "note": "Noun; responder = verb."
+      "note": "Noun; responder = verb.",
+      "priority": "essential"
     },
     {
       "id": "V002",
@@ -551,7 +587,8 @@
       "category": "work",
       "en": "to respond",
       "es": "responder",
-      "note": "Verb."
+      "note": "Verb.",
+      "priority": "essential"
     },
     {
       "id": "V003",
@@ -559,7 +596,8 @@
       "category": "work",
       "en": "appropriate",
       "es": "adecuado / adecuada",
-      "note": "Agreement: expresiones adecuadas."
+      "note": "Agreement: expresiones adecuadas.",
+      "priority": "essential"
     },
     {
       "id": "V004",
@@ -567,7 +605,8 @@
       "category": "work",
       "en": "my boss (female)",
       "es": "mi jefa",
-      "note": "One f, no accent."
+      "note": "One f, no accent.",
+      "priority": "essential"
     },
     {
       "id": "V005",
@@ -575,7 +614,8 @@
       "category": "work",
       "en": "a colleague",
       "es": "un compañero / una compañera",
-      "note": "De trabajo = coworker."
+      "note": "De trabajo = coworker.",
+      "priority": "essential"
     },
     {
       "id": "V006",
@@ -583,7 +623,8 @@
       "category": "work",
       "en": "an email",
       "es": "un correo electrónico",
-      "note": "Also un mail."
+      "note": "Also un mail.",
+      "priority": "essential"
     },
     {
       "id": "V007",
@@ -591,7 +632,8 @@
       "category": "work",
       "en": "a delay",
       "es": "una demora",
-      "note": "Perdón por la demora."
+      "note": "Perdón por la demora.",
+      "priority": "essential"
     },
     {
       "id": "V008",
@@ -599,7 +641,8 @@
       "category": "work",
       "en": "understanding",
       "es": "la comprensión",
-      "note": "Not compresión."
+      "note": "Not compresión.",
+      "priority": "essential"
     },
     {
       "id": "V009",
@@ -607,7 +650,8 @@
       "category": "argentine",
       "en": "work (casual)",
       "es": "laburo",
-      "note": "Noun; laburar = verb."
+      "note": "Noun; laburar = verb.",
+      "priority": "useful"
     },
     {
       "id": "V010",
@@ -615,7 +659,8 @@
       "category": "argentine",
       "en": "to work (casual)",
       "es": "laburar",
-      "note": "Verb; Argentine colloquial."
+      "note": "Verb; Argentine colloquial.",
+      "priority": "useful"
     },
     {
       "id": "V011",
@@ -623,7 +668,8 @@
       "category": "argentine",
       "en": "subway (Buenos Aires)",
       "es": "el subte",
-      "note": "Subterráneo."
+      "note": "Subterráneo.",
+      "priority": "useful"
     },
     {
       "id": "V012",
@@ -631,7 +677,8 @@
       "category": "argentine",
       "en": "a mess / chaos",
       "es": "un quilombo",
-      "note": "Very informal."
+      "note": "Very informal.",
+      "priority": "extra"
     },
     {
       "id": "V013",
@@ -639,7 +686,8 @@
       "category": "argentine",
       "en": "money (slang)",
       "es": "guita",
-      "note": "Argentine colloquial."
+      "note": "Argentine colloquial.",
+      "priority": "extra"
     },
     {
       "id": "V014",
@@ -647,7 +695,8 @@
       "category": "argentine",
       "en": "bus (slang)",
       "es": "bondi",
-      "note": "Argentine colloquial."
+      "note": "Argentine colloquial.",
+      "priority": "extra"
     },
     {
       "id": "V015",
@@ -655,7 +704,8 @@
       "category": "argentine",
       "en": "hey!",
       "es": "¡Che!",
-      "note": "Informal greeting/get attention."
+      "note": "Informal greeting/get attention.",
+      "priority": "useful"
     },
     {
       "id": "V016",
@@ -663,7 +713,8 @@
       "category": "places",
       "en": "welcoming / cozy",
       "es": "acogedor / acogedora",
-      "note": "El barrio es acogedor."
+      "note": "El barrio es acogedor.",
+      "priority": "essential"
     },
     {
       "id": "V017",
@@ -671,7 +722,8 @@
       "category": "places",
       "en": "lively",
       "es": "animado / animada",
-      "note": "Un barrio animado."
+      "note": "Un barrio animado.",
+      "priority": "essential"
     },
     {
       "id": "V018",
@@ -679,7 +731,8 @@
       "category": "places",
       "en": "fresh vegetables",
       "es": "verduras frescas",
-      "note": "Plural agreement."
+      "note": "Plural agreement.",
+      "priority": "essential"
     },
     {
       "id": "V020",
@@ -687,7 +740,8 @@
       "category": "grammar",
       "en": "however",
       "es": "sin embargo",
-      "note": "Connector."
+      "note": "Connector.",
+      "priority": "essential"
     },
     {
       "id": "V021",
@@ -702,7 +756,8 @@
           "tense": "present",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "V022",
@@ -710,7 +765,8 @@
       "category": "grammar",
       "en": "the thing about the meeting",
       "es": "lo de la reunión",
-      "note": "Lo de + noun."
+      "note": "Lo de + noun.",
+      "priority": "essential"
     },
     {
       "id": "V023",
@@ -726,7 +782,8 @@
           "form": "preterite",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "essential"
     },
     {
       "id": "V024",
@@ -741,7 +798,8 @@
           "tense": "conditional",
           "mood": "indicative"
         }
-      ]
+      ],
+      "priority": "useful"
     },
     {
       "id": "V025",
@@ -755,7 +813,8 @@
           "text": "bancame",
           "mood": "imperative"
         }
-      ]
+      ],
+      "priority": "useful"
     },
     {
       "id": "V026",
@@ -763,7 +822,8 @@
       "category": "places",
       "en": "outdoors",
       "es": "al aire libre",
-      "note": "Used to describe markets and activities."
+      "note": "Used to describe markets and activities.",
+      "priority": "essential"
     },
     {
       "id": "V027",
@@ -771,7 +831,8 @@
       "category": "places",
       "en": "until midnight",
       "es": "hasta la medianoche",
-      "note": "Time expression."
+      "note": "Time expression.",
+      "priority": "essential"
     }
   ]
 }
