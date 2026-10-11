@@ -7,7 +7,20 @@
       "category": "formal",
       "en": "I would appreciate it if you sent me the document tomorrow.",
       "es": "Le agradecería que me enviara el documento mañana.",
-      "note": "User earlier used envíe: polite conditional + imperfect subjunctive."
+      "note": "User earlier used envíe: polite conditional + imperfect subjunctive.",
+      "grammar": [
+        {
+          "text": "agradecería",
+          "tense": "conditional",
+          "mood": "indicative"
+        },
+        {
+          "text": "enviara",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        }
+      ]
     },
     {
       "id": "R002",
@@ -15,7 +28,14 @@
       "category": "formal",
       "en": "I apologize for arriving late.",
       "es": "Le pido disculpas por llegar tarde.",
-      "note": "por, not para"
+      "note": "por, not para",
+      "grammar": [
+        {
+          "text": "pido",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R003",
@@ -23,7 +43,14 @@
       "category": "formal",
       "en": "Thank you for your understanding.",
       "es": "Le agradezco su comprensión.",
-      "note": "comprensión, not compresión"
+      "note": "comprensión, not compresión",
+      "grammar": [
+        {
+          "text": "agradezco",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R004",
@@ -39,7 +66,15 @@
       "category": "formal",
       "en": "Things got complicated for me.",
       "es": "Se me complicó.",
-      "note": "Useful everyday explanation"
+      "note": "Useful everyday explanation",
+      "grammar": [
+        {
+          "text": "complicó",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R006",
@@ -47,7 +82,19 @@
       "category": "formal",
       "en": "Can you send me the document tomorrow when you can? (Argentina)",
       "es": "¿Me podés mandar el documento mañana cuando puedas?",
-      "note": "podés present vos, puedas subjunctive"
+      "note": "podés present vos, puedas subjunctive",
+      "grammar": [
+        {
+          "text": "podés",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "puedas",
+          "tense": "present",
+          "mood": "subjunctive"
+        }
+      ]
     },
     {
       "id": "R007",
@@ -55,7 +102,14 @@
       "category": "formal",
       "en": "Hey, can you send me the file tomorrow?",
       "es": "Che, ¿me pasás el archivo mañana?",
-      "note": "pasás present vos versus pasame imperative"
+      "note": "pasás present vos versus pasame imperative",
+      "grammar": [
+        {
+          "text": "pasás",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R008",
@@ -63,7 +117,19 @@
       "category": "formal",
       "en": "I look for examples of how other people respond.",
       "es": "Busco ejemplos de cómo responden otras personas.",
-      "note": "respuesta = response; responder = to respond"
+      "note": "respuesta = response; responder = to respond",
+      "grammar": [
+        {
+          "text": "Busco",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "responden",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R009",
@@ -71,7 +137,13 @@
       "category": "informal",
       "en": "Give me a second.",
       "es": "Bancame un toque.",
-      "note": "Argentine casual"
+      "note": "Argentine casual",
+      "grammar": [
+        {
+          "text": "Bancame",
+          "mood": "imperative"
+        }
+      ]
     },
     {
       "id": "R010",
@@ -79,7 +151,15 @@
       "category": "informal",
       "en": "I lost track of time.",
       "es": "Colgué.",
-      "note": "Argentine casual"
+      "note": "Argentine casual",
+      "grammar": [
+        {
+          "text": "Colgué",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R011",
@@ -87,7 +167,15 @@
       "category": "informal",
       "en": "The subway situation was a mess.",
       "es": "Fue un quilombo lo del subte.",
-      "note": "lo del + masculine noun; quilombo slang"
+      "note": "lo del + masculine noun; quilombo slang",
+      "grammar": [
+        {
+          "text": "Fue",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R012",
@@ -95,7 +183,14 @@
       "category": "informal",
       "en": "I have to work today. (Argentine casual)",
       "es": "Hoy tengo que laburar.",
-      "note": "laburar = verb; laburo = noun"
+      "note": "laburar = verb; laburo = noun",
+      "grammar": [
+        {
+          "text": "tengo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R013",
@@ -103,7 +198,14 @@
       "category": "informal",
       "en": "I have a lot of work. (Argentine casual)",
       "es": "Tengo un montón de laburo.",
-      "note": "laburo noun"
+      "note": "laburo noun",
+      "grammar": [
+        {
+          "text": "Tengo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R014",
@@ -127,7 +229,21 @@
       "category": "grammar",
       "en": "Did you hear what happened at the party last night?",
       "es": "¿Escuchaste lo que pasó en la fiesta anoche?",
-      "note": "lo que + verb, not lo de pasó"
+      "note": "lo que + verb, not lo de pasó",
+      "grammar": [
+        {
+          "text": "Escuchaste",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        },
+        {
+          "text": "pasó",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R017",
@@ -135,7 +251,15 @@
       "category": "grammar",
       "en": "What happened with yesterday’s meeting?",
       "es": "¿Qué pasó con lo de la reunión de ayer?",
-      "note": "lo de la, feminine; de ayer"
+      "note": "lo de la, feminine; de ayer",
+      "grammar": [
+        {
+          "text": "pasó",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R018",
@@ -143,7 +267,20 @@
       "category": "grammar",
       "en": "I don’t remember what you told me about the party.",
       "es": "No me acuerdo de lo que me dijiste sobre la fiesta.",
-      "note": "acordarse de; dijiste preterite"
+      "note": "acordarse de; dijiste preterite",
+      "grammar": [
+        {
+          "text": "acuerdo",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "dijiste",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R019",
@@ -151,7 +288,19 @@
       "category": "grammar",
       "en": "I don’t understand what you’re saying about yesterday’s meeting.",
       "es": "No entiendo lo que decís sobre la reunión de ayer.",
-      "note": "decís Argentine vos present, not hablaste"
+      "note": "decís Argentine vos present, not hablaste",
+      "grammar": [
+        {
+          "text": "entiendo",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "decís",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R020",
@@ -159,7 +308,19 @@
       "category": "grammar",
       "en": "I want to learn expressions that allow me to be formal without sounding robotic.",
       "es": "Quiero aprender expresiones que me permitan ser formal sin parecer un robot.",
-      "note": "permitan plural subjunctive; sin + infinitive"
+      "note": "permitan plural subjunctive; sin + infinitive",
+      "grammar": [
+        {
+          "text": "Quiero",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "permitan",
+          "tense": "present",
+          "mood": "subjunctive"
+        }
+      ]
     },
     {
       "id": "R021",
@@ -167,7 +328,19 @@
       "category": "grammar",
       "en": "I am looking for a neighborhood with outdoor markets.",
       "es": "Busco un barrio que tenga mercados al aire libre.",
-      "note": "relative subjunctive tenga vs tiene"
+      "note": "relative subjunctive tenga vs tiene",
+      "grammar": [
+        {
+          "text": "Busco",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "tenga",
+          "tense": "present",
+          "mood": "subjunctive"
+        }
+      ]
     },
     {
       "id": "R022",
@@ -175,7 +348,19 @@
       "category": "grammar",
       "en": "I need a place where I can learn to dance tango until midnight.",
       "es": "Necesito un lugar donde pueda aprender a bailar tango hasta la medianoche.",
-      "note": "aprender a + infinitive"
+      "note": "aprender a + infinitive",
+      "grammar": [
+        {
+          "text": "Necesito",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "pueda",
+          "tense": "present",
+          "mood": "subjunctive"
+        }
+      ]
     },
     {
       "id": "R023",
@@ -183,7 +368,19 @@
       "category": "grammar",
       "en": "I want to dance without anyone bothering me.",
       "es": "Quiero bailar sin que nadie me moleste.",
-      "note": "sin que + subjunctive"
+      "note": "sin que + subjunctive",
+      "grammar": [
+        {
+          "text": "Quiero",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "moleste",
+          "tense": "present",
+          "mood": "subjunctive"
+        }
+      ]
     },
     {
       "id": "R024",
@@ -191,7 +388,21 @@
       "category": "grammar",
       "en": "I used to send informal emails when I started working.",
       "es": "Enviaba correos informales cuando empecé a trabajar.",
-      "note": "enviaba repeated past; empecé event"
+      "note": "enviaba repeated past; empecé event",
+      "grammar": [
+        {
+          "text": "Enviaba",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        },
+        {
+          "text": "empecé",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R025",
@@ -199,7 +410,19 @@
       "category": "grammar",
       "en": "I speak informally when I talk with my friends.",
       "es": "Hablo de manera informal cuando hablo con mis amigos.",
-      "note": "hablo present still true; do not change automatically to hablaba"
+      "note": "hablo present still true; do not change automatically to hablaba",
+      "grammar": [
+        {
+          "text": "Hablo",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "hablo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R026",
@@ -207,7 +430,14 @@
       "category": "expression",
       "en": "I do not consciously think about formal and informal registers.",
       "es": "No pienso conscientemente en el registro formal y el informal.",
-      "note": "conscientemente"
+      "note": "conscientemente",
+      "grammar": [
+        {
+          "text": "pienso",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R027",
@@ -215,7 +445,19 @@
       "category": "expression",
       "en": "The first thing that comes to mind is...",
       "es": "Lo primero que se me ocurre es...",
-      "note": "natural opening"
+      "note": "natural opening",
+      "grammar": [
+        {
+          "text": "ocurre",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "es",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R028",
@@ -223,7 +465,14 @@
       "category": "expression",
       "en": "I am aware that...",
       "es": "Soy consciente de que...",
-      "note": "awareness vs estar al tanto"
+      "note": "awareness vs estar al tanto",
+      "grammar": [
+        {
+          "text": "Soy",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R029",
@@ -239,7 +488,14 @@
       "category": "expression",
       "en": "I struggle to find the right words.",
       "es": "Me cuesta encontrar las palabras adecuadas.",
-      "note": "me cuesta + infinitive; adecuadas feminine plural"
+      "note": "me cuesta + infinitive; adecuadas feminine plural",
+      "grammar": [
+        {
+          "text": "cuesta",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R031",
@@ -439,7 +695,14 @@
       "category": "grammar",
       "en": "I struggle to…",
       "es": "me cuesta…",
-      "note": "Me cuesta + infinitive."
+      "note": "Me cuesta + infinitive.",
+      "grammar": [
+        {
+          "text": "cuesta",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V022",
@@ -455,7 +718,15 @@
       "category": "grammar",
       "en": "what happened",
       "es": "lo que pasó",
-      "note": "Lo que + verb."
+      "note": "Lo que + verb.",
+      "grammar": [
+        {
+          "text": "pasó",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V024",
@@ -463,7 +734,14 @@
       "category": "work",
       "en": "I would appreciate it if…",
       "es": "le agradecería que…",
-      "note": "Follow with imperfect subjunctive for polite request."
+      "note": "Follow with imperfect subjunctive for polite request.",
+      "grammar": [
+        {
+          "text": "agradecería",
+          "tense": "conditional",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V025",
@@ -471,7 +749,13 @@
       "category": "argentine",
       "en": "give me a second",
       "es": "bancame un toque",
-      "note": "Vos imperative."
+      "note": "Vos imperative.",
+      "grammar": [
+        {
+          "text": "bancame",
+          "mood": "imperative"
+        }
+      ]
     },
     {
       "id": "V026",
