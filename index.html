@@ -374,7 +374,7 @@ function clearScratch(){
  $('answerFeedback').classList.add('hidden');
  $('compareAnswer').disabled=true;
 }
-function tokenizeAnswer(value){return String(value||'').match(/[\\p{L}\\p{N}]+(?:['’][\\p{L}\\p{N}]+)*/gu)||[]}
+function tokenizeAnswer(value){return String(value||'').match(/[\p{L}\p{N}]+(?:['’][\p{L}\p{N}]+)*/gu)||[]}
 function compareTokens(written,expected){
  const a=tokenizeAnswer(written),b=tokenizeAnswer(expected);
  if(a.length>160||b.length>160)return null;
