@@ -1,6 +1,6 @@
 'use strict';
 // A new cache version makes installed apps replace the older offline app shell.
-const CACHE_NAME='mi-espanol-shell-v7';
+const CACHE_NAME='mi-espanol-shell-v8';
 const APP_SHELL=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
   event.waitUntil(
