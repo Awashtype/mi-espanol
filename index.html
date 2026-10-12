@@ -614,7 +614,7 @@ function renderLibrary(){
   if(!cards.length)target.textContent='No matching cards.';
 }
 function download(name,content,mime){const blob=new Blob([content],{type:mime});const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000)}
-document.querySelectorAll('nav button').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b===btn));for(let page of ['study','library','settings'])$(page+'Page').classList.toggle('hidden',page!==btn.dataset.page);if(btn.dataset.page!=='study')cancelAudio();else{speechLastKey='';queueSpeech()}if(btn.dataset.page==='library')renderLibrary()});for(const id of ['priority','tier','scope','direction'])$(id).onchange=()=>fillDeck(true);
+document.querySelectorAll('nav button').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b===btn));for(let page of ['study','library','settings'])$(page+'Page').classList.toggle('hidden',page!==btn.dataset.page);if(btn.dataset.page!=='study')cancelAudio();else{speechLastKey='';queueSpeech()}if(btn.dataset.page==='library')renderLibrary()});for(const id of ['priority','tier','scope'])$(id).onchange=()=>fillDeck(true);
 function resetLearningProgress(){
   state.reviews={};
   state.daily={date:today(),newLimit:20};
