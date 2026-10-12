@@ -24,7 +24,19 @@
 .review-meta{display:flex;flex-direction:column;align-items:flex-end;gap:7px}
 .review-meta #queueCount{font-size:12px;color:#797972}
 #playAudio{display:flex;align-items:center;justify-content:center;width:40px;height:36px;min-width:40px;min-height:36px;padding:0;background:#f6f5f1;border:1px solid #dddcd5;border-radius:11px;font-size:18px;box-shadow:0 2px 5px #29271d0a}
-#playAudio:hover{background:#eceee8} .study-options{margin-top:12px;margin-bottom:12px}.study-options summary{font-size:12px;color:#77766f;cursor:pointer}.study-options .controls{margin-top:10px}.more-panel{text-align:center;margin-top:18px;padding:23px 16px;border-radius:16px;background:#f3f4ef}.more-panel h3{font-size:18px;margin:0 0 7px}.more-panel p{font-size:14px;color:#625f59}.grade-actions button{padding:15px 11px}.audio-controls{justify-content:flex-end}#tapHint{margin-right:auto}.quiet-delete{position:absolute;right:9px;bottom:9px;z-index:2;width:40px;height:40px;min-width:40px;min-height:40px;padding:0;border:0;border-radius:10px;background:transparent;color:#999b96;display:flex;align-items:center;justify-content:center;opacity:.58;transition:opacity .15s ease,background .15s ease,color .15s ease}.quiet-delete:hover,.quiet-delete:focus-visible{opacity:1;background:#fbefec;color:#9f544a}.quiet-delete:disabled{display:none}.priority-pill{display:inline-block;font-size:10px;font-weight:650;letter-spacing:.02em;border-radius:6px;padding:2px 6px;margin:0 0 5px;color:#496452;background:#e0ede5}.priority-pill.useful{color:#466b98;background:#e5edf8}.priority-pill.extra{color:#74716d;background:#f0efec}.priority-note{font-size:12px;color:#77746d;margin-top:4px}</style></head><body><main><header><div><div class="eyebrow">Your personal Spanish notebook</div><h1>Mi Español<span style="color:#be836b">.</span></h1><div class="muted" style="font-size:13px">Vocabulary first. Sentences next. Works offline.</div></div><span class="pill" id="offlineLabel">Offline study</span></header><div class="stats"><div class="stat"><strong id="totalStat">0</strong><small>Due reviews</small></div><div class="stat"><strong id="dueStat">0</strong><small>New available</small></div><div class="stat"><strong id="learnedStat">0</strong><small>Completed today</small></div></div><nav><button class="active" data-page="study">Study</button><button data-page="library">My cards</button><button data-page="settings">Settings</button></nav><section class="panel" id="studyPage"><div class="section-title study-heading"><h2>Today's review</h2><div class="review-meta"><small id="queueCount"></small><button id="playAudio" class="btn-sm" type="button" aria-label="Replay Spanish pronunciation" title="Replay Spanish pronunciation">🔊</button></div></div><div class="stack" style="justify-content:space-between;margin-top:12px"><small id="dailyIntro">Up to 20 new items today</small></div><details class="study-options"><summary>Study options</summary><div class="controls"><select id="priority" aria-label="Study priority"><option value="core" selected>Essential + Useful (recommended)</option><option value="essential">Essentials only</option><option value="useful">Useful only</option><option value="extra">Extras only · optional practice</option><option value="all">All priorities · including Extras</option></select><select id="tier" aria-label="Study section"><option value="all" selected>All types · priority first</option><option value="word">1 · Words</option><option value="expression">2 · Expressions</option><option value="sentence">3 · Sentences</option></select><select id="scope" aria-label="Card schedule"><option value="due" selected>Only due/new</option><option value="all">Practice all</option></select><select id="direction"><option value="es" selected>Spanish → English</option><option value="en">English → Spanish</option></select></div></details><div class="card-wrap"><div class="study-card" id="studyCard" role="button" tabindex="0" aria-label="Reveal or hide the answer"><span class="eyebrow" id="questionLabel">Translate</span><h3 id="question">Loading…</h3><div id="grammarDetails" class="grammar-details hidden" aria-live="polite"></div></div><button id="deleteCard" class="quiet-delete" type="button" aria-label="Delete this vocabulary card" title="Remove this card from my learning deck"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m5 4v7m4-7v7"/></svg></button></div><div class="priority-note">Daily study: Essentials first, then Useful. Extras are optional in Study options.</div><div class="scratch-area"><textarea id="scratch" rows="2" placeholder="Type your translation here…" spellcheck="false"></textarea></div><div class="audio-controls"><span class="muted" id="tapHint" style="font-size:12px">Tap card to reveal</span></div><div id="grading"><div class="actions grade-actions"><button data-grade="again">Again</button><button data-grade="good" class="primary">Good</button><button data-grade="easy">Easy</button></div></div><div id="morePanel" class="more-panel hidden"><h3>¡Bien hecho! You're done for today.</h3><p>You've finished this batch. Want to learn 10 more new items?</p><button id="moreNew" class="primary" type="button">Learn 10 more</button></div></section><section class="panel hidden" id="libraryPage"><div class="section-title"><h2>All your cards</h2><small>English · Español</small></div><div class="controls"><input id="search" placeholder="Search in either language…" aria-label="Search cards"><select id="listPriority" aria-label="Filter by learning priority"><option value="all">All priorities</option><option value="essential">Essentials</option><option value="useful">Useful</option><option value="extra">Extras</option></select><select id="listTier"><option value="all">All types</option><option value="word">Words</option><option value="expression">Expressions</option><option value="sentence">Sentences</option></select><select id="listRecency" aria-label="Filter newest additions"><option value="all">All additions</option><option value="10">Latest 10 added</option><option value="20">Latest 20 added</option><option value="unstarted">Not studied yet</option></select><select id="listSort" aria-label="Sort cards"><option value="priority">Priority first</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="az">A to Z</option></select></div><p id="cardListUpdated" style="font-size:10px;line-height:1.4;color:#999891;margin:0 0 8px" aria-live="polite"></p><div id="cardList"></div></section><section class="panel hidden" id="settingsPage">
+#playAudio:hover{background:#eceee8} .study-options{margin-top:12px;margin-bottom:12px}.study-options summary{font-size:12px;color:#77766f;cursor:pointer}.study-options .controls{margin-top:10px}.more-panel{text-align:center;margin-top:18px;padding:23px 16px;border-radius:16px;background:#f3f4ef}.more-panel h3{font-size:18px;margin:0 0 7px}.more-panel p{font-size:14px;color:#625f59}.grade-actions button{padding:15px 11px}.audio-controls{justify-content:flex-end}#tapHint{margin-right:auto}.quiet-delete{position:absolute;right:9px;bottom:9px;z-index:2;width:40px;height:40px;min-width:40px;min-height:40px;padding:0;border:0;border-radius:10px;background:transparent;color:#999b96;display:flex;align-items:center;justify-content:center;opacity:.58;transition:opacity .15s ease,background .15s ease,color .15s ease}.quiet-delete:hover,.quiet-delete:focus-visible{opacity:1;background:#fbefec;color:#9f544a}.quiet-delete:disabled{display:none}.priority-pill{display:inline-block;font-size:10px;font-weight:650;letter-spacing:.02em;border-radius:6px;padding:2px 6px;margin:0 0 5px;color:#496452;background:#e0ede5}.priority-pill.useful{color:#466b98;background:#e5edf8}.priority-pill.extra{color:#74716d;background:#f0efec}.priority-note{font-size:12px;color:#77746d;margin-top:4px}.compare-button{margin-top:9px;padding:9px 14px;background:#f5f6f2;border:1px solid #dcdfd8;color:#354c42;border-radius:11px;font-size:13px}
+.compare-button:disabled{opacity:.45;cursor:default}
+.answer-feedback{margin-top:12px;background:#f8f8f5;border:1px solid #e5e5de;border-radius:12px;padding:12px;font-size:13px}
+.answer-feedback p{margin:0 0 9px;color:#64655f}
+.answer-feedback .answer-columns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.answer-feedback .answer-col{min-width:0;overflow-wrap:anywhere;line-height:1.8}
+.answer-feedback .answer-col small{display:block;color:#7b7d75;font-size:11px;margin-bottom:2px}
+.answer-feedback .missing{background:#e7f3e8;color:#29583e;border-radius:3px;padding:1px 2px}
+.answer-feedback .extra{background:#f8e5df;color:#8c4237;border-radius:3px;padding:1px 2px;text-decoration:underline wavy #cd8b78}
+.answer-feedback .answer-note{margin-top:9px;padding-top:8px;border-top:1px solid #e5e5de;color:#66665f}
+#playAudio:disabled{opacity:.35;cursor:default}
+@media(max-width:400px){.answer-feedback .answer-columns{grid-template-columns:1fr}}
+</style></head><body><main><header><div><div class="eyebrow">Your personal Spanish notebook</div><h1>Mi Español<span style="color:#be836b">.</span></h1><div class="muted" style="font-size:13px">Vocabulary first. Sentences next. Works offline.</div></div><span class="pill" id="offlineLabel">Offline study</span></header><div class="stats"><div class="stat"><strong id="totalStat">0</strong><small>Due reviews</small></div><div class="stat"><strong id="dueStat">0</strong><small>New available</small></div><div class="stat"><strong id="learnedStat">0</strong><small>Completed today</small></div></div><nav><button class="active" data-page="study">Study</button><button data-page="library">My cards</button><button data-page="settings">Settings</button></nav><section class="panel" id="studyPage"><div class="section-title study-heading"><h2>Today's review</h2><div class="review-meta"><small id="queueCount"></small><button id="playAudio" class="btn-sm" type="button" aria-label="Replay Spanish pronunciation" title="Replay Spanish pronunciation">🔊</button></div></div><div class="stack" style="justify-content:space-between;margin-top:12px"><small id="dailyIntro">Up to 20 new items today</small></div><details class="study-options"><summary>Study options</summary><div class="controls"><select id="priority" aria-label="Study priority"><option value="core" selected>Essential + Useful (recommended)</option><option value="essential">Essentials only</option><option value="useful">Useful only</option><option value="extra">Extras only · optional practice</option><option value="all">All priorities · including Extras</option></select><select id="tier" aria-label="Study section"><option value="all" selected>All types · priority first</option><option value="word">1 · Words</option><option value="expression">2 · Expressions</option><option value="sentence">3 · Sentences</option></select><select id="scope" aria-label="Card schedule"><option value="due" selected>Only due/new</option><option value="all">Practice all</option></select></div></details><div class="card-wrap"><div class="study-card" id="studyCard" role="button" tabindex="0" aria-label="Reveal or hide the answer"><span class="eyebrow" id="questionLabel">Translate</span><h3 id="question">Loading…</h3><div id="grammarDetails" class="grammar-details hidden" aria-live="polite"></div></div><button id="deleteCard" class="quiet-delete" type="button" aria-label="Delete this vocabulary card" title="Remove this card from my learning deck"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m5 4v7m4-7v7"/></svg></button></div><div class="scratch-area"><textarea id="scratch" rows="2" placeholder="Write your answer here…" spellcheck="false"></textarea><button id="compareAnswer" class="btn-sm compare-button" type="button" disabled>Compare answer</button><div id="answerFeedback" class="answer-feedback hidden" aria-live="polite"></div></div><div id="grading"><div class="actions grade-actions"><button data-grade="again">Again</button><button data-grade="good" class="primary">Good</button><button data-grade="easy">Easy</button></div></div><div id="morePanel" class="more-panel hidden"><h3>¡Bien hecho! You're done for today.</h3><p>You've finished this batch. Want to learn 10 more new items?</p><button id="moreNew" class="primary" type="button">Learn 10 more</button></div></section><section class="panel hidden" id="libraryPage"><div class="section-title"><h2>All your cards</h2><small>English · Español</small></div><div class="controls"><input id="search" placeholder="Search in either language…" aria-label="Search cards"><select id="listPriority" aria-label="Filter by learning priority"><option value="all">All priorities</option><option value="essential">Essentials</option><option value="useful">Useful</option><option value="extra">Extras</option></select><select id="listTier"><option value="all">All types</option><option value="word">Words</option><option value="expression">Expressions</option><option value="sentence">Sentences</option></select><select id="listRecency" aria-label="Filter newest additions"><option value="all">All additions</option><option value="10">Latest 10 added</option><option value="20">Latest 20 added</option><option value="unstarted">Not studied yet</option></select><select id="listSort" aria-label="Sort cards"><option value="priority">Priority first</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="az">A to Z</option></select></div><p id="cardListUpdated" style="font-size:10px;line-height:1.4;color:#999891;margin:0 0 8px" aria-live="polite"></p><div id="cardList"></div></section><section class="panel hidden" id="settingsPage">
 <h2>Settings</h2>
 <p class="muted" id="appBuildInfo" style="font-size:12px"></p>
 <p class="muted" style="font-size:14px">New cards and Google pronunciations download automatically when you're online. Everything you've already studied stays available on this device.</p>
@@ -62,7 +74,7 @@
 'use strict';
 const BASE=[{"id":"R001","type":"sentence","category":"formal","en":"I would appreciate it if you sent me the document tomorrow.","es":"Le agradecería que me enviara el documento mañana.","note":"User earlier used envíe: polite conditional + imperfect subjunctive.","grammar":[{"text":"agradecería","tense":"conditional","mood":"indicative"},{"text":"enviara","tense":"past","form":"imperfect","mood":"subjunctive"}],"priority":"useful"},{"id":"R002","type":"expression","category":"formal","en":"I apologize for arriving late.","es":"Le pido disculpas por llegar tarde.","note":"por, not para","grammar":[{"text":"pido","tense":"present","mood":"indicative"}],"priority":"essential"},{"id":"R003","type":"expression","category":"formal","en":"Thank you for your understanding.","es":"Le agradezco su comprensión.","note":"comprensión, not compresión","grammar":[{"text":"agradezco","tense":"present","mood":"indicative"}],"priority":"essential"},{"id":"R004","type":"expression","category":"formal","en":"Sorry for the delay.","es":"Perdón por la demora.","note":"demora = delay","priority":"essential"},{"id":"R005","type":"expression","category":"formal","en":"Things got complicated for me.","es":"Se me complicó.","note":"Useful everyday explanation","grammar":[{"text":"complicó","tense":"past","form":"preterite","mood":"indicative"}],"priority":"essential"},{"id":"R006","type":"sentence","category":"formal","en":"Can you send me the document tomorrow when you can? (Argentina)","es":"¿Me podés mandar el documento mañana cuando puedas?","note":"podés present vos, puedas subjunctive","grammar":[{"text":"podés","tense":"present","mood":"indicative"},{"text":"puedas","tense":"present","mood":"subjunctive"}],"priority":"essential"},{"id":"R007","type":"sentence","category":"formal","en":"Hey, can you send me the file tomorrow?","es":"Che, ¿me pasás el archivo mañana?","note":"pasás present vos versus pasame imperative","grammar":[{"text":"pasás","tense":"present","mood":"indicative"}],"priority":"essential"},{"id":"R008","type":"sentence","category":"formal","en":"I look for examples of how other people respond.","es":"Busco ejemplos de cómo responden otras personas.","note":"respuesta = response; responder = to respond","grammar":[{"text":"Busco","tense":"present","mood":"indicative"},{"text":"responden","tense":"present","mood":"indicative"}],"priority":"essential"},{"id":"R009","type":"expression","category":"informal","en":"Give me a second.","es":"Bancame un toque.","note":"Argentine casual","grammar":[{"text":"Bancame","mood":"imperative"}],"priority":"useful"},{"id":"R010","type":"expression","category":"informal","en":"I lost track of time.","es":"Colgué.","note":"Argentine casual","grammar":[{"text":"Colgué","tense":"past","form":"preterite","mood":"indicative"}],"priority":"useful"},{"id":"R011","type":"expression","category":"informal","en":"The subway situation was a mess.","es":"Fue un quilombo lo del subte.","note":"lo del + masculine noun; quilombo slang","grammar":[{"text":"Fue","tense":"past","form":"preterite","mood":"indicative"}],"priority":"extra"},{"id":"R012","type":"expression","category":"informal","en":"I have to work today. (Argentine casual)","es":"Hoy tengo que laburar.","note":"laburar = verb; laburo = noun","grammar":[{"text":"tengo","tense":"present","mood":"indicative"}],"priority":"useful"},{"id":"R013","type":"sentence","category":"informal","en":"I have a lot of work. (Argentine casual)","es":"Tengo un montón de laburo.","note":"laburo noun","grammar":[{"text":"Tengo","tense":"present","mood":"indicative"}],"priority":"useful"},{"id":"R014","type":"word","category":"informal","en":"What a bummer!","es":"¡Qué bajón!","note":"Argentine casual","priority":"useful"},{"id":"R015","type":"word","category":"informal","en":"Absolutely, I’m in!","es":"¡De una!","note":"Enthusiastic agreement","priority":"useful"},{"id":"R016","type":"sentence","category":"grammar","en":"Did you hear what happened at the party last night?","es":"¿Escuchaste lo que pasó en la fiesta anoche?","note":"lo que + verb, not lo de pasó","grammar":[{"text":"Escuchaste","tense":"past","form":"preterite","mood":"indicative"},{"text":"pasó","tense":"past","form":"preterite","mood":"indicative"}],"priority":"essential"},{"id":"R017","type":"expression","category":"grammar","en":"What happened with yesterday’s meeting?","es":"¿Qué pasó con lo de la reunión de ayer?","note":"lo de la, feminine; de ayer","grammar":[{"text":"pasó","tense":"past","form":"preterite","mood":"indicative"}],"priority":"essential"},{"id":"R018","type":"sentence","category":"grammar","en":"I don’t remember what you told me about the party.","es":"No me acuerdo de lo que me dijiste sobre la fiesta.","note":"acordarse de; dijiste preterite","grammar":[{"text":"acuerdo","tense":"present","mood":"indicative"},{"text":"dijiste","tense":"past","form":"preterite","mood":"indicative"}],"priority":"essential"},{"id":"R019","type":"sentence","category":"grammar","en":"I don’t understand what you’re saying about yesterday’s meeting.","es":"No entiendo lo que decís sobre la reunión de ayer.","note":"decís Argentine vos present, not hablaste","grammar":[{"text":"entiendo","tense":"present","mood":"indicative"},{"text":"decís","tense":"present","mood":"indicative"}],"priority":"essential"},{"id":"R020","type":"sentence","category":"grammar","en":"I want to learn expressions that allow me to be formal without sounding robotic.","es":"Quiero aprender expresiones que me permitan ser formal sin parecer un robot.","note":"permitan plural subjunctive; sin + infinitive","grammar":[{"text":"Quiero","tense":"present","mood":"indicative"},{"text":"permitan","tense":"present","mood":"subjunctive"}],"priority":"essential"},{"id":"R021","type":"sentence","category":"grammar","en":"I am looking for a neighborhood with outdoor markets.","es":"Busco un barrio que tenga mercados al aire libre.","note":"relative subjunctive tenga vs tiene","grammar":[{"text":"Busco","tense":"present","mood":"indicative"},{"text":"tenga","tense":"present","mood":"subjunctive"}],"priority":"essential"},{"id":"R022","type":"sentence","category":"grammar","en":"I need a place where I can learn to dance tango until midnight.","es":"Necesito un lugar donde pueda aprender a bailar tango hasta la medianoche.","note":"aprender a + infinitive","grammar":[{"text":"Necesito","tense":"present","mood":"indicative"},{"text":"pueda","tense":"present","mood":"subjunctive"}],"priority":"essential"},{"id":"R023","type":"sentence","category":"grammar","en":"I want to dance without anyone bothering me.","es":"Quiero bailar sin que nadie me moleste.","note":"sin que + subjunctive","grammar":[{"text":"Quiero","tense":"present","mood":"indicative"},{"text":"moleste","tense":"present","mood":"subjunctive"}],"priority":"essential"},{"id":"R024","type":"sentence","category":"grammar","en":"I used to send informal emails when I started working.","es":"Enviaba correos informales cuando empecé a trabajar.","note":"enviaba repeated past; empecé event","grammar":[{"text":"Enviaba","tense":"past","form":"imperfect","mood":"indicative"},{"text":"empecé","tense":"past","form":"preterite","mood":"indicative"}],"priority":"essential"},{"id":"R025","type":"sentence","category":"grammar","en":"I speak informally when I talk with my friends.","es":"Hablo de manera informal cuando hablo con mis amigos.","note":"hablo present still true; do not change automatically to hablaba","grammar":[{"text":"Hablo","tense":"present","mood":"indicative"},{"text":"hablo","tense":"present","mood":"indicative"}],"priority":"essential"},{"id":"R026","type":"sentence","category":"expression","en":"I do not consciously think about formal and informal registers.","es":"No pienso conscientemente en el registro formal y el informal.","note":"conscientemente","grammar":[{"text":"pienso","tense":"present","mood":"indicative"}],"priority":"useful"},{"id":"R027","type":"sentence","category":"expression","en":"The first thing that comes to mind is...","es":"Lo primero que se me ocurre es...","note":"natural opening","grammar":[{"text":"ocurre","tense":"present","mood":"indicative"},{"text":"es","tense":"present","mood":"indicative"}],"priority":"essential"},{"id":"R028","type":"expression","category":"expression","en":"I am aware that...","es":"Soy consciente de que...","note":"awareness vs estar al tanto","grammar":[{"text":"Soy","tense":"present","mood":"indicative"}],"priority":"useful"},{"id":"R029","type":"word","category":"expression","en":"Without realizing it","es":"Sin darme cuenta","note":"common phrase","priority":"essential"},{"id":"R030","type":"expression","category":"expression","en":"I struggle to find the right words.","es":"Me cuesta encontrar las palabras adecuadas.","note":"me cuesta + infinitive; adecuadas feminine plural","grammar":[{"text":"cuesta","tense":"present","mood":"indicative"}],"priority":"essential"},{"id":"R031","type":"word","category":"daily","en":"An outdoor market","es":"Un mercado al aire libre","note":"al aire libre","priority":"essential"},{"id":"R032","type":"word","category":"daily","en":"Live music","es":"Música en vivo","note":"useful restaurant description","priority":"essential"},{"id":"R033","type":"expression","category":"daily","en":"A cozy and lively neighborhood","es":"Un barrio acogedor y animado","note":"adjectives","priority":"useful"},{"id":"R034","type":"expression","category":"daily","en":"A steak with fried eggs","es":"Un bife a caballo","note":"Argentine dish","priority":"extra"},{"id":"R035","type":"word","category":"daily","en":"People experiencing homelessness","es":"Personas en situación de calle","note":"Common Argentine expression","priority":"useful"},{"id":"V001","type":"word","category":"work","en":"a response","es":"una respuesta","note":"Noun; responder = verb.","priority":"essential"},{"id":"V002","type":"word","category":"work","en":"to respond","es":"responder","note":"Verb.","priority":"essential"},{"id":"V003","type":"word","category":"work","en":"appropriate","es":"adecuado / adecuada","note":"Agreement: expresiones adecuadas.","priority":"essential"},{"id":"V004","type":"word","category":"work","en":"my boss (female)","es":"mi jefa","note":"One f, no accent.","priority":"essential"},{"id":"V005","type":"word","category":"work","en":"a colleague","es":"un compañero / una compañera","note":"De trabajo = coworker.","priority":"essential"},{"id":"V006","type":"word","category":"work","en":"an email","es":"un correo electrónico","note":"Also un mail.","priority":"essential"},{"id":"V007","type":"word","category":"work","en":"a delay","es":"una demora","note":"Perdón por la demora.","priority":"essential"},{"id":"V008","type":"word","category":"work","en":"understanding","es":"la comprensión","note":"Not compresión.","priority":"essential"},{"id":"V009","type":"word","category":"argentine","en":"work (casual)","es":"laburo","note":"Noun; laburar = verb.","priority":"useful"},{"id":"V010","type":"word","category":"argentine","en":"to work (casual)","es":"laburar","note":"Verb; Argentine colloquial.","priority":"useful"},{"id":"V011","type":"word","category":"argentine","en":"subway (Buenos Aires)","es":"el subte","note":"Subterráneo.","priority":"useful"},{"id":"V012","type":"word","category":"argentine","en":"a mess / chaos","es":"un quilombo","note":"Very informal.","priority":"extra"},{"id":"V013","type":"word","category":"argentine","en":"money (slang)","es":"guita","note":"Argentine colloquial.","priority":"extra"},{"id":"V014","type":"word","category":"argentine","en":"bus (slang)","es":"bondi","note":"Argentine colloquial.","priority":"extra"},{"id":"V015","type":"word","category":"argentine","en":"hey!","es":"¡Che!","note":"Informal greeting/get attention.","priority":"useful"},{"id":"V016","type":"word","category":"places","en":"welcoming / cozy","es":"acogedor / acogedora","note":"El barrio es acogedor.","priority":"essential"},{"id":"V017","type":"word","category":"places","en":"lively","es":"animado / animada","note":"Un barrio animado.","priority":"essential"},{"id":"V018","type":"word","category":"places","en":"fresh vegetables","es":"verduras frescas","note":"Plural agreement.","priority":"essential"},{"id":"V020","type":"expression","category":"grammar","en":"however","es":"sin embargo","note":"Connector.","priority":"essential"},{"id":"V021","type":"expression","category":"grammar","en":"I struggle to…","es":"me cuesta…","note":"Me cuesta + infinitive.","grammar":[{"text":"cuesta","tense":"present","mood":"indicative"}],"priority":"essential"},{"id":"V022","type":"expression","category":"grammar","en":"the thing about the meeting","es":"lo de la reunión","note":"Lo de + noun.","priority":"essential"},{"id":"V023","type":"expression","category":"grammar","en":"what happened","es":"lo que pasó","note":"Lo que + verb.","grammar":[{"text":"pasó","tense":"past","form":"preterite","mood":"indicative"}],"priority":"essential"},{"id":"V024","type":"expression","category":"work","en":"I would appreciate it if…","es":"le agradecería que…","note":"Follow with imperfect subjunctive for polite request.","grammar":[{"text":"agradecería","tense":"conditional","mood":"indicative"}],"priority":"useful"},{"id":"V025","type":"expression","category":"argentine","en":"give me a second","es":"bancame un toque","note":"Vos imperative.","grammar":[{"text":"bancame","mood":"imperative"}],"priority":"useful"},{"id":"V026","type":"expression","category":"places","en":"outdoors","es":"al aire libre","note":"Used to describe markets and activities.","priority":"essential"},{"id":"V027","type":"expression","category":"places","en":"until midnight","es":"hasta la medianoche","note":"Time expression.","priority":"essential"}];
 const STORAGE='mi-espanol-offline-v1';
-const APP_VERSION='2026.10.11 · priority v2';
+const APP_VERSION='2026.10.12 · four-stage learning';
 // One-time reset requested after the initial testing period; applied per device on next launch.
 const PROGRESS_RESET_VERSION='fresh-start-priority-2026-10-11-v2';
 const state={cards:[],reviews:{},deleted:[],daily:null,session:null,progressResetVersion:null};
@@ -88,6 +100,10 @@ function normalizeReview(old){
   if(!old)return null;
   if(old.dirs){
     for(const d of ['es','en'])if(!old.dirs[d])old.dirs[d]={step:-1,count:0,due:null};
+    // Legacy recognition/production records become stage 1 or 4, based on past activity.
+    // No due dates, grades, counts, deletion choices or intervals are reset.
+    if(!Number.isInteger(old.stage)||old.stage<0||old.stage>3)
+      old.stage=(old.dirs.en.last||old.dirs.en.count>0)?3:(old.dirs.es.last?1:0);
     return old;
   }
   const introducedOn=old.last||old.recognizedOn||null;
@@ -97,6 +113,7 @@ function normalizeReview(old){
     es:{step:old.step??-1,count:old.count||0,due:old.due||null,last:old.last||old.recognizedOn||null,lastGrade:old.lastGrade||old.recognitionGrade||null},
     en:{step:-1,count:0,due:localDatePlus(1),last:null}
   }};
+  r.stage=previouslyRecognized?3:(old.recognizedOn?1:0);
   if(previouslyRecognized){
     const easy=old.recognitionGrade==='easy';
     r.dirs.es.step=easy?2:1;
@@ -135,7 +152,7 @@ function init(){
     if(['word','expression','sentence','all'].includes(state.session.tier))$('tier').value=state.session.tier;
     if(['due','all'].includes(state.session.scope))$('scope').value=state.session.scope;
     if(['core','essential','useful','extra','all'].includes(state.session.priority))$('priority').value=state.session.priority;
-    if(['es','en'].includes(state.session.direction))$('direction').value=state.session.direction;
+
   }
   save();
 }
@@ -250,18 +267,19 @@ function ensureDaily(){
 function emptyDirection(){return {step:-1,count:0,due:null,last:null,lastGrade:null}}
 function getRecord(id,create=false){
   let r=state.reviews[id];
-  if(!r&&create){r={introducedOn:null,dirs:{es:emptyDirection(),en:emptyDirection()}};state.reviews[id]=r}
+  if(!r&&create){r={introducedOn:null,stage:0,dirs:{es:emptyDirection(),en:emptyDirection()}};state.reviews[id]=r}
   return r||null;
 }
+function stageOf(c){const n=getRecord(c?.id)?.stage;return Number.isInteger(n)&&n>=0&&n<=3?n:0}
+function directionFor(c){return stageOf(c)===0?'es':'en'}
 function completedToday(r){
   return !!r&&Object.values(r.dirs).some(d=>d.last===today()&&d.due>today());
 }
 function dueDirection(c){
   const r=getRecord(c.id);
   if(!r?.introducedOn||completedToday(r))return null;
-  if(r.dirs.en?.due&&r.dirs.en.due<=today())return 'en';
-  if(r.dirs.es?.due&&r.dirs.es.due<=today())return 'es';
-  return null;
+  const dir=directionFor(c),due=r.dirs[dir]?.due;
+  return due&&due<=today()?dir:null;
 }
 function unseenCount(){return state.cards.filter(c=>matchesStudyPriority(c)&&($('tier').value==='all'||c.type===$('tier').value)&&!getRecord(c.id)?.introducedOn).length}
 function introducedToday(){return state.cards.filter(c=>getRecord(c.id)?.introducedOn===today()).length}
@@ -278,21 +296,56 @@ function openAudioDB(){return new Promise((resolve,reject)=>{if(!('indexedDB' in
 function storeClip(key,encoded){return new Promise((resolve,reject)=>{const t=audioDB.transaction('clips','readwrite');t.objectStore('clips').put(encoded,key);t.oncomplete=()=>resolve();t.onerror=()=>reject(t.error)});}
 function getClip(key){return new Promise(resolve=>{if(!audioDB){resolve(null);return;}const t=audioDB.transaction('clips','readonly');const r=t.objectStore('clips').get(key);r.onsuccess=()=>resolve(r.result||null);r.onerror=()=>resolve(null)});}
 function countClips(){return new Promise(resolve=>{if(!audioDB){resolve(0);return;}const r=audioDB.transaction('clips','readonly').objectStore('clips').count();r.onsuccess=()=>resolve(r.result);r.onerror=()=>resolve(0)});}
+let audioBusy=false;
 function cancelAudio(){audioSeq++;if(currentAudio){currentAudio.pause();currentAudio.removeAttribute('src');currentAudio=null;}}
-function spanishVisible(){return cardDirection()==='es' ? !revealed : revealed;}
-async function speakSpanish(force=false){
- const c=deck[pos];if(!c||(!force&&!spanishVisible()))return;
- const key=c.id+'|'+cardDirection()+'|'+revealed+'|'+(c._pass||'initial');
- if(!force&&(!$('autoAudio').checked||speechLastKey===key))return;
- speechLastKey=key;cancelAudio();const seq=audioSeq;
- const b64=await getClip(audioKey(c.es));if(seq!==audioSeq||!b64||(!force&&!spanishVisible())||deck[pos]?.id!==c.id)return;
- try{const player=new Audio('data:audio/mpeg;base64,'+b64);currentAudio=player;await player.play();}catch(e){if(seq===audioSeq){console.debug('Audio playback blocked until a tap or unavailable:',e)}}
+function spanishVisible(){return stageOf(deck[pos])===0?!revealed:revealed}
+function updateAudioButton(){
+ const c=deck[pos],stage=stageOf(c),button=$('playAudio');
+ const used=stage===2&&!!c?._audioUsed;
+ button.disabled=!c||stage===3||used||audioBusy;
+ button.title=!c?'No card':stage===3?'No audio during independent translation':stage===2?(used?'One listen used':'Listen once'):stage===1?'Listen as often as needed':'Replay Spanish pronunciation';
+ button.setAttribute('aria-label',button.title);
 }
-function queueSpeech(){const c=deck[pos],visible=!!c&&spanishVisible();$('playAudio').disabled=!c;if(!visible){speechLastKey='';cancelAudio();return;}speakSpanish();}
+async function speakSpanish(force=false){
+ const c=deck[pos];if(!c)return false;
+ const stage=stageOf(c);
+ if(stage===3||audioBusy||(stage===2&&c._audioUsed))return false;
+ if(!force&&(stage!==0||!spanishVisible()||!$('autoAudio').checked))return false;
+ const key=c.id+'|'+stage+'|'+revealed;
+ if(!force&&speechLastKey===key)return false;
+ speechLastKey=key;
+ cancelAudio();const seq=audioSeq;
+ audioBusy=true;updateAudioButton();
+ try{
+   const b64=await getClip(audioKey(c.es));
+   if(seq!==audioSeq||deck[pos]!==c)return false;
+   if(!b64){if(force)alert('Spanish audio is not downloaded for this card yet. Connect online to download it.');return false}
+   const player=new Audio('data:audio/mpeg;base64,'+b64);
+   currentAudio=player;
+   await player.play();
+   if(seq!==audioSeq||deck[pos]!==c){player.pause();return false}
+   if(stage===2){
+     c._audioUsed=true;
+     saveSession(); // Persist the single playback across refreshes of this session.
+   }
+   return true;
+ }catch(error){
+   if(force&&seq===audioSeq)alert('Could not play this recording. Please try again.');
+   return false;
+ }finally{
+   audioBusy=false;updateAudioButton();
+ }
+}
+function queueSpeech(){
+ const c=deck[pos];
+ if(!c||stageOf(c)!==0||!spanishVisible()){speechLastKey='';cancelAudio();updateAudioButton();return}
+ updateAudioButton();
+ speakSpanish();
+}
 $('grammarLens').checked=localStorage.getItem('mi-espanol-grammar-lens')!=='off';
 $('grammarLens').onchange=()=>{localStorage.setItem('mi-espanol-grammar-lens',$('grammarLens').checked?'on':'off');renderCard();renderLibrary()};
 $('autoAudio').checked=localStorage.getItem('mi-espanol-auto-audio')!=='off';
-$('autoAudio').onchange=()=>{localStorage.setItem('mi-espanol-auto-audio',$('autoAudio').checked?'on':'off');if(!$('autoAudio').checked)cancelAudio();else{speechLastKey='';speakSpanish();}};
+$('autoAudio').onchange=()=>{localStorage.setItem('mi-espanol-auto-audio',$('autoAudio').checked?'on':'off');if(!$('autoAudio').checked)cancelAudio();else{speechLastKey='';queueSpeech()}};
 $('playAudio').onclick=()=>{speechLastKey='';speakSpanish(true)};
 openAudioDB().then(async()=>{$('audioPackStatus').textContent=`${await countClips()} Google recordings available offline.`;speechLastKey='';queueSpeech();}).catch(err=>{$('audioPackStatus').textContent='Offline audio unavailable here: '+err.message;});
 
@@ -315,21 +368,79 @@ async function syncPublishedAudio(){
     if(added){speechLastKey='';queueSpeech()}
   }catch(err){console.info('Using offline audio; automatic audio sync unavailable:',err.message)}
 }
-function clearScratch(){$('scratch').value=''}
-function cardDirection(){return deck[pos]?._direction||$('direction').value}
+function clearScratch(){
+ $('scratch').value='';
+ $('answerFeedback').replaceChildren();
+ $('answerFeedback').classList.add('hidden');
+ $('compareAnswer').disabled=true;
+}
+function tokenizeAnswer(value){return String(value||'').match(/[\\p{L}\\p{N}]+(?:['’][\\p{L}\\p{N}]+)*/gu)||[]}
+function compareTokens(written,expected){
+ const a=tokenizeAnswer(written),b=tokenizeAnswer(expected);
+ if(a.length>160||b.length>160)return null;
+ const dp=Array.from({length:a.length+1},()=>new Uint16Array(b.length+1));
+ for(let i=a.length-1;i>=0;i--)for(let j=b.length-1;j>=0;j--)
+   dp[i][j]=a[i].toLocaleLowerCase()===b[j].toLocaleLowerCase()?1+dp[i+1][j+1]:Math.max(dp[i+1][j],dp[i][j+1]);
+ const yours=[],saved=[];let i=0,j=0;
+ while(i<a.length||j<b.length){
+   if(i<a.length&&j<b.length&&a[i].toLocaleLowerCase()===b[j].toLocaleLowerCase()){
+     yours.push({text:a[i],kind:'equal'});saved.push({text:b[j],kind:'equal'});i++;j++;
+   }else if(i<a.length&&(j===b.length||dp[i+1][j]>=dp[i][j+1])){
+     yours.push({text:a[i++],kind:'extra'});
+   }else saved.push({text:b[j++],kind:'missing'});
+ }
+ return {yours,saved,match:yours.every(x=>x.kind==='equal')&&saved.every(x=>x.kind==='equal')};
+}
+function renderAnswerFeedback(){
+ const c=deck[pos];if(!c)return;
+ const target=stageOf(c)===0?c.en:c.es;
+ const comparison=compareTokens($('scratch').value,target),feedback=$('answerFeedback');
+ feedback.replaceChildren();feedback.classList.remove('hidden');
+ if(!comparison){feedback.textContent='Answer too long for the offline comparison.';return}
+ const message=document.createElement('p');
+ message.textContent=comparison.match?'Your words match the saved answer.':'Highlighted words differ from the saved answer. Other translations may also be valid.';
+ feedback.append(message);
+ const columns=document.createElement('div');columns.className='answer-columns';
+ for(const [label,words] of [['Your answer',comparison.yours],['Saved answer',comparison.saved]]){
+   const col=document.createElement('div');col.className='answer-col';
+   const header=document.createElement('small');header.textContent=label;col.append(header);
+   words.forEach((word,index)=>{
+     const span=document.createElement('span');span.textContent=word.text;span.className=word.kind==='equal'?'':word.kind;
+     if(index)col.append(document.createTextNode(' '));
+     col.append(span);
+   });
+   columns.append(col);
+ }
+ feedback.append(columns);
+ if(c.note){
+   const note=document.createElement('div');note.className='answer-note';note.textContent=c.note;
+   feedback.append(note);
+ }
+}
+$('scratch').addEventListener('input',()=>{
+ $('compareAnswer').disabled=!deck[pos]||!$('scratch').value.trim();
+ $('answerFeedback').classList.add('hidden');
+ if(state.session)saveSession(); // Keep an unfinished written attempt through a refresh.
+});
+$('compareAnswer').onclick=()=>{
+ if(!deck[pos]||!$('scratch').value.trim())return;
+ revealed=true;
+ saveSession();renderCard();renderAnswerFeedback();
+};
+function cardDirection(){return directionFor(deck[pos])}
 function nextCandidates(){
   ensureDaily();
-  const tier=$('tier').value,scope=$('scope').value,preference=$('direction').value;
+  const tier=$('tier').value,scope=$('scope').value;
   const eligible=state.cards.filter(c=>(tier==='all'||c.type===tier)&&matchesStudyPriority(c));
   const due=[],fresh=[];
   for(const c of eligible){
     const rec=getRecord(c.id);
     if(scope==='all'){
-      due.push({...c,_direction:dueDirection(c)||preference,_tries:0,_failed:false});
+      due.push({...c,_direction:directionFor(c),_tries:0,_failed:false,_audioUsed:false});
     }else if(rec?.introducedOn){
       const direction=dueDirection(c);
-      if(direction)due.push({...c,_direction:direction,_tries:0,_failed:false});
-    }else fresh.push({...c,_direction:preference,_tries:0,_failed:false});
+      if(direction)due.push({...c,_direction:direction,_tries:0,_failed:false,_audioUsed:false});
+    }else fresh.push({...c,_direction:'es',_tries:0,_failed:false,_audioUsed:false});
   }
   // Due reviews are kept; new cards are chosen by learning priority, not publication order.
   due.sort(byPriority);
@@ -339,16 +450,17 @@ function nextCandidates(){
 }
 function saveSession(){
   ensureDaily();
-  state.session={date:today(),tier:$('tier').value,scope:$('scope').value,priority:$('priority').value,direction:$('direction').value,pos,revealed,queue:deck.map(c=>({id:c.id,dir:c._direction,tries:c._tries||0,failed:!!c._failed}))};
+  state.session={date:today(),tier:$('tier').value,scope:$('scope').value,priority:$('priority').value,direction:'staged',pos,revealed,draft:$('scratch').value,queue:deck.map(c=>({id:c.id,dir:c._direction,tries:c._tries||0,failed:!!c._failed,audioUsed:!!c._audioUsed}))};
   save();
 }
 function fillDeck(forceNew=false){
-  clearScratch();ensureDaily();
+  ensureDaily();
   const snapshot=state.session;
-  const canRestore=!forceNew&&snapshot?.date===today()&&snapshot.tier===$('tier').value&&snapshot.scope===$('scope').value&&snapshot.direction===$('direction').value&&(snapshot.priority||'core')===$('priority').value;
+  let restoredDraft='';
+  const canRestore=!forceNew&&snapshot?.date===today()&&snapshot.tier===$('tier').value&&snapshot.scope===$('scope').value&&(snapshot.priority||'core')===$('priority').value;
   if(canRestore){
     const lookup=new Map(state.cards.map(c=>[c.id,c]));
-    const restored=(snapshot.queue||[]).map(q=>lookup.has(q.id)?{...lookup.get(q.id),_direction:q.dir||'es',_tries:q.tries||0,_failed:!!q.failed}:null).filter(Boolean);
+    const restored=(snapshot.queue||[]).map(q=>lookup.has(q.id)?{...lookup.get(q.id),_direction:directionFor(lookup.get(q.id)),_tries:q.tries||0,_failed:!!q.failed,_audioUsed:!!q.audioUsed}:null).filter(Boolean);
     const current=restored[Math.min(Math.max(0,snapshot.pos||0),Math.max(0,restored.length-1))];
     const previous=new Map(restored.map(c=>[c.id,c]));
     // Re-plan unstarted slots whenever a new batch arrives. New Essentials may leap
@@ -366,11 +478,14 @@ function fillDeck(forceNew=false){
       }
       deck=[current,...chosen];
       revealed=!!snapshot.revealed;
+      restoredDraft=typeof snapshot.draft==='string'?snapshot.draft:'';
     }else{deck=chosen;revealed=false;}
     pos=0;
   }else{
     deck=nextCandidates();pos=0;revealed=false;visited=new Set();
   }
+  clearScratch();$('scratch').value=restoredDraft;
+  $('compareAnswer').disabled=!restoredDraft.trim();
   saveSession();renderCard();
 }
 function renderCard(){
@@ -380,10 +495,11 @@ function renderCard(){
   $('deleteCard').disabled=!c;
   $('grading').classList.toggle('hidden',!c);
   $('morePanel').classList.toggle('hidden',!!c||$('scope').value!=='due'||$('tier').value!=='all'||introducedToday()<state.daily.newLimit||unseenCount()===0);
-  $('tapHint').textContent=!c?'':revealed?'Rate how well you remembered':'Tap to reveal · or rate directly';
-  if(!c){$('question').textContent='Session complete 🎉';$('questionLabel').textContent='All caught up';queueSpeech();return}
-  const dir=cardDirection();
-  $('questionLabel').textContent=revealed?'ANSWER':dir==='en'?'ENGLISH → SPANISH':'ESPAÑOL → ENGLISH';
+  if(!c){$('question').textContent='Session complete 🎉';$('questionLabel').textContent='All caught up';$('compareAnswer').disabled=true;queueSpeech();return}
+  const stage=stageOf(c),dir=cardDirection();
+  $('questionLabel').textContent=revealed?'ANSWER':['SPANISH → ENGLISH','LISTEN & WRITE · UNLIMITED','LISTEN & WRITE · ONCE','ENGLISH → SPANISH · NO AUDIO'][stage];
+  $('scratch').placeholder=stage===0?'Write what it means (optional)…':stage===3?'Write the full Spanish translation…':'Type what you hear in Spanish…';
+  $('compareAnswer').disabled=!$('scratch').value.trim();
   const annotated=revealed&&$('grammarLens').checked&&grammarRanges(c).length>0;
   $('question').innerHTML=(revealed?(dir==='en'?highlighted(c,annotated):esc(c.en)):(dir==='en'?esc(c.en):highlighted(c)));
   const details=$('grammarDetails');
@@ -394,38 +510,36 @@ function renderCard(){
   }else details.textContent='';
   queueSpeech();
 }
-function toggle(){if(!deck.length)return;revealed=!revealed;saveSession();renderCard()}
+function toggle(){if(!deck.length)return;revealed=!revealed;$('answerFeedback').classList.add('hidden');saveSession();renderCard()}
 let gradingLock=false;
 function grade(g){
-  if(gradingLock)return;
-  const c=deck[pos];if(!c||!['again','good','easy'].includes(g))return;
-  gradingLock=true;setTimeout(()=>gradingLock=false,280);
-  const r=getRecord(c.id,true);
-  if(!r.introducedOn)r.introducedOn=today();
-  const dir=c._direction,other=dir==='es'?'en':'es',current=r.dirs[dir];
-  const tries=(c._tries||0)+(g==='again'?1:0);
-  current.count=(current.count||0)+1;
-  current.last=today();current.lastGrade=g;
-  if(g==='again'){
-    current.step=-1;current.due=today();current.interval=0;
-  }else{
-    current.step=Math.min(INTERVALS.length-1,Math.max(-1,current.step??-1)+(g==='easy'?3:2));
-    current.interval=c._failed?1:INTERVALS[current.step];
-    current.due=localDatePlus(current.interval);
-  }
-  // The opposite direction is introduced tomorrow, not immediately.
-  if(g!=='again'&&!r.dirs[other].due&&!r.dirs[other].last)
-    r.dirs[other].due=localDatePlus(1);
-  visited.add(c.id);
-  deck.splice(pos,1);
-  if(g==='again'&&tries<3){
-    deck.push({...c,_tries:tries,_failed:true});
-  }else if(g==='again'){
-    current.due=localDatePlus(1);
-    current.interval=1;
-  }
-  if(pos>=deck.length)pos=Math.max(0,deck.length-1);
-  revealed=false;clearScratch();saveSession();renderCard();
+ if(gradingLock)return;
+ const c=deck[pos];if(!c||!['again','good','easy'].includes(g))return;
+ gradingLock=true;setTimeout(()=>gradingLock=false,280);
+ const r=getRecord(c.id,true),stage=stageOf(c);
+ if(!r.introducedOn)r.introducedOn=today();
+ const dir=stage===0?'es':'en',current=r.dirs[dir];
+ const tries=(c._tries||0)+(g==='again'?1:0);
+ current.count=(current.count||0)+1;
+ current.last=today();current.lastGrade=g;
+ if(g==='again'){
+   current.step=-1;current.due=today();current.interval=0;
+ }else{
+   current.step=Math.min(INTERVALS.length-1,Math.max(-1,current.step??-1)+(g==='easy'?3:2));
+   current.interval=c._failed?1:INTERVALS[current.step];
+   current.due=localDatePlus(current.interval);
+   if(g==='easy'&&stage<3){
+     r.stage=stage+1;
+     // Graduate on the next review, not immediately in the same daily session.
+     r.dirs[directionFor(c)].due=localDatePlus(1);
+   }
+ }
+ visited.add(c.id);
+ deck.splice(pos,1);
+ if(g==='again'&&tries<3)deck.push({...c,_tries:tries,_failed:true,_audioUsed:false});
+ else if(g==='again'){current.due=localDatePlus(1);current.interval=1}
+ if(pos>=deck.length)pos=Math.max(0,deck.length-1);
+ revealed=false;cancelAudio();clearScratch();saveSession();renderCard();
 }
 function removeCard(id){
   const c=state.cards.find(x=>x.id===id);
