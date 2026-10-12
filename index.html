@@ -103,7 +103,7 @@ function normalizeReview(old){
     // Legacy recognition/production records become stage 1 or 4, based on past activity.
     // No due dates, grades, counts, deletion choices or intervals are reset.
     if(!Number.isInteger(old.stage)||old.stage<0||old.stage>3)
-      old.stage=(old.dirs.en.last||old.dirs.en.count>0)?3:(old.dirs.es.last?1:0);
+      old.stage=(old.dirs.en.last||old.dirs.en.count>0)?3:(old.dirs.en.due?1:0);
     return old;
   }
   const introducedOn=old.last||old.recognizedOn||null;
