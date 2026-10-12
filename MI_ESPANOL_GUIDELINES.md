@@ -335,3 +335,7 @@ When committing:
 ---
 
 **Maintenance note:** If the user revises their learning philosophy or the app's behavior changes, update this document in the same feature work. Favor the user's latest explicit instructions over older preferences, but preserve safety around progress, deleted cards, and audio.
+
+### Card-list update label
+
+`cards.json` includes a top-level `updated_at` ISO calendar date (`YYYY-MM-DD`). Update that field whenever the published card contents change, so the tiny gray date in **My cards** accurately reports the card list's last publication date. Do not change it for app-only UI edits or progress/history. The label only renders when metadata is supplied by a successful online card fetch; it does not infer dates from device study history.
