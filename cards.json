@@ -833,6 +833,105 @@
       "es": "hasta la medianoche",
       "note": "Time expression.",
       "priority": "essential"
+    },
+    {
+      "id": "N001",
+      "type": "expression",
+      "category": "daily",
+      "en": "I need sweaters.",
+      "es": "Me hacen falta suéteres.",
+      "note": "Me hace falta (singular need) / me hacen falta (plural thing needed); agreement follows what is missing, not the speaker.",
+      "priority": "essential"
+    },
+    {
+      "id": "N002",
+      "type": "expression",
+      "category": "daily",
+      "en": "I feel like eating sushi.",
+      "es": "Me apetece comer sushi.",
+      "note": "Me apetece + infinitive or noun; also me apetece sushi.",
+      "priority": "essential"
+    },
+    {
+      "id": "N003",
+      "type": "expression",
+      "category": "daily",
+      "en": "I feel like going to the movies.",
+      "es": "Tengo ganas de ir al cine.",
+      "note": "Tengo ganas de + infinitive; expresses desire or enthusiasm.",
+      "priority": "useful"
+    },
+    {
+      "id": "N004",
+      "type": "expression",
+      "category": "daily",
+      "en": "It's your turn.",
+      "es": "Te toca a ti.",
+      "note": "Me toca / te toca / le toca; ¿A quién le toca? Avoid te toca a tú; after a use ti.",
+      "priority": "essential"
+    },
+    {
+      "id": "N005",
+      "type": "expression",
+      "category": "daily",
+      "en": "How about we go for a drink?",
+      "es": "¿Te parece si vamos a tomar algo?",
+      "note": "¿Te parece si...? suggests a plan. Me parece que... = it seems to me that.",
+      "priority": "essential"
+    },
+    {
+      "id": "N006",
+      "type": "expression",
+      "category": "daily",
+      "en": "I've realized that I need to change jobs.",
+      "es": "Me he dado cuenta de que necesito cambiar de trabajo.",
+      "note": "Darse cuenta de que; reflexive: me he dado cuenta (not me ha dado cuenta). Distinct from existing sin darme cuenta (without realizing it).",
+      "priority": "essential"
+    },
+    {
+      "id": "N007",
+      "type": "expression",
+      "category": "daily",
+      "en": "I'm going hiking this weekend.",
+      "es": "Voy a hacer senderismo este fin de semana.",
+      "note": "Hacer senderismo, without un.",
+      "priority": "useful"
+    },
+    {
+      "id": "N008",
+      "type": "expression",
+      "category": "daily",
+      "en": "I want good-quality clothes at a good price.",
+      "es": "Quiero ropa de buena calidad y a buen precio.",
+      "note": "A buen precio; el precio is masculine (un buen precio, not una precio buena).",
+      "priority": "useful"
+    },
+    {
+      "id": "N009",
+      "type": "expression",
+      "category": "daily",
+      "en": "I'm going to put my app to the test.",
+      "es": "Voy a poner a prueba mi aplicación.",
+      "note": "Poner a prueba = test something in practice.",
+      "priority": "useful"
+    },
+    {
+      "id": "N010",
+      "type": "expression",
+      "category": "daily",
+      "en": "I'm going shopping this weekend.",
+      "es": "Voy a ir de compras este fin de semana.",
+      "note": "Ir de compras = go shopping.",
+      "priority": "useful"
+    },
+    {
+      "id": "N011",
+      "type": "expression",
+      "category": "daily",
+      "en": "To make mistakes",
+      "es": "Cometer errores",
+      "note": "Cometer errores, not hacer errores.",
+      "priority": "essential"
     }
   ]
 }
