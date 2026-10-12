@@ -339,3 +339,7 @@ When committing:
 ### Card-list update label
 
 `cards.json` includes a top-level `updated_at` ISO calendar date (`YYYY-MM-DD`). Update that field whenever the published card contents change, so the tiny gray date in **My cards** accurately reports the card list's last publication date. Do not change it for app-only UI edits or progress/history. The label only renders when metadata is supplied by a successful online card fetch; it does not infer dates from device study history.
+
+### My cards browsing filters
+
+In **My cards**, the priority and type filters can be combined with **All additions / Latest 10 added / Latest 20 added / Not studied yet**, plus **Priority first / Newest first / Oldest first / A to Z** sorting. Newest/oldest follow the order cards entered the local library (published cards are merged in their published array order), rather than study/review time; no historical per-card timestamps are implied. Recency is global across cards, before topic/priority/search filtering. These controls affect only library presentation; they must not mutate review state or the study queue.
