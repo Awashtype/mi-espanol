@@ -557,7 +557,7 @@ async function syncPublishedCards(){
     const payload=await response.json();
     if(!Array.isArray(payload.cards))throw new Error('Invalid card data');
     const stamp=$('cardListUpdated');
-    if(stamp && typeof payload.updated_at==='string' && /^\\d{4}-\\d{2}-\\d{2}$/.test(payload.updated_at)){
+    if(stamp && typeof payload.updated_at==='string' && /^\d{4}-\d{2}-\d{2}$/.test(payload.updated_at)){
       const date=new Date(payload.updated_at+'T12:00:00Z');
       stamp.textContent='Card list last updated · '+new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'}).format(date);
     }
