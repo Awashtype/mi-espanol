@@ -932,7 +932,215 @@
       "es": "Cometer errores",
       "note": "Cometer errores, not hacer errores.",
       "priority": "essential"
+    },
+    {
+      "id": "N012",
+      "type": "sentence",
+      "category": "reported-speech",
+      "en": "Monday, Elena said: «Me duele mucho la cabeza». On Thursday, report what she said.",
+      "es": "Elena dijo que le dolía mucho la cabeza.",
+      "note": "Presente → imperfecto: me duele → le dolía; change the person too.",
+      "priority": "essential",
+      "grammar": [
+        {
+          "text": "dolía",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "N013",
+      "type": "sentence",
+      "category": "reported-speech",
+      "en": "Wednesday, Elena said: «He tenido un accidente». On Friday, explain why she missed work.",
+      "es": "Elena explicó que había tenido un accidente.",
+      "note": "Pretérito perfecto → pluscuamperfecto: he tenido → había tenido.",
+      "priority": "essential",
+      "grammar": [
+        {
+          "text": "había tenido",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative",
+          "aspect": "perfect"
+        }
+      ]
+    },
+    {
+      "id": "N014",
+      "type": "sentence",
+      "category": "reported-speech",
+      "en": "Saturday, Lucía said: «Ayer fui al cine con Eva». On Tuesday, recount it.",
+      "es": "Lucía contó que el día anterior había ido al cine con Eva.",
+      "note": "Indefinido → pluscuamperfecto: fui → había ido; ayer → el día anterior. «Fue» can also be valid in some contexts.",
+      "priority": "useful",
+      "grammar": [
+        {
+          "text": "había ido",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative",
+          "aspect": "perfect"
+        }
+      ]
+    },
+    {
+      "id": "N015",
+      "type": "sentence",
+      "category": "reported-speech",
+      "en": "Wednesday, Adrián said: «El sábado compraré ropa». On Monday, report the plan; you don't know if he went.",
+      "es": "Adrián dijo que compraría ropa el sábado.",
+      "note": "Futuro → condicional: compraré → compraría. This reports an intention, not proof it happened.",
+      "priority": "essential",
+      "grammar": [
+        {
+          "text": "compraría",
+          "tense": "conditional",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "N016",
+      "type": "sentence",
+      "category": "reported-speech",
+      "en": "Monday, Dani said: «Mañana voy a pedir una cita». On Friday, retell what Dani planned.",
+      "es": "Dani dijo que iba a pedir una cita al día siguiente.",
+      "note": "Ir a + infinitivo → iba a + infinitivo; mañana → al día siguiente.",
+      "priority": "useful",
+      "grammar": [
+        {
+          "text": "iba",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "N017",
+      "type": "sentence",
+      "category": "reported-speech",
+      "en": "Monday, Nora told you: «Ve a la tienda y compra azúcar». On Friday, report her request.",
+      "es": "Nora me pidió que fuera a la tienda y comprara azúcar.",
+      "note": "Imperativo → imperfecto de subjuntivo after past pedir que: ve → fuera; compra → comprara.",
+      "priority": "essential",
+      "grammar": [
+        {
+          "text": "fuera",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        },
+        {
+          "text": "comprara",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        }
+      ]
+    },
+    {
+      "id": "N018",
+      "type": "sentence",
+      "category": "reported-speech",
+      "en": "Monday, Ana said: «Espero que Lucía venga mañana». On Thursday, report Ana's hope.",
+      "es": "Ana dijo que esperaba que Lucía viniera al día siguiente.",
+      "note": "Presente → imperfecto (espero → esperaba); presente de subjuntivo → imperfecto de subjuntivo (venga → viniera).",
+      "priority": "essential",
+      "grammar": [
+        {
+          "text": "esperaba",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        },
+        {
+          "text": "viniera",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        }
+      ]
+    },
+    {
+      "id": "N019",
+      "type": "sentence",
+      "category": "reported-speech",
+      "en": "Monday, your teacher asked you: «¿Has terminado la tarea?». On Friday, report the question.",
+      "es": "Mi profesor me preguntó si había terminado la tarea.",
+      "note": "Indirect yes/no question: preguntar si (not preguntar que); has terminado → había terminado.",
+      "priority": "essential",
+      "grammar": [
+        {
+          "text": "había terminado",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative",
+          "aspect": "perfect"
+        }
+      ]
+    },
+    {
+      "id": "N020",
+      "type": "sentence",
+      "category": "reported-speech",
+      "en": "Tuesday, Paula asked you: «¿Dónde guardaste el archivo?». On Friday, report the question.",
+      "es": "Paula me preguntó dónde había guardado el archivo.",
+      "note": "Indirect information question retains dónde with accent; guardaste → había guardado.",
+      "priority": "useful",
+      "grammar": [
+        {
+          "text": "había guardado",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative",
+          "aspect": "perfect"
+        }
+      ]
+    },
+    {
+      "id": "N021",
+      "type": "sentence",
+      "category": "reported-speech",
+      "en": "Last month, Gloria said: «Me gustaría trabajar en esta tienda». Today the shop has closed. Recount her unrealized wish.",
+      "es": "Gloria dijo que le habría gustado trabajar en esa tienda.",
+      "note": "A past unrealized wish: gustaría → habría gustado (also hubiera gustado). Not an automatic backshift of every conditional.",
+      "priority": "useful",
+      "grammar": [
+        {
+          "text": "habría gustado",
+          "tense": "conditional",
+          "mood": "indicative",
+          "aspect": "perfect"
+        }
+      ]
+    },
+    {
+      "id": "N022",
+      "type": "sentence",
+      "category": "reported-speech",
+      "en": "Monday, Clara told you: «Esconde los regalos para que los niños no los vean». On Thursday, report the request.",
+      "es": "Clara me pidió que escondiera los regalos para que los niños no los vieran.",
+      "note": "Imperative and purpose-clause subjunctive both shift: esconde → escondiera; vean → vieran.",
+      "priority": "useful",
+      "grammar": [
+        {
+          "text": "escondiera",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        },
+        {
+          "text": "vieran",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        }
+      ]
     }
   ],
-  "updated_at": "2026-10-12"
+  "updated_at": "2026-10-14"
 }
