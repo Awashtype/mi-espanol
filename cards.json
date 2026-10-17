@@ -1140,7 +1140,23 @@
           "mood": "subjunctive"
         }
       ]
+    },
+    {
+      "id": "N023",
+      "type": "expression",
+      "category": "daily",
+      "en": "Does that time work for you?",
+      "es": "¿Te viene bien ese horario?",
+      "note": "Venirle bien algo a alguien = to be convenient / work for someone. Also: ¿Te va bien esa hora? (Don't say «es buena con ti».)",
+      "priority": "essential",
+      "grammar": [
+        {
+          "text": "viene",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     }
   ],
-  "updated_at": "2026-10-14"
+  "updated_at": "2026-10-17"
 }
