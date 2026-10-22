@@ -1156,7 +1156,437 @@
           "mood": "indicative"
         }
       ]
+    },
+    {
+      "id": "L20261022_01",
+      "type": "word",
+      "category": "nature",
+      "priority": "useful",
+      "en": "a waterfall",
+      "es": "una cascada",
+      "note": "Cascada = waterfall; cáscara = peel or shell."
+    },
+    {
+      "id": "L20261022_02",
+      "type": "word",
+      "category": "daily",
+      "priority": "useful",
+      "en": "to get up early",
+      "es": "madrugar",
+      "note": "Madrugar = get up early; acostarse = go to bed."
+    },
+    {
+      "id": "L20261022_03",
+      "type": "word",
+      "category": "food",
+      "priority": "useful",
+      "en": "lamb (meat)",
+      "es": "el cordero",
+      "note": "Cordero = lamb; la carne de cordero = lamb meat."
+    },
+    {
+      "id": "L20261022_04",
+      "type": "word",
+      "category": "food",
+      "priority": "essential",
+      "en": "noodles",
+      "es": "los fideos",
+      "note": "Often used in the plural: sopa con fideos = noodle soup."
+    },
+    {
+      "id": "L20261022_05",
+      "type": "word",
+      "category": "daily",
+      "priority": "essential",
+      "en": "a compliment",
+      "es": "un cumplido",
+      "note": "Hacerle un cumplido a alguien = pay someone a compliment."
+    },
+    {
+      "id": "L20261022_06",
+      "type": "word",
+      "category": "food",
+      "priority": "useful",
+      "en": "a meat skewer",
+      "es": "una brocheta de carne",
+      "note": "In Argentina, also una brochette de carne. El palito is the stick; la carne is feminine."
+    },
+    {
+      "id": "L20261022_07",
+      "type": "expression",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "I pay attention to how I write.",
+      "es": "Presto atención a cómo escribo.",
+      "note": "Prestar atención a algo: no reflexive me here. Le presto atención a algo is also possible.",
+      "grammar": [
+        {
+          "text": "Presto",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "escribo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ],
+      "focus": [
+        "Presto atención a"
+      ]
+    },
+    {
+      "id": "L20261022_08",
+      "type": "expression",
+      "category": "daily",
+      "priority": "essential",
+      "en": "I'm happy for you. (Argentina)",
+      "es": "Me alegro por vos.",
+      "note": "Alegrarse por alguien. For this meaning, use por vos, rather than para vos.",
+      "grammar": [
+        {
+          "text": "alegro",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ],
+      "focus": [
+        "Me alegro por vos"
+      ]
+    },
+    {
+      "id": "L20261022_09",
+      "type": "expression",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "to find out about something",
+      "es": "enterarse de algo",
+      "note": "Pronominal: me entero de, me enteré de, ¿te enteraste de...? Enterarse = learn news; darse cuenta de = realize or notice.",
+      "focus": [
+        "enterarse de"
+      ]
+    },
+    {
+      "id": "L20261022_10",
+      "type": "expression",
+      "category": "work",
+      "priority": "useful",
+      "en": "to retire from work",
+      "es": "jubilarse",
+      "note": "Pronominal: se va a jubilar = is going to retire."
+    },
+    {
+      "id": "L20261022_11",
+      "type": "expression",
+      "category": "culture",
+      "priority": "useful",
+      "en": "beauty standards",
+      "es": "los estándares de belleza",
+      "note": "Also los ideales de belleza; belleza is the noun, beautiful is bello or bonito."
+    },
+    {
+      "id": "L20261022_12",
+      "type": "expression",
+      "category": "daily",
+      "priority": "essential",
+      "en": "Thank you for teaching me.",
+      "es": "Gracias por enseñarme.",
+      "note": "Gracias por + infinitive, not gracias para. Me attaches to the infinitive enseñar.",
+      "focus": [
+        "Gracias por"
+      ]
+    },
+    {
+      "id": "L20261022_13",
+      "type": "expression",
+      "category": "formal",
+      "priority": "useful",
+      "en": "Tell me something about yourself. (formal usted)",
+      "es": "Cuénteme algo sobre usted.",
+      "note": "Formal usted: cuénteme. Informal Argentine vos: contame. Keep the same form of address throughout.",
+      "grammar": [
+        {
+          "text": "Cuénteme",
+          "mood": "imperative"
+        }
+      ]
+    },
+    {
+      "id": "L20261022_14",
+      "type": "sentence",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "I still don't feel comfortable speaking formally.",
+      "es": "Todavía no me siento cómoda hablando de manera formal.",
+      "note": "Sentirse + adjective: me siento cómoda. Sentir + noun: siento alegría. Keep me with sentirse; use hablando for speaking.",
+      "grammar": [
+        {
+          "text": "siento",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ],
+      "focus": [
+        "me siento cómoda"
+      ]
+    },
+    {
+      "id": "L20261022_15",
+      "type": "sentence",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "It's going to rain a lot this winter.",
+      "es": "Va a llover mucho este invierno.",
+      "note": "Forecast: va a llover or lloverá. Lloviera is imperfect subjunctive, not future indicative.",
+      "grammar": [
+        {
+          "text": "Va",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ],
+      "focus": [
+        "Va a llover"
+      ]
+    },
+    {
+      "id": "L20261022_16",
+      "type": "sentence",
+      "category": "work",
+      "priority": "essential",
+      "en": "I design drawings that represent garments.",
+      "es": "Me ocupo de diseñar dibujos que representan prendas de ropa.",
+      "note": "Ocuparse de + infinitive. Dibujos que representan: conjugate the relative-clause verb to agree with dibujos; not dibujos que representar.",
+      "grammar": [
+        {
+          "text": "ocupo",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "representan",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ],
+      "focus": [
+        "Me ocupo de"
+      ]
+    },
+    {
+      "id": "L20261022_17",
+      "type": "sentence",
+      "category": "nature",
+      "priority": "essential",
+      "en": "The sun had already set, but we were still on the mountain.",
+      "es": "El sol ya se había puesto, pero todavía estábamos en la montaña.",
+      "note": "Ponerse el sol = set; salir el sol = rise. Había puesto is past perfect; estábamos describes the ongoing situation.",
+      "grammar": [
+        {
+          "text": "había puesto",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative",
+          "aspect": "perfect"
+        },
+        {
+          "text": "estábamos",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        }
+      ],
+      "focus": [
+        "se había puesto"
+      ]
+    },
+    {
+      "id": "L20261022_18",
+      "type": "sentence",
+      "category": "daily",
+      "priority": "useful",
+      "en": "It's worth it to get two more hours of sleep.",
+      "es": "Vale la pena dormir dos horas más.",
+      "note": "Valer la pena + infinitive. Dos horas = two hours, not dos dólares.",
+      "grammar": [
+        {
+          "text": "Vale",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ],
+      "focus": [
+        "Vale la pena"
+      ]
+    },
+    {
+      "id": "L20261022_19",
+      "type": "sentence",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "Elena told me about it, but she didn't tell me who told her.",
+      "es": "Elena me lo contó, pero no me dijo quién se lo contó a ella.",
+      "note": "Lo refers to the news or information. Me = to me; se = to her (le becomes se before lo). Quién keeps its accent in an indirect question.",
+      "grammar": [
+        {
+          "text": "contó",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        },
+        {
+          "text": "dijo",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        },
+        {
+          "text": "contó",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative",
+          "occurrence": 1
+        }
+      ],
+      "focus": [
+        "me lo contó",
+        "se lo contó"
+      ]
+    },
+    {
+      "id": "L20261022_20",
+      "type": "sentence",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "I didn't tell anyone about it.",
+      "es": "No se lo conté a nadie.",
+      "note": "Lo = the information; se = the recipient. Le or les becomes se before lo/la/los/las. No le conté nada a nadie is a related sentence: I didn't tell anyone anything.",
+      "grammar": [
+        {
+          "text": "conté",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ],
+      "focus": [
+        "se lo conté"
+      ]
+    },
+    {
+      "id": "L20261022_21",
+      "type": "sentence",
+      "category": "grammar",
+      "priority": "useful",
+      "en": "The three of them looked at each other nervously.",
+      "es": "Los tres se miraron nerviosamente.",
+      "note": "Reciprocal se = each other; not every se means oneself.",
+      "grammar": [
+        {
+          "text": "miraron",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ],
+      "focus": [
+        "se miraron"
+      ]
+    },
+    {
+      "id": "L20261022_22",
+      "type": "sentence",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "I'll take you a gift; you'll say: “You're bringing me a gift.”",
+      "es": "Te voy a llevar un regalo; vos dirás: «Me vas a traer un regalo».",
+      "note": "Llevar: take toward another place. Traer: bring toward the speaker's reference point. The reference point changes when the speaker changes.",
+      "grammar": [
+        {
+          "text": "voy",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "dirás",
+          "tense": "future",
+          "mood": "indicative"
+        },
+        {
+          "text": "vas",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ],
+      "focus": [
+        "llevar un regalo",
+        "traer un regalo"
+      ]
+    },
+    {
+      "id": "L20261022_23",
+      "type": "sentence",
+      "category": "reported-speech",
+      "priority": "essential",
+      "en": "On Monday, Elena told you and your colleagues: «Mañana les llevaré los documentos que me han pedido». On Thursday, report her plan from your group's office; you don't know whether she delivered them.",
+      "es": "Elena nos dijo que al día siguiente nos traería los documentos que le habíamos pedido.",
+      "note": "Distinct targets: les → nos, me → le, mañana → al día siguiente; llevar → traer from the recipient's office. Llevaré → traería; han pedido → habíamos pedido. The conditional reports her plan, not whether it happened.",
+      "grammar": [
+        {
+          "text": "dijo",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        },
+        {
+          "text": "traería",
+          "tense": "conditional",
+          "mood": "indicative"
+        },
+        {
+          "text": "habíamos pedido",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative",
+          "aspect": "perfect"
+        }
+      ]
+    },
+    {
+      "id": "L20261022_24",
+      "type": "sentence",
+      "category": "reported-speech",
+      "priority": "essential",
+      "en": "On Monday, your mother told you: «No salgas tan tarde y avísame cuando llegues». On Friday, report what she asked you to do.",
+      "es": "Mi madre me pidió que no saliera tan tarde y que la avisara cuando llegara.",
+      "note": "Past request: no salgas → no saliera; avísame → que la avisara (me now refers to your mother); llegues → llegara. Saliese/avisase/llegase are also valid; le avisara is also accepted.",
+      "grammar": [
+        {
+          "text": "pidió",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        },
+        {
+          "text": "saliera",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        },
+        {
+          "text": "avisara",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        },
+        {
+          "text": "llegara",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        }
+      ]
     }
   ],
-  "updated_at": "2026-10-17"
+  "updated_at": "2026-10-22"
 }
