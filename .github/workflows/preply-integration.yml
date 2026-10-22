@@ -1,0 +1,18 @@
+name: Check Preply integration
+on:
+  pull_request:
+    paths: ['integrations/preply/**', '.github/workflows/preply-integration.yml']
+  push:
+    paths: ['integrations/preply/**', '.github/workflows/preply-integration.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s integrations/preply/tests -v
+      - run: bash -n integrations/preply/Setup.command

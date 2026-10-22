@@ -336,6 +336,26 @@ When committing:
 
 **Maintenance note:** If the user revises their learning philosophy or the app's behavior changes, update this document in the same feature work. Favor the user's latest explicit instructions over older preferences, but preserve safety around progress, deleted cards, and audio.
 
+### Optional automatic Preply lesson import
+
+`integrations/preply/` contains a local Mac integration authorized for the user's private
+Preply lessons. After one-time setup it can append curated cards without routing each
+transcript through a new ChatGPT conversation. It records a registered browser classroom
+with OBS, transcribes via MacWhisper **Pro** Watch Folders or free whisper.cpp, and uses a
+separate local Ollama **text** model for editorial extraction and semantic deduplication.
+This is source code, not an already-installed service on the user's Mac. Browser matching
+means an open registered tab, not verified call attendance; see its README for setup tests.
+
+The automation reads this guide, processes the full transcript, and sends the whole deck
+to a second editorial model pass. It requires verbatim local evidence for candidates and
+publishes a maximum of 12 cards by default, including zero when no genuine gap is found.
+Semantic deduplication remains AI editorial work; exact-text matching is only a final
+technical guard. Existing cards/IDs/audio keys, review state, and deleted-card behavior
+are preserved. Full transcripts, excerpts, and recordings stay local; published examples
+must generalize private details. Model judgment is fallible; preview mode is available and
+is the initial setup default. Normal ad hoc Spanish tutoring still does not authorize
+automatic publication outside the explicitly configured lesson-import workflow.
+
 ### Card-list update label
 
 `cards.json` includes a top-level `updated_at` ISO calendar date (`YYYY-MM-DD`). Update that field whenever the published card contents change, so the tiny gray date in **My cards** accurately reports the card list's last publication date. Do not change it for app-only UI edits or progress/history. The label only renders when metadata is supplied by a successful online card fetch; it does not infer dates from device study history.
