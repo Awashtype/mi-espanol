@@ -1586,7 +1586,397 @@
           "mood": "subjunctive"
         }
       ]
+    },
+    {
+      "id": "L20261024_01",
+      "type": "expression",
+      "priority": "essential",
+      "en": "You can't tell.",
+      "es": "No se nota.",
+      "note": "Se nota = it shows / is noticeable; no se nota = you can't tell. Not yo se nota.",
+      "category": "daily",
+      "focus": [
+        "se nota"
+      ]
+    },
+    {
+      "id": "L20261024_02",
+      "type": "word",
+      "priority": "useful",
+      "en": "humidity",
+      "es": "la humedad",
+      "note": "Not humanitud; húmedo = humid.",
+      "category": "daily"
+    },
+    {
+      "id": "L20261024_03",
+      "type": "word",
+      "priority": "essential",
+      "en": "to shout",
+      "es": "gritar",
+      "note": "Gritar mucho = shout a lot; quedarse sin voz = lose your voice.",
+      "category": "daily"
+    },
+    {
+      "id": "L20261024_04",
+      "type": "expression",
+      "priority": "useful",
+      "en": "the commute to work",
+      "es": "el trayecto al trabajo",
+      "note": "Also el viaje al trabajo; a natural way to express commute.",
+      "category": "work"
+    },
+    {
+      "id": "L20261024_05",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "When I work from home all day, I feel a little lonely.",
+      "es": "Cuando trabajo desde casa todo el día, me siento un poco sola.",
+      "note": "Todo el día = all day. Sentirse + adjective: me siento sola, not siento en solitud.",
+      "category": "daily",
+      "focus": [
+        "todo el día",
+        "me siento un poco sola"
+      ],
+      "grammar": [
+        {
+          "text": "trabajo",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "siento",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261024_06",
+      "type": "word",
+      "priority": "useful",
+      "en": "to disappear",
+      "es": "desaparecer",
+      "note": "From your attempt to describe feeling disconnected while working at home.",
+      "category": "daily"
+    },
+    {
+      "id": "L20261024_07",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "I really enjoy working in person.",
+      "es": "Disfruto mucho trabajando en persona.",
+      "note": "Disfrutar is not reflexive: disfruto, not me disfruto. Also disfruto de mi trabajo.",
+      "category": "work",
+      "focus": [
+        "Disfruto mucho"
+      ],
+      "grammar": [
+        {
+          "text": "Disfruto",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261024_08",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "It depends on who I work with.",
+      "es": "Depende de con quién trabajo.",
+      "note": "Con quién = with whom; not a quién. Quién has an accent in this indirect question.",
+      "category": "work",
+      "focus": [
+        "Depende de",
+        "con quién"
+      ],
+      "grammar": [
+        {
+          "text": "Depende",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "trabajo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261024_09",
+      "type": "word",
+      "priority": "useful",
+      "en": "an internship",
+      "es": "unas prácticas",
+      "note": "Hacer prácticas = do an internship; una pasantía is also common in Latin America.",
+      "category": "work"
+    },
+    {
+      "id": "L20261024_10",
+      "type": "expression",
+      "priority": "useful",
+      "en": "made to measure",
+      "es": "hecho a medida",
+      "note": "Ropa hecha a medida; un vestido hecho a medida. Agree hecho/hecha with the garment.",
+      "category": "work",
+      "focus": [
+        "a medida"
+      ]
+    },
+    {
+      "id": "L20261024_11",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "I didn't get along with my boss.",
+      "es": "No me llevaba bien con mi jefa.",
+      "note": "Llevarse bien con = get along with. No me caía bien = I didn't like her. Imperfect describes the ongoing relationship.",
+      "category": "work",
+      "focus": [
+        "me llevaba bien con"
+      ],
+      "grammar": [
+        {
+          "text": "llevaba",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "imperfect"
+        }
+      ]
+    },
+    {
+      "id": "L20261024_12",
+      "type": "word",
+      "priority": "essential",
+      "en": "a salary",
+      "es": "un sueldo",
+      "note": "Also un salario; sueldo mínimo = minimum wage.",
+      "category": "work"
+    },
+    {
+      "id": "L20261024_13",
+      "type": "expression",
+      "priority": "essential",
+      "en": "in cash",
+      "es": "en efectivo",
+      "note": "Me pagaban en efectivo = they paid me in cash; not infectivo.",
+      "category": "daily"
+    },
+    {
+      "id": "L20261024_14",
+      "type": "word",
+      "priority": "essential",
+      "en": "a tip (money left for service)",
+      "es": "una propina",
+      "note": "Dejar propina = leave a tip. Vocabulary only; tipping expectations vary by location.",
+      "category": "daily"
+    },
+    {
+      "id": "L20261024_15",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "The tips are divided equally among the workers.",
+      "es": "Las propinas se reparten por igual entre los trabajadores.",
+      "note": "Repartir = distribute; por igual = equally; entre = among.",
+      "category": "work",
+      "focus": [
+        "se reparten por igual",
+        "entre los trabajadores"
+      ],
+      "grammar": [
+        {
+          "text": "reparten",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261024_16",
+      "type": "expression",
+      "priority": "essential",
+      "en": "takeout food",
+      "es": "comida para llevar",
+      "note": "Pedir comida para llevar = order takeout; un café para llevar = a coffee to go.",
+      "category": "daily",
+      "focus": [
+        "para llevar"
+      ]
+    },
+    {
+      "id": "L20261024_17",
+      "type": "expression",
+      "priority": "essential",
+      "en": "to eat out",
+      "es": "comer fuera",
+      "note": "Salir a comer is another common option. Past habit: me gustaba comer fuera.",
+      "category": "daily"
+    },
+    {
+      "id": "L20261024_18",
+      "type": "expression",
+      "priority": "useful",
+      "en": "at most",
+      "es": "como mucho",
+      "note": "Veinte dólares como mucho = twenty dollars at most.",
+      "category": "daily"
+    },
+    {
+      "id": "L20261024_19",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "I have to get ready to move.",
+      "es": "Tengo que prepararme para mudarme.",
+      "note": "Prepararse para + infinitive. Mudarse = move house; not preparar para mudar.",
+      "category": "daily",
+      "focus": [
+        "prepararme para mudarme"
+      ],
+      "grammar": [
+        {
+          "text": "Tengo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261024_20",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "We've been waiting for approval for a month and a half.",
+      "es": "Llevamos un mes y medio esperando la aprobación.",
+      "note": "Llevar + duration + gerund = have been doing something for that long. Un mes y medio, not media.",
+      "category": "grammar",
+      "focus": [
+        "Llevamos un mes y medio esperando"
+      ],
+      "grammar": [
+        {
+          "text": "Llevamos",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261024_21",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "I don't know how many more days they'll need to review the application.",
+      "es": "No sé cuántos días más necesitarán para revisar la solicitud.",
+      "note": "Días is masculine: cuántos días. Solicitud = application (not an app). Future necesitarán.",
+      "category": "daily",
+      "focus": [
+        "cuántos días más",
+        "revisar la solicitud"
+      ],
+      "grammar": [
+        {
+          "text": "sé",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "necesitarán",
+          "tense": "future",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261024_22",
+      "type": "word",
+      "priority": "essential",
+      "en": "to throw away",
+      "es": "tirar",
+      "note": "Tirar las cosas que no uso = throw away the things I don't use. Quiero tirar, not quiero que tirar.",
+      "category": "daily"
+    },
+    {
+      "id": "L20261024_23",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "I don't like having too many things in my room.",
+      "es": "No me gusta tener demasiadas cosas en mi habitación.",
+      "note": "Demasiadas agrees with cosas. No me gusta tener + noun; demasiadas = too many.",
+      "category": "grammar",
+      "focus": [
+        "demasiadas cosas"
+      ],
+      "grammar": [
+        {
+          "text": "gusta",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261024_24",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "I'll wait until he's ready.",
+      "es": "Voy a esperar hasta que esté listo.",
+      "note": "Hasta que + subjunctive for a future event that hasn't happened yet; not cuando él es listo.",
+      "category": "grammar",
+      "focus": [
+        "hasta que esté listo"
+      ],
+      "grammar": [
+        {
+          "text": "Voy",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "esté",
+          "tense": "present",
+          "mood": "subjunctive"
+        }
+      ]
+    },
+    {
+      "id": "L20261024_25",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "I'd like to live in Argentina for at least a year.",
+      "es": "Me gustaría vivir en Argentina por lo menos un año.",
+      "note": "Por lo menos or al menos = at least; not al mínimo. Gustaría expresses a wish.",
+      "category": "travel",
+      "focus": [
+        "por lo menos"
+      ],
+      "grammar": [
+        {
+          "text": "gustaría",
+          "tense": "conditional",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261024_26",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "I'm deciding where to travel and for how long.",
+      "es": "Estoy decidiendo adónde viajar y por cuánto tiempo.",
+      "note": "Adónde = to where; por cuánto tiempo = for how long. Vacaciones, not vocación.",
+      "category": "travel",
+      "focus": [
+        "adónde viajar",
+        "por cuánto tiempo"
+      ],
+      "grammar": [
+        {
+          "text": "Estoy decidiendo",
+          "tense": "present",
+          "mood": "indicative",
+          "aspect": "progressive"
+        }
+      ]
     }
   ],
-  "updated_at": "2026-10-22"
+  "updated_at": "2026-10-24"
 }
