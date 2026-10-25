@@ -1976,7 +1976,331 @@
           "aspect": "progressive"
         }
       ]
+    },
+    {
+      "id": "L20261025_01",
+      "type": "word",
+      "priority": "essential",
+      "en": "a budget",
+      "es": "un presupuesto",
+      "note": "Presupuesto = budget. ¿Qué presupuesto tenés para el viaje?",
+      "category": "travel"
+    },
+    {
+      "id": "L20261025_02",
+      "type": "word",
+      "priority": "useful",
+      "en": "to prevent",
+      "es": "prevenir",
+      "note": "Prevenir un accidente = prevent an accident; la prevención = prevention.",
+      "category": "daily"
+    },
+    {
+      "id": "L20261025_03",
+      "type": "word",
+      "priority": "useful",
+      "en": "affordable; accessible",
+      "es": "accesible",
+      "note": "An adjective, not a verb form. Un precio accesible = an affordable price; acceder is the related verb.",
+      "category": "daily"
+    },
+    {
+      "id": "L20261025_04",
+      "type": "expression",
+      "priority": "essential",
+      "en": "Make a guess. (Argentina, vos)",
+      "es": "Adiviná.",
+      "note": "Vos imperative of adivinar; tú: adivina. Una adivinanza is a riddle, not a guess.",
+      "category": "argentine",
+      "focus": [
+        "Adiviná"
+      ],
+      "grammar": [
+        {
+          "text": "Adiviná",
+          "mood": "imperative"
+        }
+      ]
+    },
+    {
+      "id": "L20261025_05",
+      "type": "expression",
+      "priority": "essential",
+      "en": "Either one thing or the other.",
+      "es": "O una cosa o la otra.",
+      "note": "O... o... = either... or... Example: o en el segundo piso o en el último.",
+      "category": "grammar",
+      "focus": [
+        "O una cosa",
+        "o la otra"
+      ]
+    },
+    {
+      "id": "L20261025_06",
+      "type": "expression",
+      "priority": "essential",
+      "en": "I'll take it. (when buying something)",
+      "es": "Me lo llevo.",
+      "note": "Llevarse something when buying it: me lo llevo. For a feminine item: me la llevo.",
+      "category": "daily",
+      "focus": [
+        "Me lo llevo"
+      ],
+      "grammar": [
+        {
+          "text": "llevo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261025_07",
+      "type": "expression",
+      "priority": "essential",
+      "en": "to get in for free",
+      "es": "entrar gratis",
+      "note": "Gratis needs no preposition: puedo entrar gratis, not entrar para gratis. Also la entrada es gratis.",
+      "category": "daily",
+      "focus": [
+        "entrar gratis"
+      ]
+    },
+    {
+      "id": "L20261025_08",
+      "type": "expression",
+      "priority": "essential",
+      "en": "to take time off for vacation",
+      "es": "tomarse vacaciones",
+      "note": "Me gustaría tomarme seis meses de vacaciones. Vacaciones = vacation; vocación = vocation/calling.",
+      "category": "travel",
+      "focus": [
+        "tomarse vacaciones"
+      ]
+    },
+    {
+      "id": "L20261025_09",
+      "type": "word",
+      "priority": "essential",
+      "en": "sixteen",
+      "es": "dieciséis",
+      "note": "One word, with an accent: dieciséis. Related teens: diecisiete (17), dieciocho (18), diecinueve (19).",
+      "category": "numbers"
+    },
+    {
+      "id": "L20261025_10",
+      "type": "expression",
+      "priority": "essential",
+      "en": "170 years",
+      "es": "ciento setenta años",
+      "note": "101–199 use ciento: ciento setenta, not cien y setenta. Use y between tens and units: ciento setenta y uno.",
+      "category": "numbers",
+      "focus": [
+        "ciento setenta"
+      ]
+    },
+    {
+      "id": "L20261025_11",
+      "type": "expression",
+      "priority": "essential",
+      "en": "1,000 dollars",
+      "es": "mil dólares",
+      "note": "Say mil, not un mil. Contrast un millón de dólares. Twenty-one thousand dollars = veintiún mil dólares.",
+      "category": "numbers",
+      "focus": [
+        "mil dólares"
+      ]
+    },
+    {
+      "id": "L20261025_12",
+      "type": "expression",
+      "priority": "essential",
+      "en": "3,500 people",
+      "es": "tres mil quinientas personas",
+      "note": "500 = quinientos; before feminine personas: quinientas. Compare tres mil quinientos dólares.",
+      "category": "numbers",
+      "focus": [
+        "quinientas personas"
+      ]
+    },
+    {
+      "id": "L20261025_13",
+      "type": "expression",
+      "priority": "useful",
+      "en": "200 million inhabitants",
+      "es": "doscientos millones de habitantes",
+      "note": "200,000 = doscientos mil; 200,000,000 = doscientos millones. Millones takes de directly before the counted noun.",
+      "category": "numbers",
+      "focus": [
+        "doscientos millones de"
+      ]
+    },
+    {
+      "id": "L20261025_14",
+      "type": "expression",
+      "priority": "useful",
+      "en": "3,807 pesos and 86 cents",
+      "es": "tres mil ochocientos siete pesos con ochenta y seis centavos",
+      "note": "AR$ 3.807,86 in Argentine notation. Read prices with con; centavos means cents. This is a reading exercise, not an exchange rate.",
+      "category": "numbers",
+      "focus": [
+        "pesos con",
+        "ochenta y seis centavos"
+      ]
+    },
+    {
+      "id": "L20261025_15",
+      "type": "expression",
+      "priority": "essential",
+      "en": "on November 11, 2026",
+      "es": "el once de noviembre de dos mil veintiséis",
+      "note": "Use el for on a date, then de between day, month, and year. Not once y noviembre. Months are lowercase.",
+      "category": "numbers",
+      "focus": [
+        "el once de noviembre de",
+        "dos mil veintiséis"
+      ]
+    },
+    {
+      "id": "L20261025_16",
+      "type": "expression",
+      "priority": "useful",
+      "en": "the nineteenth century (siglo XIX)",
+      "es": "el siglo diecinueve",
+      "note": "XIX = 19: X (10) + IX (9). Read siglo XIX as siglo diecinueve. Spanish writes centuries with Roman numerals.",
+      "category": "numbers",
+      "focus": [
+        "siglo diecinueve"
+      ]
+    },
+    {
+      "id": "L20261025_17",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "I live on the third floor.",
+      "es": "Vivo en el tercer piso.",
+      "note": "Tercero becomes tercer before masculine singular piso; primero becomes primer. Feminine: la tercera planta, la primera canción.",
+      "category": "grammar",
+      "focus": [
+        "el tercer piso"
+      ],
+      "grammar": [
+        {
+          "text": "Vivo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261025_18",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "I arrived in New York in 2019.",
+      "es": "Llegué a Nueva York en dos mil diecinueve.",
+      "note": "Read the full year: dos mil diecinueve. En 2019, en el 2019, and en el año 2019 are all valid.",
+      "category": "numbers",
+      "focus": [
+        "Llegué a",
+        "en dos mil diecinueve"
+      ],
+      "grammar": [
+        {
+          "text": "Llegué",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261025_19",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "How much is the trip going to cost?",
+      "es": "¿Cuánto va a costar el viaje?",
+      "note": "Ir a + infinitive: va a costar, not va a cuesta. The infinitive is costar; the present form is cuesta.",
+      "category": "travel",
+      "focus": [
+        "Cuánto va a costar"
+      ],
+      "grammar": [
+        {
+          "text": "va",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261025_20",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "Can you give me a discount if I pay in cash? (Argentina)",
+      "es": "¿Me podés hacer un descuento si pago en efectivo?",
+      "note": "Hacer un descuento = give a discount; un descuento del veinte por ciento = a 20% discount. A real condition uses si pago. Pronoun placement: te voy a dar or voy a darte, not voy a te dar.",
+      "category": "daily",
+      "focus": [
+        "Me podés hacer un descuento",
+        "si pago en efectivo"
+      ],
+      "grammar": [
+        {
+          "text": "podés",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "pago",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261025_21",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "I'm doing well, thanks. And you? (Argentina)",
+      "es": "Estoy bien, gracias. ¿Y vos?",
+      "note": "Use estar for how you feel: estoy bien, not soy bien. Vos is the usual informal singular you in Argentina.",
+      "category": "daily",
+      "focus": [
+        "Estoy bien"
+      ],
+      "grammar": [
+        {
+          "text": "Estoy",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261025_22",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "I'm glad you're feeling better.",
+      "es": "Me alegro de que estés mejor.",
+      "note": "Alegrarse de que + subjunctive expresses a reaction: estés. Me alegro por vos means I'm happy for you.",
+      "category": "grammar",
+      "focus": [
+        "Me alegro de que",
+        "estés mejor"
+      ],
+      "grammar": [
+        {
+          "text": "alegro",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "estés",
+          "tense": "present",
+          "mood": "subjunctive"
+        }
+      ]
     }
   ],
-  "updated_at": "2026-10-24"
+  "updated_at": "2026-10-25"
 }
