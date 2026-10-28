@@ -24,21 +24,25 @@ function reviewTime(r){
 }
 export function mergeProgress(a={},b={}){
   const resetAt=Math.max(Number(a.resetAt)||0,Number(b.resetAt)||0);
-  const deleted=[...new Set([...(a.deleted||[]),...(b.deleted||[])])];
-  const reviews={};
-  for(const id of new Set([...Object.keys(a.reviews||{}),...Object.keys(b.reviews||{})])){
-    if(deleted.includes(id))continue;
-    const x=a.reviews?.[id],y=b.reviews?.[id];
-    // A later successful sync may not replace a newer offline review with an old snapshot.
-    const r=!x?y:!y?x:reviewTime(x)>reviewTime(y)?x:reviewTime(y)>reviewTime(x)?y:
-      JSON.stringify(x)>JSON.stringify(y)?x:y;
-    if(!resetAt||reviewTime(r)>resetAt)reviews[id]=r;
+  const all=[...(a.cards||[]),...(b.cards||[])];
+  const canonical=new Map(all.map(c=>[c.id,c.published_id||c.id]));
+  const preferred=new Map();
+  for(const c of all)if(!preferred.has(c.published_id||c.id))preferred.set(c.published_id||c.id,c.id);
+  const key=id=>canonical.get(id)||id;
+  const deletedKeys=new Set([...(a.deleted||[]),...(b.deleted||[])].map(key));
+  const deleted=[...new Set([...(a.deleted||[]),...(b.deleted||[]),...deletedKeys])];
+  const byConcept=new Map();
+  for(const source of [a,b])for(const [id,r] of Object.entries(source.reviews||{})){
+    const concept=key(id);if(deletedKeys.has(concept)||resetAt&&reviewTime(r)<=resetAt)continue;
+    const old=byConcept.get(concept);
+    if(!old||reviewTime(r)>reviewTime(old)||reviewTime(r)===reviewTime(old)&&JSON.stringify(r)>JSON.stringify(old))byConcept.set(concept,r);
   }
+  const reviews=Object.fromEntries([...byConcept].map(([concept,r])=>[preferred.get(concept)||concept,r]));
   const map=new Map();
-  for(const c of [...(a.cards||[]),...(b.cards||[])]){
-    if(!c||typeof c.id!=='string'||deleted.includes(c.id))continue;
-    const old=map.get(c.id);
-    if(!old||(c.content_revision||0)>=(old.content_revision||0))map.set(c.id,c);
+  for(const c of all){
+    if(!c||typeof c.id!=='string'||deletedKeys.has(key(c.id)))continue;
+    const concept=key(c.id),old=map.get(concept),id=preferred.get(concept)||c.id;
+    if(!old||(c.content_revision||0)>=(old.content_revision||0))map.set(concept,{...c,id,...(id!==concept?{published_id:concept}:{})});
   }
   return {cards:[...map.values()],reviews,deleted,resetAt};
 }

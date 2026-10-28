@@ -6,7 +6,7 @@ const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
 const cards=JSON.parse(readFileSync(new URL('../cards.json',import.meta.url))).cards;
 const scenes=JSON.parse(readFileSync(new URL('../scenarios.json',import.meta.url))).scenarios;
 const mergeCode=html.slice(html.indexOf('function merge('),html.indexOf('// Focus on useful'));
-const make=state=>{const ctx=vm.createContext({state,TYPES:['word','expression','sentence'],PRIORITIES:['essential','useful','extra'],save:()=>{}});vm.runInContext(mergeCode,ctx);return items=>{ctx.items=items;return vm.runInContext('merge(items,false)',ctx)}};
+const make=state=>{const ctx=vm.createContext({state,BASE:cards,TYPES:['word','expression','sentence'],PRIORITIES:['essential','useful','extra'],save:()=>{}});vm.runInContext(mergeCode,ctx);return items=>{ctx.items=items;return vm.runInContext('merge(items,false)',ctx)}};
 const original=JSON.parse(readFileSync(new URL('./original-cards.json',import.meta.url)));
 const r={introducedOn:'2026-10-12',stage:2,dirs:{es:{count:3,lastGrade:'good',due:'2026-11-01',last:'2026-10-20',step:4,interval:30},en:{count:2,lastGrade:'good',due:'2026-10-30',last:'2026-10-22',step:2,interval:7}}};
 const state={cards:structuredClone(original),deleted:['V004'],reviews:{V002:structuredClone(r)},daily:{date:'2026-10-27',newLimit:30},session:{draft:'Necesito responder',queue:[{id:'V002',tries:1,audioUsed:true}]}};
@@ -36,3 +36,17 @@ assert.ok(!mergeProgress(a,b).reviews.V003);
 assert.deepEqual(mergeProgress(a,b),mergeProgress(b,a));
 const reset=mergeProgress({...a,resetAt:250},b);assert.ok(!reset.reviews.V002);assert.ok(reset.reviews.V004);
 console.log('Passed: stable-ID rewrites, stale backups, local aliases, deleted cards, unchanged familiarity/session, grammar/focus, reviewed-only practice, offline cloud merge and reset conflicts.');
+// Account initialization must run after its constants (an early async call can silently reject).
+assert.ok(html.indexOf('const ACCOUNT_ORIGIN=')<html.lastIndexOf('startAccountSync();'));
+const transferCode=html.slice(html.indexOf('async function encodeTransfer('),html.indexOf('async function startAccountSync('));
+const transferContext=vm.createContext({TextEncoder,TextDecoder,CompressionStream,DecompressionStream,Response,Blob,Uint8Array,btoa,atob,JSON});
+vm.runInContext(transferCode,transferContext);
+transferContext.progress={cards:cards.slice(0,2),reviews:{R001:r},deleted:[],resetAt:0};
+const encoded=await vm.runInContext('encodeTransfer(progress)',transferContext);transferContext.encoded=encoded;
+const decoded=await vm.runInContext('decodeTransfer(encoded)',transferContext);
+assert.equal(JSON.stringify(decoded),JSON.stringify(transferContext.progress));
+console.log('Passed: account initialization order and compressed mobile transfer round trip.');
+
+const startup={cards:[],reviews:{V025:r},deleted:[]};make(startup)(original);make(startup)(cards);assert.equal(startup.cards.length,156);assert.ok(startup.cards.some(c=>c.id==='V025'));assert.deepEqual(startup.reviews.V025,r);
+const cloudAlias=mergeProgress({cards:[cards.find(c=>c.id==='V002')],reviews:{},deleted:[]},{cards:[{...cards.find(c=>c.id==='V002'),id:'Ulegacy',published_id:'V002'}],reviews:{Ulegacy:r},deleted:[]});assert.equal(cloudAlias.cards.length,1);assert.deepEqual(cloudAlias.reviews.V002,r);
+console.log('Passed: startup keeps distinct legacy IDs and cross-device aliases retain familiarity.');

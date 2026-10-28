@@ -44,7 +44,8 @@
 </section><section class="panel hidden" id="settingsPage">
 <h2>Account & sync</h2>
 <p id="accountStatus" class="muted" style="font-size:14px">This copy keeps progress on this device. Connect your account for cloud sync.</p>
-<div class="actions"><button id="connectAccount" class="primary" type="button">Connect account & keep my progress</button><button id="syncNow" type="button" class="hidden">Sync now</button></div>
+<div id="transferOffer" class="hidden"><p id="transferSummary"></p><button id="importProgress" class="primary" type="button">Import my existing progress</button></div>
+<div class="actions"><button id="connectAccount" class="primary" type="button">Connect account & keep my progress</button><a id="signInLink" class="button primary hidden" href="/signin-with-chatgpt?return_to=%2Fnotebook%2Findex.html" target="_top">Sign in with ChatGPT</a><button id="syncNow" type="button" class="hidden">Sync now</button></div>
 <p id="accountHelp" class="muted" style="font-size:12px">Start here on the device where you study. Your existing familiarity transfers once, then syncs automatically.</p>
 <hr style="border:0;border-top:1px solid #eceae4;margin:24px 0">
 <h2>Settings</h2>
@@ -69,7 +70,7 @@
 <p class="muted" style="font-size:13px;margin-top:14px">A verb’s form does not always describe when an event happens: <em>enviara</em> is an imperfect subjunctive form in a present polite request. Fixed expressions use a separate warm underline: <mark class="chunk">sin darme cuenta</mark>. Grammar markings are added only when a card has verified labels; an unmarked verb isn't necessarily unimportant.</p>
 <hr style="border:0;border-top:1px solid #eceae4;margin:24px 0">
 <h2>Backup your progress</h2>
-<p class="muted" style="font-size:14px">Your browser and installed Home Screen app may keep separate learning history. To move your progress, save a backup in the version you want to keep, then restore it in the other version. This is a one-time transfer, not live synchronization.</p>
+<p id="backupHelp" class="muted" style="font-size:14px">Your browser and installed Home Screen app may keep separate learning history. To move your progress, save a backup in the version you want to keep, then restore it in the other version. This is a one-time transfer, not live synchronization.</p>
 <div class="actions"><button id="backupBtn" class="primary">Save progress backup</button></div>
 <p><label for="backupFile">Restore a previously saved backup (.json)</label></p><label class="audio-switch" style="margin:6px 0 13px"><input id="replaceOnRestore" type="checkbox"> Replace this app's review history with the backup's (instead of merging)</label><input type="file" id="backupFile" accept=".json,application/json">
 <div class="status" id="backupStatus"></div>
@@ -79,7 +80,7 @@
 <p class="muted" style="font-size:14px">Erase all your review ratings, due dates, and session position on this device, while keeping your cards and offline recordings.</p>
 <button id="resetProgressBtn" type="button">Reset learning history…</button>
 <div class="status" id="resetStatus"></div>
-<div class="warning" style="margin-top:16px">The installed Home Screen app may use separate storage from Safari. If your review progress doesn't appear after installing, restore your backup here. Your recordings can download again while online.</div>
+<div id="storageHelp" class="warning" style="margin-top:16px">The installed Home Screen app may use separate storage from Safari. If your review progress doesn't appear after installing, restore your backup here. Your recordings can download again while online.</div>
 </section><p class="foot">Mi Español · Two-way spaced repetition · 20 new items by default · Designed for offline study.</p></main><script type="module">
 import {selectPracticeBatch, mergeProgress} from './practice-core.mjs';
 'use strict';
@@ -175,9 +176,9 @@ function merge(items,persist=true){
   const pair=c=>(c.en.trim()+'|'+c.es.trim()).toLowerCase();
   const rev=c=>Number.isInteger(c.content_revision)?c.content_revision:0;
   for(const x of items){
-    if(!x||state.deleted.includes(x.id)||typeof x.en!=='string'||typeof x.es!=='string'||!x.en.trim()||!x.es.trim())continue;
+    if(!x||(state.deleted.includes(x.id)||state.deleted.includes(x.published_id))||typeof x.en!=='string'||typeof x.es!=='string'||!x.en.trim()||!x.es.trim())continue;
     const aliases=[pair(x),...(Array.isArray(x.previous_text)?x.previous_text.filter(p=>typeof p.en==='string'&&typeof p.es==='string').map(pair):[])];
-    const card=state.cards.find(c=>c.id===x.id||c.published_id===x.id)||state.cards.find(c=>aliases.includes(pair(c)));
+    const card=state.cards.find(c=>c.id===x.id||c.published_id===x.id)||state.cards.find(c=>aliases.includes(pair(c))&&!(BASE.some(p=>p.id===x.id)&&BASE.some(p=>p.id===c.id)));
     if(card){
       // Content is versioned independently from familiarity. Backups cannot roll a rewrite back.
       if(rev(x)>rev(card)){
@@ -570,6 +571,7 @@ function removeCard(id){
   if(!c)return;
   if(!confirm('Remove this card from your learning deck?\n\n'+c.en+' → '+displaySpanish(c.es)+'\n\nIt will no longer appear in reviews.'))return;
   state.deleted.push(id);
+  if(c.published_id&&!state.deleted.includes(c.published_id))state.deleted.push(c.published_id);
   state.cards=state.cards.filter(x=>x.id!==id);
   delete state.reviews[id];
   const i=deck.findIndex(x=>x.id===id);
@@ -710,16 +712,18 @@ async function syncPublishedCards(){
 window.miEspanol={snapshot:()=>JSON.parse(JSON.stringify(state)),applyCloud:payload=>{
   const merged=mergeProgress(state,payload);
   state.deleted=merged.deleted;state.reviews=merged.reviews;state.resetAt=merged.resetAt;
-  state.cards=state.cards.filter(c=>!state.deleted.includes(c.id));merge(merged.cards,false);merge(BASE,false);
+  state.cards=state.cards.filter(c=>!state.deleted.includes(c.id)&&!state.deleted.includes(c.published_id));merge(merged.cards,false);merge(BASE,false);
   save();fillDeck();renderLibrary();
 }};
 init();fillDeck();syncPublishedCards();syncPublishedAudio();
-startAccountSync();
 
 const ACCOUNT_ORIGIN='https://mi-espanol-thea.wrytoad39.chatgpt.site';
 const accountMode=location.origin===ACCOUNT_ORIGIN||location.hostname==='terminal.local';
 let cloudVersion=0,cloudReady=false,syncBusy=false,syncTimer=null,applyingCloud=false,dirty=false;
 let transferWindow=null,transferNonce='';
+const transferHash=new URLSearchParams(location.hash.slice(1));
+const incomingNonce=transferHash.get('nonce')||location.hash.slice(1);
+let pendingTransfer=null;
 const accountStatus=message=>$('accountStatus').textContent=message;
 function markDirty(){if(applyingCloud)return;dirty=true;if(cloudReady){clearTimeout(syncTimer);syncTimer=setTimeout(syncCloud,900)}}
 async function syncCloud(){
@@ -730,7 +734,7 @@ async function syncCloud(){
     // Always read first; all uploads use compare-and-swap to avoid overwriting another device.
     for(let attempt=0;attempt<3;attempt++){
       const read=await fetch('/api/progress',{cache:'no-store'});
-      if(read.status===401){cloudReady=false;accountStatus('Sign in to resume sync. Your progress is safe on this device.');$('connectAccount').classList.remove('hidden');return}
+      if(read.status===401){cloudReady=false;accountStatus('Sign in to resume sync. Your progress is safe on this device.');$('signInLink').classList.remove('hidden');$('syncNow').classList.add('hidden');return}
       if(!read.ok)throw Error('Could not reach your account');
       const remote=await read.json();cloudVersion=remote.version;
       applyingCloud=true;
@@ -747,11 +751,33 @@ async function syncCloud(){
   }catch(err){dirty=true;accountStatus(err.message+' · saved on this device; sync will retry.');}
   finally{syncBusy=false;if(dirty&&cloudReady){clearTimeout(syncTimer);syncTimer=setTimeout(syncCloud,15000)}}
 }
+async function encodeTransfer(progress){
+  const bytes=new TextEncoder().encode(JSON.stringify(progress));
+  const compressed=typeof CompressionStream==='function';
+  const data=compressed?new Uint8Array(await new Response(new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer()):bytes;
+  let raw='';for(let i=0;i<data.length;i+=8192)raw+=String.fromCharCode(...data.subarray(i,i+8192));
+  return (compressed?'gz.':'json.')+btoa(raw);
+}
+async function decodeTransfer(value){
+  if(value.length>700000)throw Error('Transfer too large');
+  const dot=value.indexOf('.'),kind=value.slice(0,dot);if(!['gz','json'].includes(kind))throw Error('Unknown transfer');
+  const data=Uint8Array.from(atob(value.slice(dot+1)),c=>c.charCodeAt(0));
+  const text=kind==='gz'?await new Response(new Blob([data]).stream().pipeThrough(new DecompressionStream('gzip'))).text():new TextDecoder().decode(data);
+  if(text.length>2000000)throw Error('Transfer too large');
+  const progress=JSON.parse(text);if(!Array.isArray(progress.cards)||!progress.reviews||!Array.isArray(progress.deleted))throw Error('Invalid progress transfer');
+  return progress;
+}
 async function startAccountSync(){
-  $('connectAccount').onclick=()=>{
-    if(accountMode){location.href='/signin-with-chatgpt?return_to=%2Fnotebook%2Findex.html';return}
+  $('connectAccount').onclick=async()=>{
+    if(accountMode)return;
     transferNonce=crypto.randomUUID();
-    transferWindow=window.open(ACCOUNT_ORIGIN+'/notebook/index.html?import=legacy#'+transferNonce,'mi-espanol-account');
+    transferWindow=window.open('about:blank','mi-espanol-account');
+    if(transferWindow){
+      try{
+        const payload=await encodeTransfer(mergeProgress(state,{}));
+        transferWindow.location=ACCOUNT_ORIGIN+'/notebook/index.html?import=legacy#'+new URLSearchParams({nonce:transferNonce,progress:payload});
+      }catch(err){transferWindow.location=ACCOUNT_ORIGIN+'/notebook/index.html?import=legacy#'+transferNonce;}
+    }
     if(!transferWindow)accountStatus('Allow this account window, then tap Connect account again.');
     else accountStatus('Sign in in the account window. Keep this page open until your progress transfers.');
   };
@@ -762,13 +788,34 @@ async function startAccountSync(){
       if(event.data.type==='mi-saved')accountStatus('Your progress is in your account. Continue in the account window on this device.');
       return;
     }
-    if(event.origin!=='https://awashtype.github.io'||event.source!==window.opener||event.data?.type!=='mi-transfer'||event.data.nonce!==location.hash.slice(1))return;
-    if(!cloudReady)return;
+    if(event.origin!=='https://awashtype.github.io'||event.source!==window.opener||event.data?.type!=='mi-transfer'||event.data.nonce!==incomingNonce)return;
+    if(!cloudReady||pendingTransfer)return;
     applyingCloud=true;try{window.miEspanol.applyCloud(event.data.progress)}finally{applyingCloud=false}
     dirty=true;await syncCloud();
-    if(!dirty){event.source.postMessage({type:'mi-saved',nonce:location.hash.slice(1)},event.origin);history.replaceState(null,'','/notebook/index.html');$('accountHelp').textContent='Your existing progress has transferred. Use this account version on your other devices.';}
+    if(!dirty){event.source.postMessage({type:'mi-saved',nonce:incomingNonce},event.origin);history.replaceState(null,'','/notebook/index.html');$('accountHelp').textContent='Your existing progress has transferred. Use this account version on your other devices.';}
   });
   if(!accountMode)return;
+  $('backupHelp').textContent='Your account syncs progress automatically across devices. This optional backup gives you an additional recovery copy.';
+  $('storageHelp').textContent='Offline changes stay on this device until they sync. Keep the original installation until the account reports Synced.';
+  $('appBuildInfo').textContent='App '+APP_VERSION+' · Offline cache + account sync';
+  if(new URLSearchParams(location.search).get('import')==='legacy'){
+    document.querySelector('nav button[data-page="settings"]').click();
+    const encoded=transferHash.get('progress');
+    if(encoded){
+      history.replaceState(null,'','/notebook/index.html?import=legacy');
+      try{
+        pendingTransfer=await decodeTransfer(encoded);
+        $('transferSummary').textContent='Transfer '+Object.keys(pendingTransfer.reviews).length+' existing review records from your original app. Your current account progress will be merged.';
+        $('transferOffer').classList.remove('hidden');
+        $('importProgress').onclick=async()=>{
+          if(!cloudReady){accountStatus('Sign in first, then return to this transfer.');return}
+          applyingCloud=true;try{window.miEspanol.applyCloud(pendingTransfer)}finally{applyingCloud=false}
+          dirty=true;await syncCloud();
+          if(!dirty){pendingTransfer=null;$('transferOffer').classList.add('hidden');$('accountHelp').textContent='Your familiarity has transferred. This account will now sync automatically.';history.replaceState(null,'','/notebook/index.html');}
+        };
+      }catch(err){$('accountHelp').textContent='Could not read the transfer. Return to the original app and tap Connect account again.';}
+    }
+  }
   $('connectAccount').classList.add('hidden');$('syncNow').classList.remove('hidden');$('syncNow').onclick=syncCloud;
   try{
     const res=await fetch('/api/me',{cache:'no-store'});
@@ -777,15 +824,15 @@ async function startAccountSync(){
     cloudReady=true;window.addEventListener('mi-progress-changed',markDirty);
     await syncCloud();
     if(new URLSearchParams(location.search).get('import')==='legacy'){
-      if(window.opener){
-        const sendReady=()=>window.opener?.postMessage({type:'mi-ready',nonce:location.hash.slice(1)},'https://awashtype.github.io');
+      if(pendingTransfer){$('accountHelp').textContent='Tap Import my existing progress above to finish the one-time transfer.';}else if(window.opener){
+        const sendReady=()=>window.opener?.postMessage({type:'mi-ready',nonce:incomingNonce},'https://awashtype.github.io');
         sendReady();const timer=setInterval(sendReady,1200);setTimeout(()=>clearInterval(timer),120000);
       }else $('accountHelp').textContent='You are signed in. Return to the original app and tap Connect account again to transfer its progress.';
     }
     setInterval(()=>{if(document.visibilityState==='visible')syncCloud()},60000);
     window.addEventListener('online',syncCloud);
     document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')syncCloud()});
-  }catch(err){accountStatus('Account unavailable · your progress stays on this device.');$('connectAccount').classList.remove('hidden');}
+  }catch(err){accountStatus('Sign in to sync your progress. Your changes stay on this device.');$('signInLink').classList.remove('hidden');$('syncNow').classList.add('hidden');}
 }
 $('prepareConversation').onclick=async()=>{
   const result=$('conversationResult');
@@ -801,6 +848,7 @@ $('prepareConversation').onclick=async()=>{
   }catch(err){result.textContent=err.message+'. Try again while online.'}
 };
 
+startAccountSync();
 if('serviceWorker' in navigator&&location.protocol==='https:'){
  let refreshStarted=false;
  navigator.serviceWorker.addEventListener('controllerchange',()=>{
