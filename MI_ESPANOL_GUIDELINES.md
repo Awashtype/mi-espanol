@@ -10,6 +10,8 @@ Mi Español is a personal, offline-capable, minimal, focused Spanish flashcard a
 
 Principles, in descending order:
 
+0. **Build transferable expression and learner agency.** Success means being able to express an intention in a similar new situation later, with greater willingness to learn and connect with real people. Card counts, streaks and familiar-sentence reproduction are practice signals, not proof of internalization. See [PRODUCT_SUCCESS_AND_PILOT.md](PRODUCT_SUCCESS_AND_PILOT.md) for the current evidence model and pilot boundary.
+
 1. **Learn common missing vocabulary first.** A word appearing in a lesson, or being novel or interesting, does **not** automatically make it worthy of the day's limited study slots.
 2. **Prioritize by usefulness, not by card type or date added.** Words, expressions, and complete sentences all compete for daily attention, with Essential > Useful. Extra is excluded by default.
 3. **Protect study time and focus.** Make the interface quick, visually quiet, and easy to use while commuting. Do not overload it with controls, vocabulary trivia, or unnecessary features.
@@ -382,3 +384,8 @@ The Site exposes read-only MCP tools for current practice batches, progress summ
 ### Conversation practice ordering (October 28, 2026)
 
 For rebuilt conversations / review power sessions, start with the most familiar eligible phrases (stage 3 → 2 → 1 → successfully reviewed 0), then Essential before Useful within each stage. The first question should elicit the first selected target; gradually include weaker targets after the opening. This supersedes the former preference for stages 1–2. Recency/rotation breaks ties only. The daily spaced-repetition scheduling and familiarity records are unaffected.
+
+
+### Product success and free student pilot (October 28, 2026)
+
+Read [PRODUCT_SUCCESS_AND_PILOT.md](PRODUCT_SUCCESS_AND_PILOT.md). Keep delayed contextual transfer, willingness to speak, and human use distinct. Changed-context self-reports are not verified language scores. No opportunity and missing data are not failure. No everyday-conversation recording is required. Use volunteered excerpts or tutor observations when available, with uncertainty labels. The student pilot is a separate Site; do not change access to the personal app or copy its lesson archive into a shared curriculum. Familiarity-first conversation warm-ups remain in place; their easiest items should not be the entire assessment set.
