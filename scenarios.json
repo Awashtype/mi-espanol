@@ -250,6 +250,91 @@
         "After one successful retelling, change the request to a yes/no question."
       ],
       "provenance": "Pedagogical adaptation of reported-speech practice in the linked original transcript, supplemented by existing reported-speech cards; prompts and twists are invented, not verbatim tutor quotes."
+    },
+    {
+      "id": "snowboard",
+      "title": "Catch up after snowboarding and yoga",
+      "source_path": "sessions/transcripts/2026-10-28-autumn-snowboard-yoga-reading.txt",
+      "setup": "Your tutor asks why snowboarding still feels difficult even though you have tried it several times. Explain the slope, gear, and what you can do in yoga.",
+      "starter": "¿Fuiste a la montaña este año? ¿Ya te sale girar sin caerte?",
+      "card_ids": [
+        "L20261028_02",
+        "L20261028_03",
+        "L20261028_04",
+        "L20261028_05",
+        "L20261028_06",
+        "L20261028_07",
+        "L20261028_08"
+      ],
+      "learning_gaps": [
+        "cada vez que + indicative for repetition",
+        "me sale / no me sale; caerse",
+        "hace dos años que / a ver si me da tiempo",
+        "la vertical vs hacer el pino"
+      ],
+      "twists": [
+        "Now a friend offers to lend you the equipment: does that change your plan?",
+        "You have two hours to teach the tutor one yoga skill."
+      ],
+      "provenance": "Pedagogical reconstruction based on redacted Oct 28 transcript; new turns and twists are invented and not exact tutor dialogue."
+    },
+    {
+      "id": "swing-party",
+      "title": "Swing class and Halloween plans",
+      "source_path": "sessions/transcripts/2026-10-28-swing-halloween-stories.txt",
+      "setup": "Catch up with your tutor about a small swing class, social dancing, and a costume party where a friend is performing.",
+      "starter": "¿Vas a seguir con las clases de swing o preferís ir a bailes sociales?",
+      "card_ids": [
+        "L20261028_14",
+        "L20261028_15",
+        "L20261028_16",
+        "L20261028_17",
+        "L20261028_18",
+        "L20261028_19",
+        "L20261028_20",
+        "L20261028_21",
+        "L20261028_22"
+      ],
+      "learning_gaps": [
+        "seguir los movimientos de alguien",
+        "uno al lado del otro",
+        "actuar vs hacer una actuación",
+        "disfrazarse de / tener tiempo de"
+      ],
+      "twists": [
+        "You meet another dancer who does not know swing. Explain the basic follower role.",
+        "Your friend needs help choosing a last-minute costume."
+      ],
+      "provenance": "Pedagogical reconstruction based on redacted Oct 28 transcript; new turns and twists are invented and not exact tutor dialogue."
+    },
+    {
+      "id": "spooky-story",
+      "title": "Finish a mysterious photo story",
+      "source_path": "sessions/transcripts/2026-10-28-swing-halloween-stories.txt",
+      "setup": "Your tutor gives you the opening of a strange story about a camera. You finish it in the past tense and make a hypothetical revision as the author.",
+      "starter": "Clara vio una figura detrás de ella en la foto. ¿Qué pasó después?",
+      "card_ids": [
+        "L20261028_09",
+        "L20261028_10",
+        "L20261028_11",
+        "L20261028_12",
+        "L20261028_13",
+        "L20261028_23",
+        "L20261028_24",
+        "L20261028_25",
+        "L20261028_26"
+      ],
+      "learning_gaps": [
+        "si yo fuera ... describiría",
+        "como si + imperfect subjunctive",
+        "preterite events vs imperfect background",
+        "de golpe, no tener nada que ver con"
+      ],
+      "twists": [
+        "Make the figure unexpectedly kind rather than threatening.",
+        "Retell the ending from the daughter's point of view."
+      ],
+      "provenance": "Pedagogical reconstruction from the tutor's picture-story exercise; the details and twists are invented, not verbatim."
     }
   ]
 }
