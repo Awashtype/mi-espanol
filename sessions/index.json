@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "archived_on": "2026-10-27",
-  "coverage": "Five original files currently retrievable. This is not a claim that every historical lesson was recovered. provided_on is the timestamp in the supplied filename, not a verified lesson date.",
+  "archived_on": "2026-10-28",
+  "coverage": "Seven recovered transcripts; two supplied on Oct 28, 2026, included as redacted public copies. provided_on is the supplied filename date, not a verified lesson date. Other historical sessions may remain outside this archive.",
   "transcripts": [
     {
       "id": "hiking-and-reported-speech",
@@ -117,6 +117,64 @@
         }
       ],
       "transcription_quality": "Unedited ASR apart from marked privacy redactions; speakers, stutters, names, accents and repetition may be wrong."
+    },
+    {
+      "id": "2026-10-28-autumn-snowboard-yoga-reading",
+      "path": "sessions/transcripts/2026-10-28-autumn-snowboard-yoga-reading.txt",
+      "original_filename": "Pasted text(20261028-115529).txt",
+      "provided_on": "2026-10-28",
+      "session_date": null,
+      "topics": [
+        "autumn hiking",
+        "snowboarding",
+        "yoga inversions",
+        "literary B2 past subjunctive"
+      ],
+      "source_sha256": "dbc7f3755a44b400313e49d7354fced396367c3633205a25cda9a08553fcb603",
+      "archived_sha256": "3baa38580acd4df84cfb9cd389825a72818890e3005171ad009b27f35fb024c3",
+      "redactions": [
+        {
+          "reason": "Private housing discussion",
+          "original_character_range": [
+            12091,
+            13096
+          ]
+        },
+        {
+          "reason": "Unrelated repetitive ASR hallucinated footer after lesson end",
+          "original_character_range": [
+            18853,
+            36916
+          ]
+        }
+      ],
+      "transcription_quality": "Unedited imperfect ASR outside explicit redactions, name anonymization and removal of hallucinated audio footer; uncertain speaker attribution."
+    },
+    {
+      "id": "2026-10-28-swing-halloween-stories",
+      "path": "sessions/transcripts/2026-10-28-swing-halloween-stories.txt",
+      "original_filename": "Pasted text (2)(2).txt",
+      "provided_on": null,
+      "session_date": null,
+      "topics": [
+        "swing dancing",
+        "daylight and overtime",
+        "Halloween",
+        "creating horror stories",
+        "hypothetical conditionals"
+      ],
+      "source_sha256": "e6df1463a1a40ad70ab6384a18341d2dc7ad977dddfcc7c4d3cc89f7b0b07ea6",
+      "archived_sha256": "6735fe02600aaddcc07a2282f3ab68e1600761346f848e2389b78a662970de60",
+      "redactions": [
+        {
+          "reason": "Private housing and move logistics",
+          "original_character_range": [
+            6513,
+            7632
+          ]
+        }
+      ],
+      "transcription_quality": "Unedited imperfect ASR outside explicit redactions, incidental opening music removal and name anonymization; uncertain speaker attribution."
     }
   ]
 }
