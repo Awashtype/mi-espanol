@@ -3307,7 +3307,456 @@
           "mood": "subjunctive"
         }
       ]
+    },
+    {
+      "id": "L20261028_01",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "The cows walked away when I tried to pet them.",
+      "es": "Las vacas se alejaron cuando intenté acariciarlas.",
+      "note": "Acariciar = to pet/stroke. Intentar + infinitive; alejarse = move away. From the autumn hiking conversation.",
+      "category": "nature",
+      "focus": [
+        "intenté acariciarlas"
+      ],
+      "grammar": [
+        {
+          "text": "se alejaron",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        },
+        {
+          "text": "intenté",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261028_02",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "Every time I go snowboarding again, I feel like I'm starting from scratch.",
+      "es": "Cada vez que vuelvo a hacer snowboard, siento que empiezo de cero.",
+      "note": "Cada vez que + indicative for a repeated real situation; volver a + infinitive = do something again. Empezar de cero = start from scratch.",
+      "category": "daily",
+      "focus": [
+        "Cada vez que",
+        "vuelvo a hacer",
+        "empiezo de cero"
+      ]
+    },
+    {
+      "id": "L20261028_03",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "We have to rent all the gear before going up the mountain.",
+      "es": "Tenemos que alquilar todo el equipo antes de subir a la montaña.",
+      "note": "Alquilar = rent; el equipo = gear/equipment, usually singular for a set; antes de + infinitive.",
+      "category": "travel",
+      "focus": [
+        "alquilar todo el equipo",
+        "antes de subir"
+      ]
+    },
+    {
+      "id": "L20261028_04",
+      "type": "expression",
+      "priority": "essential",
+      "en": "Can you manage to turn without falling?",
+      "es": "¿Te sale girar sin caerte?",
+      "note": "¿Te sale? = Can you do/pull it off? Me sale / no me sale muy bien. Common for skills, dance moves and yoga.",
+      "category": "daily",
+      "focus": [
+        "¿Te sale",
+        "sin caerte"
+      ]
+    },
+    {
+      "id": "L20261028_05",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "I haven't gone snowboarding in two years.",
+      "es": "Hace dos años que no hago snowboard.",
+      "note": "Hace + duration + que + present expresses time since the last occurrence. Also: No hago snowboard desde hace dos años.",
+      "category": "daily",
+      "focus": [
+        "Hace dos años que no"
+      ]
+    },
+    {
+      "id": "L20261028_06",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "Hopefully I'll have time to go skiing again this year.",
+      "es": "A ver si este año me da tiempo de volver a esquiar.",
+      "note": "A ver si... expresses hope or uncertainty. Darme tiempo de + infinitive = have time to do something; darme tiempo a is also heard.",
+      "category": "daily",
+      "focus": [
+        "A ver si",
+        "me da tiempo de",
+        "volver a esquiar"
+      ]
+    },
+    {
+      "id": "L20261028_07",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "To practice a handstand, I lean against the wall.",
+      "es": "Para practicar la vertical, me apoyo en la pared.",
+      "note": "La vertical = handstand (common in Argentina); in Spain, hacer el pino. Apoyarse en la pared = use the wall for support.",
+      "category": "yoga",
+      "focus": [
+        "practicar la vertical",
+        "me apoyo en la pared"
+      ]
+    },
+    {
+      "id": "L20261028_08",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "I've gotten used to the sound of sirens.",
+      "es": "Ya me acostumbré al ruido de las sirenas.",
+      "note": "Acostumbrarse a + noun/infinitive. Estoy acostumbrada al ruido describes the current state; me acostumbré marks the change.",
+      "category": "daily",
+      "focus": [
+        "me acostumbré al ruido"
+      ],
+      "grammar": [
+        {
+          "text": "acostumbré",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261028_09",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "Most likely, they were signs.",
+      "es": "Lo más probable es que fueran señales.",
+      "note": "Lo más probable es que + subjunctive. Fueran is imperfect subjunctive, referring here to a past situation; que alone does not require subjunctive.",
+      "category": "grammar",
+      "focus": [
+        "Lo más probable es que"
+      ],
+      "grammar": [
+        {
+          "text": "fueran",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        }
+      ]
+    },
+    {
+      "id": "L20261028_10",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "Before it all began, no one suspected anything.",
+      "es": "Antes de que todo empezara, nadie sospechaba nada.",
+      "note": "Antes de que + subjunctive for an event viewed relative to another; contrast antes de + infinitive when the subject is shared.",
+      "category": "grammar",
+      "focus": [
+        "Antes de que todo empezara"
+      ],
+      "grammar": [
+        {
+          "text": "empezara",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        },
+        {
+          "text": "sospechaba",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261028_11",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "Suddenly, he started talking about something else.",
+      "es": "De golpe empezó a hablar de otra cosa.",
+      "note": "De golpe = suddenly / all of a sudden (natural in Argentina); de repente is also common. Empezar a + infinitive.",
+      "category": "daily",
+      "focus": [
+        "De golpe",
+        "empezó a hablar"
+      ],
+      "grammar": [
+        {
+          "text": "empezó",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261028_12",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "That has nothing to do with what we were talking about.",
+      "es": "Eso no tiene nada que ver con lo que estábamos hablando.",
+      "note": "No tener nada que ver con = have nothing to do with. ¡Nada que ver! is a common standalone response; 'todo que ver' is informal.",
+      "category": "daily",
+      "focus": [
+        "no tiene nada que ver con"
+      ],
+      "grammar": [
+        {
+          "text": "estábamos",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261028_13",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "Luckily, he came out of the accident unharmed.",
+      "es": "Por suerte, salió ileso del accidente.",
+      "note": "Salir ileso, ilesa = emerge uninjured; literary/news register. The reading passage used salió ileso after a fall.",
+      "category": "reading",
+      "focus": [
+        "salió ileso"
+      ],
+      "grammar": [
+        {
+          "text": "salió",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261028_14",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "It's still dark when I leave for work.",
+      "es": "Todavía está oscuro cuando salgo para el trabajo.",
+      "note": "Todavía = still. Está oscuro rather than es oscuro for lighting conditions; salir para el trabajo = head off to work.",
+      "category": "daily",
+      "focus": [
+        "Todavía está oscuro",
+        "salgo para el trabajo"
+      ]
+    },
+    {
+      "id": "L20261028_15",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "Do they pay you overtime when you stay late? (Argentina)",
+      "es": "¿Te pagan las horas extra cuando te quedás hasta tarde?",
+      "note": "Horas extra = overtime hours; quedar(se) hasta tarde = stay late. Te quedás is present indicative with vos.",
+      "category": "work",
+      "focus": [
+        "te pagan las horas extra",
+        "te quedás hasta tarde"
+      ]
+    },
+    {
+      "id": "L20261028_16",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "In swing dancing, I follow my dance partner's movements.",
+      "es": "En swing, sigo los movimientos de mi pareja de baile.",
+      "note": "Seguir los movimientos / las indicaciones de alguien = follow someone's moves/cues. Pareja de baile does not imply romantic partner.",
+      "category": "dance",
+      "focus": [
+        "sigo los movimientos",
+        "mi pareja de baile"
+      ]
+    },
+    {
+      "id": "L20261028_17",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "We dance side by side.",
+      "es": "Bailamos uno al lado del otro.",
+      "note": "Uno al lado del otro = side by side (mixed/male pair); una al lado de la otra for two women. Also: caminamos uno al lado del otro.",
+      "category": "dance",
+      "focus": [
+        "uno al lado del otro"
+      ]
+    },
+    {
+      "id": "L20261028_18",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "I prefer social dances so I can practice with different partners.",
+      "es": "Prefiero ir a bailes sociales para practicar con distintas parejas.",
+      "note": "Para + infinitive expresses purpose; un baile social is a social dance event, not a formal class.",
+      "category": "dance",
+      "focus": [
+        "Prefiero ir a",
+        "para practicar con"
+      ]
+    },
+    {
+      "id": "L20261028_19",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "A friend of mine is going to perform at the Halloween party.",
+      "es": "Una amiga mía va a actuar en la fiesta de Halloween.",
+      "note": "Actuar = perform onstage or in an event; interpretar a un personaje = play a character. Una amiga mía = a friend of mine.",
+      "category": "daily",
+      "focus": [
+        "Una amiga mía",
+        "va a actuar"
+      ]
+    },
+    {
+      "id": "L20261028_20",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "This year I didn't have time to prepare a costume.",
+      "es": "Este año no tuve tiempo de preparar un disfraz.",
+      "note": "Un disfraz = costume; disfrazarse de = dress up as. No tuve tiempo de + infinitive = didn't have time to.",
+      "category": "daily",
+      "focus": [
+        "no tuve tiempo de",
+        "preparar un disfraz"
+      ],
+      "grammar": [
+        {
+          "text": "tuve",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261028_21",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "Once I dressed up as a raccoon for a parade.",
+      "es": "Una vez me disfracé de mapache para un desfile.",
+      "note": "Disfrazarse de + costume/character; un mapache = raccoon; un desfile = parade. Me disfracé is preterite.",
+      "category": "daily",
+      "focus": [
+        "me disfracé de mapache",
+        "para un desfile"
+      ],
+      "grammar": [
+        {
+          "text": "disfracé",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261028_22",
+      "type": "sentence",
+      "priority": "useful",
+      "en": "In my country, we don't usually go door to door asking for candy.",
+      "es": "En mi país no tenemos la costumbre de ir de casa en casa pidiendo dulces.",
+      "note": "Tener la costumbre de + infinitive. Ir de casa en casa = go door to door; pedir dulces = trick-or-treat (also pedir caramelos).",
+      "category": "culture",
+      "focus": [
+        "tener la costumbre de",
+        "ir de casa en casa"
+      ]
+    },
+    {
+      "id": "L20261028_23",
+      "type": "sentence",
+      "priority": "extra",
+      "en": "The last photograph made her blood run cold.",
+      "es": "La última fotografía le heló la sangre.",
+      "note": "Helarle la sangre a alguien = terrify someone; literary, often in mystery and horror. Le refers to the person frightened.",
+      "category": "reading",
+      "focus": [
+        "le heló la sangre"
+      ],
+      "grammar": [
+        {
+          "text": "heló",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261028_24",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "If I were a writer, I'd describe the scene in more detail.",
+      "es": "Si yo fuera escritora, describiría la escena con más detalle.",
+      "note": "Hypothetical si + imperfect subjunctive (fuera) → conditional (describiría). Not si fuera ... voy a describir.",
+      "category": "grammar",
+      "focus": [
+        "Si yo fuera",
+        "describiría"
+      ],
+      "grammar": [
+        {
+          "text": "fuera",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        },
+        {
+          "text": "describiría",
+          "tense": "conditional",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261028_25",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "I don't like horror movies because they make me nervous.",
+      "es": "No me gustan las películas de miedo porque me ponen nerviosa.",
+      "note": "Poner nervioso/a a alguien = make someone nervous. Gustan agrees with películas (plural).",
+      "category": "daily",
+      "focus": [
+        "No me gustan",
+        "me ponen nerviosa"
+      ]
+    },
+    {
+      "id": "L20261028_26",
+      "type": "sentence",
+      "priority": "essential",
+      "en": "It was as if someone were controlling my body.",
+      "es": "Era como si alguien controlara mi cuerpo.",
+      "note": "Como si + imperfect subjunctive for an imagined/unreal comparison. Era sets a past storytelling frame; controlled ≠ controlaba here.",
+      "category": "grammar",
+      "focus": [
+        "como si alguien controlara"
+      ],
+      "grammar": [
+        {
+          "text": "Era",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        },
+        {
+          "text": "controlara",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        }
+      ]
     }
   ],
-  "updated_at": "2026-10-27"
+  "updated_at": "2026-10-28"
 }
