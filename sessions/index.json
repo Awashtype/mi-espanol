@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "archived_on": "2026-10-27",
+  "coverage": "Five original files currently retrievable. This is not a claim that every historical lesson was recovered. provided_on is the timestamp in the supplied filename, not a verified lesson date.",
+  "transcripts": [
+    {
+      "id": "hiking-and-reported-speech",
+      "path": "sessions/transcripts/hiking-and-reported-speech.txt",
+      "original_filename": "Pasted text (2).txt",
+      "provided_on": null,
+      "session_date": null,
+      "topics": [
+        "hiking",
+        "waterfall",
+        "reported speech"
+      ],
+      "source_sha256": "ecea4ab1644627a7ab2435bdf0b241c2cb3da0ed5e97153e7d3dc9715b8d2e36",
+      "archived_sha256": "ecea4ab1644627a7ab2435bdf0b241c2cb3da0ed5e97153e7d3dc9715b8d2e36",
+      "redactions": [],
+      "transcription_quality": "Unedited ASR apart from marked privacy redactions; speakers, stutters, names, accents and repetition may be wrong."
+    },
+    {
+      "id": "2026-10-22-register-and-design",
+      "path": "sessions/transcripts/2026-10-22-register-and-design.txt",
+      "original_filename": "Pasted text(20261022-125223).txt",
+      "provided_on": "2026-10-22",
+      "session_date": null,
+      "topics": [
+        "formal register",
+        "design interview",
+        "explaining work"
+      ],
+      "source_sha256": "4430621cb7dc3aa47412d0b08f69dd656da22a04a16940514ca596b8e2c336b5",
+      "archived_sha256": "9e1cfc37d95629e42841f639a6297ae912050ad13459875a1600b36d2de2a45a",
+      "redactions": [
+        {
+          "reason": "Third-party health / sensitive personal background",
+          "original_character_range": [
+            137,
+            3987
+          ]
+        }
+      ],
+      "transcription_quality": "Unedited ASR apart from marked privacy redactions; speakers, stutters, names, accents and repetition may be wrong."
+    },
+    {
+      "id": "2026-10-24-work-tips-and-moving",
+      "path": "sessions/transcripts/2026-10-24-work-tips-and-moving.txt",
+      "original_filename": "Pasted text(20261024-141239).txt",
+      "provided_on": "2026-10-24",
+      "session_date": null,
+      "topics": [
+        "working from home",
+        "past jobs",
+        "tips",
+        "moving"
+      ],
+      "source_sha256": "3280409b1a57ec233dd40bfb9ce2460de1ef6b13527ac6c5a7b319e830f583f4",
+      "archived_sha256": "bd07f1d842b55ab022e0ab8521131c66b1d15a97a943ae384356e99f2707d8ed",
+      "redactions": [
+        {
+          "reason": "Sensitive personal work history",
+          "original_character_range": [
+            10098,
+            11001
+          ]
+        }
+      ],
+      "transcription_quality": "Unedited ASR apart from marked privacy redactions; speakers, stutters, names, accents and repetition may be wrong."
+    },
+    {
+      "id": "travel-budget-and-numbers",
+      "path": "sessions/transcripts/travel-budget-and-numbers.txt",
+      "original_filename": "Pasted text (2)(1).txt",
+      "provided_on": null,
+      "session_date": null,
+      "topics": [
+        "travel budget",
+        "museum admission",
+        "dates",
+        "numbers"
+      ],
+      "source_sha256": "b7f949b02ac93faa06982755e8b4e3139e6634989093305c81600de3e439593e",
+      "archived_sha256": "d5495d10c72143787cd7e1aafc60353d0e54d892af27416c74d03a1b0909789b",
+      "redactions": [
+        {
+          "reason": "Third-party health",
+          "original_character_range": [
+            678,
+            733
+          ]
+        }
+      ],
+      "transcription_quality": "Unedited ASR apart from marked privacy redactions; speakers, stutters, names, accents and repetition may be wrong."
+    },
+    {
+      "id": "2026-10-25-greetings-and-numbers",
+      "path": "sessions/transcripts/2026-10-25-greetings-and-numbers.txt",
+      "original_filename": "Pasted text(20261025-203722).txt",
+      "provided_on": "2026-10-25",
+      "session_date": null,
+      "topics": [
+        "greetings",
+        "prices",
+        "numbers",
+        "ordinals"
+      ],
+      "source_sha256": "b8864ca2644da9e5aa47f196501027fdb0bc9f402d6b584928efa08aabaaf882",
+      "archived_sha256": "65a7f0475a7ba34f89a8baae88df1bd0e5526556b93c3ceb5d4f8063897430a9",
+      "redactions": [
+        {
+          "reason": "Third-party health / sensitive personal background",
+          "original_character_range": [
+            0,
+            214
+          ]
+        }
+      ],
+      "transcription_quality": "Unedited ASR apart from marked privacy redactions; speakers, stutters, names, accents and repetition may be wrong."
+    }
+  ]
+}

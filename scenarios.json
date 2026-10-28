@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "scenarios": [
+    {
+      "id": "hike",
+      "title": "Tell me about the hike",
+      "source_path": "sessions/transcripts/hiking-and-reported-speech.txt",
+      "setup": "You are back from a hike. Explain why you left later, what you saw, and why the walk was still worth it.",
+      "starter": "¿Qué tal la caminata? ¿Por qué no salieron más temprano?",
+      "card_ids": [
+        "N007",
+        "L20261022_01",
+        "L20261022_02",
+        "L20261022_17",
+        "L20261022_18",
+        "V027",
+        "R029"
+      ],
+      "learning_gaps": [
+        "cascada, not cáscara",
+        "madrugar vs just levantarse",
+        "completed actions vs background"
+      ],
+      "twists": [
+        "The parking lot is full. What do you do?",
+        "Tell the same story as a plan for next Sunday."
+      ],
+      "provenance": "Pedagogical adaptation of the linked original transcript; new prompts and twists are invented, not verbatim tutor quotes."
+    },
+    {
+      "id": "register",
+      "title": "Explain your design work",
+      "source_path": "sessions/transcripts/2026-10-22-register-and-design.txt",
+      "setup": "A designer is interviewing you. Explain your work clearly and politely, then retell it to a friend in a relaxed register.",
+      "starter": "Cuénteme algo sobre usted. ¿A qué se dedica?",
+      "card_ids": [
+        "L20261022_16",
+        "L20261022_14",
+        "L20261022_07",
+        "R020",
+        "R024",
+        "R025",
+        "R026",
+        "R030",
+        "V002",
+        "V003",
+        "V004",
+        "V005",
+        "V006",
+        "V001",
+        "V024"
+      ],
+      "learning_gaps": [
+        "explaining design without word-for-word English",
+        "feeling comfortable + gerund",
+        "formal and informal register"
+      ],
+      "twists": [
+        "The interviewer does not understand 3D design. Explain it more simply.",
+        "Now ask your colleague for a file."
+      ],
+      "provenance": "Pedagogical adaptation of the linked original transcript; new prompts and twists are invented, not verbatim tutor quotes."
+    },
+    {
+      "id": "jobs",
+      "title": "Past jobs and what suited you",
+      "source_path": "sessions/transcripts/2026-10-24-work-tips-and-moving.txt",
+      "setup": "Discuss an internship, the atmosphere at work, and what you want from your next role.",
+      "starter": "¿Cómo fue tu primer trabajo? ¿Qué te gustaba y qué no?",
+      "card_ids": [
+        "L20261024_09",
+        "L20261024_10",
+        "L20261024_11",
+        "L20261024_12",
+        "L20261024_05",
+        "L20261024_07",
+        "L20261024_08",
+        "L20261024_04",
+        "V004",
+        "V005",
+        "V009",
+        "V010",
+        "V020"
+      ],
+      "learning_gaps": [
+        "unas prácticas",
+        "llevarse bien con",
+        "disfruto, not me disfruto",
+        "past events vs habitual background"
+      ],
+      "twists": [
+        "Would you choose a higher salary or a better team?",
+        "Explain the same job to a formal interviewer."
+      ],
+      "provenance": "Pedagogical adaptation of the linked original transcript; new prompts and twists are invented, not verbatim tutor quotes."
+    },
+    {
+      "id": "tips",
+      "title": "Dinner, payment and tips",
+      "source_path": "sessions/transcripts/2026-10-24-work-tips-and-moving.txt",
+      "setup": "Your tutor is visiting and asks how you usually eat and pay. Explain your own habits; do not turn class claims into legal facts.",
+      "starter": "Cuando salís a comer, ¿cómo decidís cuánto dejar de propina?",
+      "card_ids": [
+        "L20261024_13",
+        "L20261024_14",
+        "L20261024_15",
+        "L20261024_16",
+        "L20261024_17",
+        "L20261024_18",
+        "L20261025_20",
+        "L20261022_03",
+        "L20261022_04",
+        "L20261022_06"
+      ],
+      "learning_gaps": [
+        "propina, not chips",
+        "se reparten por igual",
+        "comida para llevar vs comer fuera"
+      ],
+      "twists": [
+        "Today you order takeout instead. What changes?",
+        "You can only pay in cash. Ask about that."
+      ],
+      "provenance": "Pedagogical adaptation of the linked original transcript; new prompts and twists are invented, not verbatim tutor quotes."
+    },
+    {
+      "id": "move",
+      "title": "Waiting to move",
+      "source_path": "sessions/transcripts/2026-10-24-work-tips-and-moving.txt",
+      "setup": "Explain why your move is taking longer than expected and how you are preparing while you wait.",
+      "starter": "¿Ya está todo listo para la mudanza? ¿Qué falta?",
+      "card_ids": [
+        "L20261024_19",
+        "L20261024_20",
+        "L20261024_21",
+        "L20261024_22",
+        "L20261024_23",
+        "L20261024_24",
+        "L20261024_25",
+        "L20261024_26",
+        "V007",
+        "V020",
+        "R005"
+      ],
+      "learning_gaps": [
+        "llevar + duration + gerund",
+        "prepararme para + infinitive",
+        "hasta que + future-oriented subjunctive"
+      ],
+      "twists": [
+        "Approval arrives tomorrow. What is your first step?",
+        "A friend asks you to explain the delay politely."
+      ],
+      "provenance": "Pedagogical adaptation of the linked original transcript; new prompts and twists are invented, not verbatim tutor quotes."
+    },
+    {
+      "id": "trip",
+      "title": "Plan a trip on a budget",
+      "source_path": "sessions/transcripts/travel-budget-and-numbers.txt",
+      "setup": "Plan a hypothetical trip with your tutor. Choose one destination, a budget, dates and things to do. All prices and access rules are fictional practice details.",
+      "starter": "¿Adónde te gustaría viajar y con qué presupuesto contás?",
+      "card_ids": [
+        "L20261025_01",
+        "L20261025_03",
+        "L20261025_05",
+        "L20261025_06",
+        "L20261025_07",
+        "L20261025_08",
+        "L20261025_09",
+        "L20261025_11",
+        "L20261025_14",
+        "L20261025_15",
+        "L20261025_19",
+        "L20261025_20",
+        "L20261024_26",
+        "R031",
+        "R032",
+        "V026"
+      ],
+      "learning_gaps": [
+        "mil, not un mil",
+        "va a costar, not va a acuestar",
+        "entrar gratis, not para el gratis",
+        "affordable as precio accesible"
+      ],
+      "twists": [
+        "The ticket price goes up. Adjust your plan.",
+        "One museum is free on a fictional student day. Ask a follow-up question."
+      ],
+      "provenance": "Pedagogical adaptation of the linked original transcript; new prompts and twists are invented, not verbatim tutor quotes."
+    },
+    {
+      "id": "catch-up",
+      "title": "Start the lesson naturally",
+      "source_path": "sessions/transcripts/2026-10-25-greetings-and-numbers.txt",
+      "setup": "Your tutor asks how you are after a busy week. Respond warmly, mention something you did, and ask a follow-up question.",
+      "starter": "¿Cómo estuvo tu semana? ¿Pudiste descansar un poco?",
+      "card_ids": [
+        "L20261025_21",
+        "L20261025_22",
+        "L20261022_08",
+        "N003",
+        "N005",
+        "L20261025_08",
+        "V020"
+      ],
+      "learning_gaps": [
+        "me alegro de que + subjunctive",
+        "me alegro por vos",
+        "natural reciprocal greetings"
+      ],
+      "twists": [
+        "A friend cancels your plans. Suggest another day.",
+        "Retell one good thing from your week."
+      ],
+      "provenance": "Pedagogical adaptation of the linked original transcript; new prompts and twists are invented, not verbatim tutor quotes."
+    },
+    {
+      "id": "retell",
+      "title": "Tell me what they said",
+      "source_path": "sessions/transcripts/hiking-and-reported-speech.txt",
+      "setup": "A colleague asks you to retell a conversation. Use direct quotes and reporting dates from the selected familiar reported-speech cards; change speaker, time and perspective only when the context calls for it.",
+      "starter": "¿Qué te contó tu compañero? Vamos a reconstruir una de esas conversaciones.",
+      "card_ids": [
+        "N012",
+        "N013",
+        "N014",
+        "N015",
+        "N016",
+        "N017",
+        "N018",
+        "N019",
+        "N020",
+        "N021",
+        "N022",
+        "L20261022_19",
+        "L20261022_20",
+        "L20261022_22",
+        "L20261022_23",
+        "L20261022_24"
+      ],
+      "learning_gaps": [
+        "question words vs si in reported questions",
+        "past requests with imperfect subjunctive",
+        "deictic changes: me/nos, llevar/traer, tomorrow/the following day",
+        "backshift depends on reporting context"
+      ],
+      "twists": [
+        "The person you are talking to changes. Retell the same message from their reference point.",
+        "After one successful retelling, change the request to a yes/no question."
+      ],
+      "provenance": "Pedagogical adaptation of reported-speech practice in the linked original transcript, supplemented by existing reported-speech cards; prompts and twists are invented, not verbatim tutor quotes."
+    }
+  ]
+}

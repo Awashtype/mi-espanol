@@ -23,4 +23,4 @@ for phrase in phrases:
             if err.code not in (429,500,502,503,504) or retry==4: raise
             time.sleep(2**retry)
     print("Generated:",phrase,flush=True)
-path.write_text(json.dumps({"format":"mi-espanol-audio-v1","voice":voice,"items":[{"es":p,"audio":old[p]} for p in phrases]},ensure_ascii=False))
+path.write_text(json.dumps({"format":"mi-espanol-audio-v1","voice":voice,"items":[{"es":p,"audio":old[p]} for p in dict.fromkeys([*old,*phrases])]},ensure_ascii=False))

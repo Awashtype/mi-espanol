@@ -222,7 +222,7 @@
     },
     {
       "id": "R014",
-      "type": "word",
+      "type": "expression",
       "category": "informal",
       "en": "What a bummer!",
       "es": "¡Qué bajón!",
@@ -231,7 +231,7 @@
     },
     {
       "id": "R015",
-      "type": "word",
+      "type": "expression",
       "category": "informal",
       "en": "Absolutely, I’m in!",
       "es": "¡De una!",
@@ -504,12 +504,31 @@
     },
     {
       "id": "R029",
-      "type": "word",
+      "type": "sentence",
       "category": "expression",
-      "en": "Without realizing it",
-      "es": "Sin darme cuenta",
-      "note": "common phrase",
-      "priority": "essential"
+      "en": "I answered without realizing it.",
+      "es": "Respondí sin darme cuenta.",
+      "note": "Target: Sin darme cuenta. common phrase",
+      "priority": "essential",
+      "headword": "Sin darme cuenta",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "Without realizing it",
+          "es": "Sin darme cuenta"
+        }
+      ],
+      "focus": [
+        "sin darme cuenta"
+      ],
+      "grammar": [
+        {
+          "text": "Respondí",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "preterite"
+        }
+      ]
     },
     {
       "id": "R030",
@@ -529,21 +548,57 @@
     },
     {
       "id": "R031",
-      "type": "word",
+      "type": "sentence",
       "category": "daily",
-      "en": "An outdoor market",
-      "es": "Un mercado al aire libre",
-      "note": "al aire libre",
-      "priority": "essential"
+      "en": "There is an outdoor market near my house.",
+      "es": "Hay un mercado al aire libre cerca de mi casa.",
+      "note": "Target: Un mercado al aire libre. al aire libre",
+      "priority": "essential",
+      "headword": "Un mercado al aire libre",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "An outdoor market",
+          "es": "Un mercado al aire libre"
+        }
+      ],
+      "focus": [
+        "mercado al aire libre"
+      ],
+      "grammar": [
+        {
+          "text": "Hay",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R032",
-      "type": "word",
+      "type": "sentence",
       "category": "daily",
-      "en": "Live music",
-      "es": "Música en vivo",
-      "note": "useful restaurant description",
-      "priority": "essential"
+      "en": "This bar has live music.",
+      "es": "Este bar tiene música en vivo.",
+      "note": "Target: Música en vivo. useful restaurant description",
+      "priority": "essential",
+      "headword": "Música en vivo",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "Live music",
+          "es": "Música en vivo"
+        }
+      ],
+      "focus": [
+        "música en vivo"
+      ],
+      "grammar": [
+        {
+          "text": "tiene",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "R033",
@@ -565,191 +620,555 @@
     },
     {
       "id": "R035",
-      "type": "word",
+      "type": "sentence",
       "category": "daily",
-      "en": "People experiencing homelessness",
-      "es": "Personas en situación de calle",
-      "note": "Common Argentine expression",
-      "priority": "useful"
+      "en": "There are people experiencing homelessness in this neighborhood.",
+      "es": "Hay personas en situación de calle en este barrio.",
+      "note": "Target: Personas en situación de calle. Common Argentine expression",
+      "priority": "useful",
+      "headword": "Personas en situación de calle",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "People experiencing homelessness",
+          "es": "Personas en situación de calle"
+        }
+      ],
+      "focus": [
+        "personas en situación de calle"
+      ],
+      "grammar": [
+        {
+          "text": "Hay",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V001",
-      "type": "word",
+      "type": "sentence",
       "category": "work",
-      "en": "a response",
-      "es": "una respuesta",
-      "note": "Noun; responder = verb.",
-      "priority": "essential"
+      "en": "I am still waiting for a response.",
+      "es": "Todavía espero una respuesta.",
+      "note": "Target: una respuesta. Noun; responder = verb.",
+      "priority": "essential",
+      "headword": "una respuesta",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "a response",
+          "es": "una respuesta"
+        }
+      ],
+      "focus": [
+        "una respuesta"
+      ],
+      "grammar": [
+        {
+          "text": "espero",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V002",
-      "type": "word",
+      "type": "sentence",
       "category": "work",
-      "en": "to respond",
-      "es": "responder",
-      "note": "Verb.",
-      "priority": "essential"
+      "en": "I need to respond to this message.",
+      "es": "Necesito responder a este mensaje.",
+      "note": "Target: responder. Verb.",
+      "priority": "essential",
+      "headword": "responder",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "to respond",
+          "es": "responder"
+        }
+      ],
+      "focus": [
+        "responder a"
+      ],
+      "grammar": [
+        {
+          "text": "Necesito",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V003",
-      "type": "word",
+      "type": "sentence",
       "category": "work",
-      "en": "appropriate",
-      "es": "adecuado / adecuada",
-      "note": "Agreement: expresiones adecuadas.",
-      "priority": "essential"
+      "en": "This is not the appropriate time.",
+      "es": "No es el momento adecuado.",
+      "note": "Target: adecuado / adecuada. Agreement: expresiones adecuadas.",
+      "priority": "essential",
+      "headword": "adecuado / adecuada",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "appropriate",
+          "es": "adecuado / adecuada"
+        }
+      ],
+      "focus": [
+        "momento adecuado"
+      ],
+      "grammar": [
+        {
+          "text": "es",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V004",
-      "type": "word",
+      "type": "sentence",
       "category": "work",
-      "en": "my boss (female)",
-      "es": "mi jefa",
-      "note": "One f, no accent.",
-      "priority": "essential"
+      "en": "My boss asked me for the file.",
+      "es": "Mi jefa me pidió el archivo.",
+      "note": "Target: mi jefa. One f, no accent.",
+      "priority": "essential",
+      "headword": "mi jefa",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "my boss (female)",
+          "es": "mi jefa"
+        }
+      ],
+      "focus": [
+        "Mi jefa"
+      ],
+      "grammar": [
+        {
+          "text": "pidió",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "preterite"
+        }
+      ]
     },
     {
       "id": "V005",
-      "type": "word",
+      "type": "sentence",
       "category": "work",
-      "en": "a colleague",
-      "es": "un compañero / una compañera",
-      "note": "De trabajo = coworker.",
-      "priority": "essential"
+      "en": "I am going to ask a colleague for help.",
+      "es": "Voy a pedirle ayuda a una compañera de trabajo.",
+      "note": "Target: un compañero / una compañera. De trabajo = coworker.",
+      "priority": "essential",
+      "headword": "un compañero / una compañera",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "a colleague",
+          "es": "un compañero / una compañera"
+        }
+      ],
+      "focus": [
+        "compañera de trabajo"
+      ],
+      "grammar": [
+        {
+          "text": "Voy",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V006",
-      "type": "word",
+      "type": "sentence",
       "category": "work",
-      "en": "an email",
-      "es": "un correo electrónico",
-      "note": "Also un mail.",
-      "priority": "essential"
+      "en": "I sent you an email yesterday.",
+      "es": "Te mandé un correo electrónico ayer.",
+      "note": "Target: un correo electrónico. Also un mail.",
+      "priority": "essential",
+      "headword": "un correo electrónico",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "an email",
+          "es": "un correo electrónico"
+        }
+      ],
+      "focus": [
+        "un correo electrónico"
+      ],
+      "grammar": [
+        {
+          "text": "mandé",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "preterite"
+        }
+      ]
     },
     {
       "id": "V007",
-      "type": "word",
+      "type": "sentence",
       "category": "work",
-      "en": "a delay",
-      "es": "una demora",
-      "note": "Perdón por la demora.",
-      "priority": "essential"
+      "en": "There was a delay with the delivery.",
+      "es": "Hubo una demora con la entrega.",
+      "note": "Target: una demora. Perdón por la demora.",
+      "priority": "essential",
+      "headword": "una demora",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "a delay",
+          "es": "una demora"
+        }
+      ],
+      "focus": [
+        "una demora"
+      ],
+      "grammar": [
+        {
+          "text": "Hubo",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "preterite"
+        }
+      ]
     },
     {
       "id": "V008",
-      "type": "word",
+      "type": "sentence",
       "category": "work",
-      "en": "understanding",
-      "es": "la comprensión",
-      "note": "Not compresión.",
-      "priority": "essential"
+      "en": "I appreciate your understanding.",
+      "es": "Valoro tu comprensión.",
+      "note": "Target: la comprensión. Not compresión.",
+      "priority": "essential",
+      "headword": "la comprensión",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "understanding",
+          "es": "la comprensión"
+        }
+      ],
+      "focus": [
+        "tu comprensión"
+      ],
+      "grammar": [
+        {
+          "text": "Valoro",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V009",
-      "type": "word",
+      "type": "sentence",
       "category": "argentine",
-      "en": "work (casual)",
-      "es": "laburo",
-      "note": "Noun; laburar = verb.",
-      "priority": "useful"
+      "en": "How is work going? (Argentine casual)",
+      "es": "¿Cómo va el laburo?",
+      "note": "Target: laburo. Noun; laburar = verb.",
+      "priority": "useful",
+      "headword": "laburo",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "work (casual)",
+          "es": "laburo"
+        }
+      ],
+      "focus": [
+        "el laburo"
+      ],
+      "grammar": [
+        {
+          "text": "va",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V010",
-      "type": "word",
+      "type": "sentence",
       "category": "argentine",
-      "en": "to work (casual)",
-      "es": "laburar",
-      "note": "Verb; Argentine colloquial.",
-      "priority": "useful"
+      "en": "I start work at nine. (Argentine casual)",
+      "es": "Empiezo a laburar a las nueve.",
+      "note": "Target: laburar. Verb; Argentine colloquial.",
+      "priority": "useful",
+      "headword": "laburar",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "to work (casual)",
+          "es": "laburar"
+        }
+      ],
+      "focus": [
+        "laburar"
+      ],
+      "grammar": [
+        {
+          "text": "Empiezo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V011",
-      "type": "word",
+      "type": "sentence",
       "category": "argentine",
-      "en": "subway (Buenos Aires)",
-      "es": "el subte",
-      "note": "Subterráneo.",
-      "priority": "useful"
+      "en": "I take the subway to work. (Buenos Aires)",
+      "es": "Voy al trabajo en subte.",
+      "note": "Target: el subte. Subterráneo.",
+      "priority": "useful",
+      "headword": "el subte",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "subway (Buenos Aires)",
+          "es": "el subte"
+        }
+      ],
+      "focus": [
+        "en subte"
+      ],
+      "grammar": [
+        {
+          "text": "Voy",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V012",
-      "type": "word",
+      "type": "sentence",
       "category": "argentine",
-      "en": "a mess / chaos",
-      "es": "un quilombo",
-      "note": "Very informal.",
-      "priority": "extra"
+      "en": "What a mess this is! (very informal, Argentina)",
+      "es": "¡Qué quilombo es esto!",
+      "note": "Target: un quilombo. Very informal.",
+      "priority": "extra",
+      "headword": "un quilombo",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "a mess / chaos",
+          "es": "un quilombo"
+        }
+      ],
+      "focus": [
+        "Qué quilombo"
+      ],
+      "grammar": [
+        {
+          "text": "es",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V013",
-      "type": "word",
+      "type": "sentence",
       "category": "argentine",
-      "en": "money (slang)",
-      "es": "guita",
-      "note": "Argentine colloquial.",
-      "priority": "extra"
+      "en": "I do not have enough money. (Argentine slang)",
+      "es": "No tengo suficiente guita.",
+      "note": "Target: guita. Argentine colloquial.",
+      "priority": "extra",
+      "headword": "guita",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "money (slang)",
+          "es": "guita"
+        }
+      ],
+      "focus": [
+        "suficiente guita"
+      ],
+      "grammar": [
+        {
+          "text": "tengo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V014",
-      "type": "word",
+      "type": "sentence",
       "category": "argentine",
-      "en": "bus (slang)",
-      "es": "bondi",
-      "note": "Argentine colloquial.",
-      "priority": "extra"
+      "en": "I missed the bus. (Argentine slang)",
+      "es": "Perdí el bondi.",
+      "note": "Target: bondi. Argentine colloquial.",
+      "priority": "extra",
+      "headword": "bondi",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "bus (slang)",
+          "es": "bondi"
+        }
+      ],
+      "focus": [
+        "el bondi"
+      ],
+      "grammar": [
+        {
+          "text": "Perdí",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "preterite"
+        }
+      ]
     },
     {
       "id": "V015",
-      "type": "word",
+      "type": "sentence",
       "category": "argentine",
-      "en": "hey!",
-      "es": "¡Che!",
-      "note": "Informal greeting/get attention.",
-      "priority": "useful"
+      "en": "Hey, are you coming with us? (Argentina)",
+      "es": "Che, ¿venís con nosotros?",
+      "note": "Target: ¡Che!. Informal greeting/get attention.",
+      "priority": "useful",
+      "headword": "¡Che!",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "hey!",
+          "es": "¡Che!"
+        }
+      ],
+      "focus": [
+        "Che"
+      ],
+      "grammar": [
+        {
+          "text": "venís",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V016",
-      "type": "word",
+      "type": "sentence",
       "category": "places",
-      "en": "welcoming / cozy",
-      "es": "acogedor / acogedora",
-      "note": "El barrio es acogedor.",
-      "priority": "essential"
+      "en": "The café is very cozy.",
+      "es": "El café es muy acogedor.",
+      "note": "Target: acogedor / acogedora. El barrio es acogedor.",
+      "priority": "essential",
+      "headword": "acogedor / acogedora",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "welcoming / cozy",
+          "es": "acogedor / acogedora"
+        }
+      ],
+      "focus": [
+        "muy acogedor"
+      ],
+      "grammar": [
+        {
+          "text": "es",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V017",
-      "type": "word",
+      "type": "sentence",
       "category": "places",
-      "en": "lively",
-      "es": "animado / animada",
-      "note": "Un barrio animado.",
-      "priority": "essential"
+      "en": "The street is very lively at night.",
+      "es": "La calle está muy animada de noche.",
+      "note": "Target: animado / animada. Un barrio animado.",
+      "priority": "essential",
+      "headword": "animado / animada",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "lively",
+          "es": "animado / animada"
+        }
+      ],
+      "focus": [
+        "muy animada"
+      ],
+      "grammar": [
+        {
+          "text": "está",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V018",
-      "type": "word",
+      "type": "sentence",
       "category": "places",
-      "en": "fresh vegetables",
-      "es": "verduras frescas",
-      "note": "Plural agreement.",
-      "priority": "essential"
+      "en": "I buy fresh vegetables at the market.",
+      "es": "Compro verduras frescas en el mercado.",
+      "note": "Target: verduras frescas. Plural agreement.",
+      "priority": "essential",
+      "headword": "verduras frescas",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "fresh vegetables",
+          "es": "verduras frescas"
+        }
+      ],
+      "focus": [
+        "verduras frescas"
+      ],
+      "grammar": [
+        {
+          "text": "Compro",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V020",
-      "type": "expression",
+      "type": "sentence",
       "category": "grammar",
-      "en": "however",
-      "es": "sin embargo",
-      "note": "Connector.",
-      "priority": "essential"
+      "en": "I am tired; however, I want to go out.",
+      "es": "Estoy cansada; sin embargo, quiero salir.",
+      "note": "Target: sin embargo. Connector.",
+      "priority": "essential",
+      "headword": "sin embargo",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "however",
+          "es": "sin embargo"
+        }
+      ],
+      "focus": [
+        "sin embargo"
+      ],
+      "grammar": [
+        {
+          "text": "Estoy",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V021",
-      "type": "expression",
+      "type": "sentence",
       "category": "grammar",
-      "en": "I struggle to…",
-      "es": "me cuesta…",
-      "note": "Me cuesta + infinitive.",
+      "en": "I struggle to speak quickly.",
+      "es": "Me cuesta hablar rápido.",
+      "note": "Target: me cuesta…. Me cuesta + infinitive.",
       "grammar": [
         {
           "text": "cuesta",
@@ -757,49 +1176,111 @@
           "mood": "indicative"
         }
       ],
-      "priority": "essential"
+      "priority": "essential",
+      "headword": "me cuesta…",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "I struggle to…",
+          "es": "me cuesta…"
+        }
+      ],
+      "focus": [
+        "Me cuesta"
+      ]
     },
     {
       "id": "V022",
-      "type": "expression",
+      "type": "sentence",
       "category": "grammar",
-      "en": "the thing about the meeting",
-      "es": "lo de la reunión",
-      "note": "Lo de + noun.",
-      "priority": "essential"
+      "en": "Did you sort out that thing about the meeting?",
+      "es": "¿Resolviste lo de la reunión?",
+      "note": "Target: lo de la reunión. Lo de + noun.",
+      "priority": "essential",
+      "headword": "lo de la reunión",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "the thing about the meeting",
+          "es": "lo de la reunión"
+        }
+      ],
+      "focus": [
+        "lo de la reunión"
+      ],
+      "grammar": [
+        {
+          "text": "Resolviste",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "preterite"
+        }
+      ]
     },
     {
       "id": "V023",
-      "type": "expression",
+      "type": "sentence",
       "category": "grammar",
-      "en": "what happened",
-      "es": "lo que pasó",
-      "note": "Lo que + verb.",
+      "en": "Tell me what happened. (Argentina)",
+      "es": "Contame lo que pasó.",
+      "note": "Target: lo que pasó. Lo que + verb.",
       "grammar": [
         {
           "text": "pasó",
           "tense": "past",
-          "form": "preterite",
-          "mood": "indicative"
+          "mood": "indicative",
+          "form": "preterite"
+        },
+        {
+          "text": "Contame",
+          "mood": "imperative"
         }
       ],
-      "priority": "essential"
+      "priority": "essential",
+      "headword": "lo que pasó",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "what happened",
+          "es": "lo que pasó"
+        }
+      ],
+      "focus": [
+        "lo que pasó"
+      ]
     },
     {
       "id": "V024",
-      "type": "expression",
+      "type": "sentence",
       "category": "work",
-      "en": "I would appreciate it if…",
-      "es": "le agradecería que…",
-      "note": "Follow with imperfect subjunctive for polite request.",
+      "en": "I would appreciate it if you confirmed the time. (formal)",
+      "es": "Le agradecería que me confirmara la hora.",
+      "note": "Target: le agradecería que…. Follow with imperfect subjunctive for polite request.",
       "grammar": [
         {
           "text": "agradecería",
           "tense": "conditional",
           "mood": "indicative"
+        },
+        {
+          "text": "confirmara",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
         }
       ],
-      "priority": "useful"
+      "priority": "useful",
+      "headword": "le agradecería que…",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "I would appreciate it if…",
+          "es": "le agradecería que…"
+        }
+      ],
+      "focus": [
+        "Le agradecería que"
+      ]
     },
     {
       "id": "V025",
@@ -818,21 +1299,58 @@
     },
     {
       "id": "V026",
-      "type": "expression",
+      "type": "sentence",
       "category": "places",
-      "en": "outdoors",
-      "es": "al aire libre",
-      "note": "Used to describe markets and activities.",
-      "priority": "essential"
+      "en": "I prefer eating outdoors.",
+      "es": "Prefiero comer al aire libre.",
+      "note": "Target: al aire libre. Used to describe markets and activities.",
+      "priority": "essential",
+      "headword": "al aire libre",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "outdoors",
+          "es": "al aire libre"
+        }
+      ],
+      "focus": [
+        "al aire libre"
+      ],
+      "grammar": [
+        {
+          "text": "Prefiero",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "V027",
-      "type": "expression",
+      "type": "sentence",
       "category": "places",
-      "en": "until midnight",
-      "es": "hasta la medianoche",
-      "note": "Time expression.",
-      "priority": "essential"
+      "en": "We stayed until midnight.",
+      "es": "Nos quedamos hasta la medianoche.",
+      "note": "Target: hasta la medianoche. Time expression.",
+      "priority": "essential",
+      "headword": "hasta la medianoche",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "until midnight",
+          "es": "hasta la medianoche"
+        }
+      ],
+      "focus": [
+        "hasta la medianoche"
+      ],
+      "grammar": [
+        {
+          "text": "quedamos",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "preterite"
+        }
+      ]
     },
     {
       "id": "N001",
@@ -1159,57 +1677,162 @@
     },
     {
       "id": "L20261022_01",
-      "type": "word",
+      "type": "sentence",
       "category": "nature",
       "priority": "useful",
-      "en": "a waterfall",
-      "es": "una cascada",
-      "note": "Cascada = waterfall; cáscara = peel or shell."
+      "en": "We saw a waterfall along the way.",
+      "es": "Vimos una cascada en el camino.",
+      "note": "Target: una cascada. Cascada = waterfall; cáscara = peel or shell.",
+      "headword": "una cascada",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "a waterfall",
+          "es": "una cascada"
+        }
+      ],
+      "focus": [
+        "una cascada"
+      ],
+      "grammar": [
+        {
+          "text": "Vimos",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "preterite"
+        }
+      ]
     },
     {
       "id": "L20261022_02",
-      "type": "word",
+      "type": "sentence",
       "category": "daily",
       "priority": "useful",
-      "en": "to get up early",
-      "es": "madrugar",
-      "note": "Madrugar = get up early; acostarse = go to bed."
+      "en": "I do not want to get up early on Sunday.",
+      "es": "No quiero madrugar el domingo.",
+      "note": "Target: madrugar. Madrugar = get up early; acostarse = go to bed.",
+      "headword": "madrugar",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "to get up early",
+          "es": "madrugar"
+        }
+      ],
+      "focus": [
+        "madrugar"
+      ],
+      "grammar": [
+        {
+          "text": "quiero",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261022_03",
-      "type": "word",
+      "type": "sentence",
       "category": "food",
       "priority": "useful",
-      "en": "lamb (meat)",
-      "es": "el cordero",
-      "note": "Cordero = lamb; la carne de cordero = lamb meat."
+      "en": "I have never tried lamb.",
+      "es": "Nunca probé el cordero.",
+      "note": "Target: el cordero. Cordero = lamb; la carne de cordero = lamb meat.",
+      "headword": "el cordero",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "lamb (meat)",
+          "es": "el cordero"
+        }
+      ],
+      "focus": [
+        "el cordero"
+      ],
+      "grammar": [
+        {
+          "text": "probé",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "preterite"
+        }
+      ]
     },
     {
       "id": "L20261022_04",
-      "type": "word",
+      "type": "sentence",
       "category": "food",
       "priority": "essential",
-      "en": "noodles",
-      "es": "los fideos",
-      "note": "Often used in the plural: sopa con fideos = noodle soup."
+      "en": "I am going to make noodles for dinner.",
+      "es": "Voy a preparar fideos para cenar.",
+      "note": "Target: los fideos. Often used in the plural: sopa con fideos = noodle soup.",
+      "headword": "los fideos",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "noodles",
+          "es": "los fideos"
+        }
+      ],
+      "focus": [
+        "preparar fideos"
+      ],
+      "grammar": [
+        {
+          "text": "Voy",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261022_05",
-      "type": "word",
+      "type": "sentence",
       "category": "daily",
       "priority": "essential",
-      "en": "a compliment",
-      "es": "un cumplido",
-      "note": "Hacerle un cumplido a alguien = pay someone a compliment."
+      "en": "Thank you for the compliment.",
+      "es": "Gracias por el cumplido.",
+      "note": "Target: un cumplido. Hacerle un cumplido a alguien = pay someone a compliment.",
+      "headword": "un cumplido",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "a compliment",
+          "es": "un cumplido"
+        }
+      ],
+      "focus": [
+        "el cumplido"
+      ],
+      "grammar": []
     },
     {
       "id": "L20261022_06",
-      "type": "word",
+      "type": "sentence",
       "category": "food",
       "priority": "useful",
-      "en": "a meat skewer",
-      "es": "una brocheta de carne",
-      "note": "In Argentina, also una brochette de carne. El palito is the stick; la carne is feminine."
+      "en": "I would like a meat skewer.",
+      "es": "Quisiera una brocheta de carne.",
+      "note": "Target: una brocheta de carne. In Argentina, also una brochette de carne. El palito is the stick; la carne is feminine. Quisiera is a conventional polite request; its imperfect subjunctive form does not locate the request in the past.",
+      "headword": "una brocheta de carne",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "a meat skewer",
+          "es": "una brocheta de carne"
+        }
+      ],
+      "focus": [
+        "una brocheta de carne"
+      ],
+      "grammar": [
+        {
+          "text": "Quisiera",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "subjunctive"
+        }
+      ]
     },
     {
       "id": "L20261022_07",
@@ -1256,33 +1879,85 @@
     },
     {
       "id": "L20261022_09",
-      "type": "expression",
+      "type": "sentence",
       "category": "grammar",
       "priority": "essential",
-      "en": "to find out about something",
-      "es": "enterarse de algo",
-      "note": "Pronominal: me entero de, me enteré de, ¿te enteraste de...? Enterarse = learn news; darse cuenta de = realize or notice.",
+      "en": "I found out about it yesterday.",
+      "es": "Me enteré de eso ayer.",
+      "note": "Target: enterarse de algo. Pronominal: me entero de, me enteré de, ¿te enteraste de...? Enterarse = learn news; darse cuenta de = realize or notice.",
       "focus": [
-        "enterarse de"
+        "Me enteré de"
+      ],
+      "headword": "enterarse de algo",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "to find out about something",
+          "es": "enterarse de algo"
+        }
+      ],
+      "grammar": [
+        {
+          "text": "enteré",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "preterite"
+        }
       ]
     },
     {
       "id": "L20261022_10",
-      "type": "expression",
+      "type": "sentence",
       "category": "work",
       "priority": "useful",
-      "en": "to retire from work",
-      "es": "jubilarse",
-      "note": "Pronominal: se va a jubilar = is going to retire."
+      "en": "My boss is going to retire next year.",
+      "es": "Mi jefe se va a jubilar el año que viene.",
+      "note": "Target: jubilarse. Pronominal: se va a jubilar = is going to retire.",
+      "headword": "jubilarse",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "to retire from work",
+          "es": "jubilarse"
+        }
+      ],
+      "focus": [
+        "se va a jubilar"
+      ],
+      "grammar": [
+        {
+          "text": "va",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261022_11",
-      "type": "expression",
+      "type": "sentence",
       "category": "culture",
       "priority": "useful",
-      "en": "beauty standards",
-      "es": "los estándares de belleza",
-      "note": "Also los ideales de belleza; belleza is the noun, beautiful is bello or bonito."
+      "en": "Beauty standards change over time.",
+      "es": "Los estándares de belleza cambian con el tiempo.",
+      "note": "Target: los estándares de belleza. Also los ideales de belleza; belleza is the noun, beautiful is bello or bonito.",
+      "headword": "los estándares de belleza",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "beauty standards",
+          "es": "los estándares de belleza"
+        }
+      ],
+      "focus": [
+        "estándares de belleza"
+      ],
+      "grammar": [
+        {
+          "text": "cambian",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261022_12",
@@ -1601,30 +2276,84 @@
     },
     {
       "id": "L20261024_02",
-      "type": "word",
+      "type": "sentence",
       "priority": "useful",
-      "en": "humidity",
-      "es": "la humedad",
-      "note": "Not humanitud; húmedo = humid.",
-      "category": "daily"
+      "en": "There is a lot of humidity today.",
+      "es": "Hay mucha humedad hoy.",
+      "note": "Target: la humedad. Not humanitud; húmedo = humid.",
+      "category": "daily",
+      "headword": "la humedad",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "humidity",
+          "es": "la humedad"
+        }
+      ],
+      "focus": [
+        "mucha humedad"
+      ],
+      "grammar": [
+        {
+          "text": "Hay",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261024_03",
-      "type": "word",
+      "type": "sentence",
       "priority": "essential",
-      "en": "to shout",
-      "es": "gritar",
-      "note": "Gritar mucho = shout a lot; quedarse sin voz = lose your voice.",
-      "category": "daily"
+      "en": "You do not need to shout; I can hear you.",
+      "es": "No hace falta gritar; te escucho.",
+      "note": "Target: gritar. Gritar mucho = shout a lot; quedarse sin voz = lose your voice.",
+      "category": "daily",
+      "headword": "gritar",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "to shout",
+          "es": "gritar"
+        }
+      ],
+      "focus": [
+        "hace falta gritar"
+      ],
+      "grammar": [
+        {
+          "text": "hace",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261024_04",
-      "type": "expression",
+      "type": "sentence",
       "priority": "useful",
-      "en": "the commute to work",
-      "es": "el trayecto al trabajo",
-      "note": "Also el viaje al trabajo; a natural way to express commute.",
-      "category": "work"
+      "en": "My commute to work takes an hour.",
+      "es": "El trayecto al trabajo dura una hora.",
+      "note": "Target: el trayecto al trabajo. Also el viaje al trabajo; a natural way to express commute.",
+      "category": "work",
+      "headword": "el trayecto al trabajo",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "the commute to work",
+          "es": "el trayecto al trabajo"
+        }
+      ],
+      "focus": [
+        "trayecto al trabajo"
+      ],
+      "grammar": [
+        {
+          "text": "dura",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261024_05",
@@ -1653,12 +2382,30 @@
     },
     {
       "id": "L20261024_06",
-      "type": "word",
+      "type": "sentence",
       "priority": "useful",
-      "en": "to disappear",
-      "es": "desaparecer",
-      "note": "From your attempt to describe feeling disconnected while working at home.",
-      "category": "daily"
+      "en": "Sometimes I feel like I am going to disappear.",
+      "es": "A veces siento que voy a desaparecer.",
+      "note": "Target: desaparecer. From your attempt to describe feeling disconnected while working at home.",
+      "category": "daily",
+      "headword": "desaparecer",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "to disappear",
+          "es": "desaparecer"
+        }
+      ],
+      "focus": [
+        "voy a desaparecer"
+      ],
+      "grammar": [
+        {
+          "text": "siento",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261024_07",
@@ -1706,23 +2453,57 @@
     },
     {
       "id": "L20261024_09",
-      "type": "word",
+      "type": "sentence",
       "priority": "useful",
-      "en": "an internship",
-      "es": "unas prácticas",
-      "note": "Hacer prácticas = do an internship; una pasantía is also common in Latin America.",
-      "category": "work"
+      "en": "I did an internship at a fashion company.",
+      "es": "Hice unas prácticas en una empresa de moda.",
+      "note": "Target: unas prácticas. Hacer prácticas = do an internship; una pasantía is also common in Latin America.",
+      "category": "work",
+      "headword": "unas prácticas",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "an internship",
+          "es": "unas prácticas"
+        }
+      ],
+      "focus": [
+        "unas prácticas"
+      ],
+      "grammar": [
+        {
+          "text": "Hice",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "preterite"
+        }
+      ]
     },
     {
       "id": "L20261024_10",
-      "type": "expression",
+      "type": "sentence",
       "priority": "useful",
-      "en": "made to measure",
-      "es": "hecho a medida",
-      "note": "Ropa hecha a medida; un vestido hecho a medida. Agree hecho/hecha with the garment.",
+      "en": "This dress is made to measure.",
+      "es": "Este vestido está hecho a medida.",
+      "note": "Target: hecho a medida. Ropa hecha a medida; un vestido hecho a medida. Agree hecho/hecha with the garment.",
       "category": "work",
       "focus": [
-        "a medida"
+        "hecho a medida"
+      ],
+      "headword": "hecho a medida",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "made to measure",
+          "es": "hecho a medida"
+        }
+      ],
+      "grammar": [
+        {
+          "text": "está",
+          "tense": "present",
+          "mood": "indicative"
+        }
       ]
     },
     {
@@ -1747,30 +2528,85 @@
     },
     {
       "id": "L20261024_12",
-      "type": "word",
+      "type": "sentence",
       "priority": "essential",
-      "en": "a salary",
-      "es": "un sueldo",
-      "note": "Also un salario; sueldo mínimo = minimum wage.",
-      "category": "work"
+      "en": "I am looking for a job with a better salary.",
+      "es": "Busco un trabajo con un sueldo mejor.",
+      "note": "Target: un sueldo. Also un salario; sueldo mínimo = minimum wage.",
+      "category": "work",
+      "headword": "un sueldo",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "a salary",
+          "es": "un sueldo"
+        }
+      ],
+      "focus": [
+        "un sueldo mejor"
+      ],
+      "grammar": [
+        {
+          "text": "Busco",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261024_13",
-      "type": "expression",
+      "type": "sentence",
       "priority": "essential",
-      "en": "in cash",
-      "es": "en efectivo",
-      "note": "Me pagaban en efectivo = they paid me in cash; not infectivo.",
-      "category": "daily"
+      "en": "Can I pay in cash?",
+      "es": "¿Puedo pagar en efectivo?",
+      "note": "Target: en efectivo. Me pagaban en efectivo = they paid me in cash; not infectivo.",
+      "category": "daily",
+      "headword": "en efectivo",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "in cash",
+          "es": "en efectivo"
+        }
+      ],
+      "focus": [
+        "en efectivo"
+      ],
+      "grammar": [
+        {
+          "text": "Puedo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261024_14",
-      "type": "word",
+      "type": "sentence",
       "priority": "essential",
-      "en": "a tip (money left for service)",
-      "es": "una propina",
-      "note": "Dejar propina = leave a tip. Vocabulary only; tipping expectations vary by location.",
-      "category": "daily"
+      "en": "I left a tip for the waiter.",
+      "es": "Le dejé una propina al camarero.",
+      "note": "Target: una propina. Dejar propina = leave a tip. Vocabulary only; tipping expectations vary by location.",
+      "category": "daily",
+      "headword": "una propina",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "a tip (money left for service)",
+          "es": "una propina"
+        }
+      ],
+      "focus": [
+        "una propina"
+      ],
+      "grammar": [
+        {
+          "text": "dejé",
+          "tense": "past",
+          "mood": "indicative",
+          "form": "preterite"
+        }
+      ]
     },
     {
       "id": "L20261024_15",
@@ -1794,33 +2630,84 @@
     },
     {
       "id": "L20261024_16",
-      "type": "expression",
+      "type": "sentence",
       "priority": "essential",
-      "en": "takeout food",
-      "es": "comida para llevar",
-      "note": "Pedir comida para llevar = order takeout; un café para llevar = a coffee to go.",
+      "en": "Today I am going to order takeout food.",
+      "es": "Hoy voy a pedir comida para llevar.",
+      "note": "Target: comida para llevar. Pedir comida para llevar = order takeout; un café para llevar = a coffee to go.",
       "category": "daily",
       "focus": [
-        "para llevar"
+        "comida para llevar"
+      ],
+      "headword": "comida para llevar",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "takeout food",
+          "es": "comida para llevar"
+        }
+      ],
+      "grammar": [
+        {
+          "text": "voy",
+          "tense": "present",
+          "mood": "indicative"
+        }
       ]
     },
     {
       "id": "L20261024_17",
-      "type": "expression",
+      "type": "sentence",
       "priority": "essential",
-      "en": "to eat out",
-      "es": "comer fuera",
-      "note": "Salir a comer is another common option. Past habit: me gustaba comer fuera.",
-      "category": "daily"
+      "en": "I prefer to eat out on Fridays.",
+      "es": "Prefiero comer fuera los viernes.",
+      "note": "Target: comer fuera. Salir a comer is another common option. Past habit: me gustaba comer fuera.",
+      "category": "daily",
+      "headword": "comer fuera",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "to eat out",
+          "es": "comer fuera"
+        }
+      ],
+      "focus": [
+        "comer fuera"
+      ],
+      "grammar": [
+        {
+          "text": "Prefiero",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261024_18",
-      "type": "expression",
+      "type": "sentence",
       "priority": "useful",
-      "en": "at most",
-      "es": "como mucho",
-      "note": "Veinte dólares como mucho = twenty dollars at most.",
-      "category": "daily"
+      "en": "It will take two hours at most.",
+      "es": "Va a tardar dos horas como mucho.",
+      "note": "Target: como mucho. Veinte dólares como mucho = twenty dollars at most.",
+      "category": "daily",
+      "headword": "como mucho",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "at most",
+          "es": "como mucho"
+        }
+      ],
+      "focus": [
+        "como mucho"
+      ],
+      "grammar": [
+        {
+          "text": "Va",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261024_19",
@@ -1887,12 +2774,30 @@
     },
     {
       "id": "L20261024_22",
-      "type": "word",
+      "type": "sentence",
       "priority": "essential",
-      "en": "to throw away",
-      "es": "tirar",
-      "note": "Tirar las cosas que no uso = throw away the things I don't use. Quiero tirar, not quiero que tirar.",
-      "category": "daily"
+      "en": "I am going to throw away what I do not use.",
+      "es": "Voy a tirar lo que no uso.",
+      "note": "Target: tirar. Tirar las cosas que no uso = throw away the things I don't use. Quiero tirar, not quiero que tirar.",
+      "category": "daily",
+      "headword": "tirar",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "to throw away",
+          "es": "tirar"
+        }
+      ],
+      "focus": [
+        "tirar lo que no uso"
+      ],
+      "grammar": [
+        {
+          "text": "Voy",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261024_23",
@@ -1979,30 +2884,84 @@
     },
     {
       "id": "L20261025_01",
-      "type": "word",
+      "type": "sentence",
       "priority": "essential",
-      "en": "a budget",
-      "es": "un presupuesto",
-      "note": "Presupuesto = budget. ¿Qué presupuesto tenés para el viaje?",
-      "category": "travel"
+      "en": "I have a budget of a thousand dollars for the trip.",
+      "es": "Tengo un presupuesto de mil dólares para el viaje.",
+      "note": "Target: un presupuesto. Presupuesto = budget. ¿Qué presupuesto tenés para el viaje?",
+      "category": "travel",
+      "headword": "un presupuesto",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "a budget",
+          "es": "un presupuesto"
+        }
+      ],
+      "focus": [
+        "un presupuesto de"
+      ],
+      "grammar": [
+        {
+          "text": "Tengo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261025_02",
-      "type": "word",
+      "type": "sentence",
       "priority": "useful",
-      "en": "to prevent",
-      "es": "prevenir",
-      "note": "Prevenir un accidente = prevent an accident; la prevención = prevention.",
-      "category": "daily"
+      "en": "These rules help prevent accidents.",
+      "es": "Estas normas ayudan a prevenir accidentes.",
+      "note": "Target: prevenir. Prevenir un accidente = prevent an accident; la prevención = prevention.",
+      "category": "daily",
+      "headword": "prevenir",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "to prevent",
+          "es": "prevenir"
+        }
+      ],
+      "focus": [
+        "prevenir accidentes"
+      ],
+      "grammar": [
+        {
+          "text": "ayudan",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261025_03",
-      "type": "word",
+      "type": "sentence",
       "priority": "useful",
-      "en": "affordable; accessible",
-      "es": "accesible",
-      "note": "An adjective, not a verb form. Un precio accesible = an affordable price; acceder is the related verb.",
-      "category": "daily"
+      "en": "The museum admission price is affordable.",
+      "es": "La entrada al museo tiene un precio accesible.",
+      "note": "Target: accesible. An adjective, not a verb form. Un precio accesible = an affordable price; acceder is the related verb. Here accesible is an adjective meaning affordable; it is not an inflected verb.",
+      "category": "daily",
+      "headword": "accesible",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "affordable; accessible",
+          "es": "accesible"
+        }
+      ],
+      "focus": [
+        "un precio accesible"
+      ],
+      "grammar": [
+        {
+          "text": "tiene",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261025_04",
@@ -2056,36 +3015,84 @@
     },
     {
       "id": "L20261025_07",
-      "type": "expression",
+      "type": "sentence",
       "priority": "essential",
-      "en": "to get in for free",
-      "es": "entrar gratis",
-      "note": "Gratis needs no preposition: puedo entrar gratis, not entrar para gratis. Also la entrada es gratis.",
+      "en": "Can students get in for free?",
+      "es": "¿Los estudiantes pueden entrar gratis?",
+      "note": "Target: entrar gratis. Gratis needs no preposition: puedo entrar gratis, not entrar para gratis. Also la entrada es gratis.",
       "category": "daily",
       "focus": [
         "entrar gratis"
+      ],
+      "headword": "entrar gratis",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "to get in for free",
+          "es": "entrar gratis"
+        }
+      ],
+      "grammar": [
+        {
+          "text": "pueden",
+          "tense": "present",
+          "mood": "indicative"
+        }
       ]
     },
     {
       "id": "L20261025_08",
-      "type": "expression",
+      "type": "sentence",
       "priority": "essential",
-      "en": "to take time off for vacation",
-      "es": "tomarse vacaciones",
-      "note": "Me gustaría tomarme seis meses de vacaciones. Vacaciones = vacation; vocación = vocation/calling.",
+      "en": "I am going to take time off for vacation in November.",
+      "es": "Me voy a tomar vacaciones en noviembre.",
+      "note": "Target: tomarse vacaciones. Me gustaría tomarme seis meses de vacaciones. Vacaciones = vacation; vocación = vocation/calling.",
       "category": "travel",
       "focus": [
-        "tomarse vacaciones"
+        "Me voy a tomar vacaciones"
+      ],
+      "headword": "tomarse vacaciones",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "to take time off for vacation",
+          "es": "tomarse vacaciones"
+        }
+      ],
+      "grammar": [
+        {
+          "text": "voy",
+          "tense": "present",
+          "mood": "indicative"
+        }
       ]
     },
     {
       "id": "L20261025_09",
-      "type": "word",
+      "type": "sentence",
       "priority": "essential",
-      "en": "sixteen",
-      "es": "dieciséis",
-      "note": "One word, with an accent: dieciséis. Related teens: diecisiete (17), dieciocho (18), diecinueve (19).",
-      "category": "numbers"
+      "en": "The admission costs sixteen dollars.",
+      "es": "La entrada cuesta dieciséis dólares.",
+      "note": "Target: dieciséis. One word, with an accent: dieciséis. Related teens: diecisiete (17), dieciocho (18), diecinueve (19).",
+      "category": "numbers",
+      "headword": "dieciséis",
+      "content_revision": 1,
+      "previous_text": [
+        {
+          "en": "sixteen",
+          "es": "dieciséis"
+        }
+      ],
+      "focus": [
+        "dieciséis dólares"
+      ],
+      "grammar": [
+        {
+          "text": "cuesta",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     },
     {
       "id": "L20261025_10",
@@ -2302,5 +3309,5 @@
       ]
     }
   ],
-  "updated_at": "2026-10-25"
+  "updated_at": "2026-10-27"
 }
