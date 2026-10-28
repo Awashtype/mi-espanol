@@ -50,3 +50,18 @@ console.log('Passed: account initialization order and compressed mobile transfer
 const startup={cards:[],reviews:{V025:r},deleted:[]};make(startup)(original);make(startup)(cards);assert.equal(startup.cards.length,156);assert.ok(startup.cards.some(c=>c.id==='V025'));assert.deepEqual(startup.reviews.V025,r);
 const cloudAlias=mergeProgress({cards:[cards.find(c=>c.id==='V002')],reviews:{},deleted:[]},{cards:[{...cards.find(c=>c.id==='V002'),id:'Ulegacy',published_id:'V002'}],reviews:{Ulegacy:r},deleted:[]});assert.equal(cloudAlias.cards.length,1);assert.deepEqual(cloudAlias.reviews.V002,r);
 console.log('Passed: startup keeps distinct legacy IDs and cross-device aliases retain familiarity.');
+// Familiarity precedes priority; rotation must never move a weaker target ahead.
+const orderedCards=[
+ {id:'E0',priority:'essential'},{id:'E1',priority:'essential'},{id:'U2',priority:'useful'},
+ {id:'U3',priority:'useful'},{id:'E3a',priority:'essential'},{id:'E3b',priority:'essential'},
+ {id:'X3',priority:'extra'},{id:'unseen',priority:'essential'}
+];
+const stages={E0:0,E1:1,U2:2,U3:3,E3a:3,E3b:3,X3:3};
+const orderedReviews=Object.fromEntries(Object.entries(stages).map(([id,stage])=>[id,{...structuredClone(r),stage}]));
+const frozenBefore=JSON.stringify(orderedReviews);
+const ranked=selectPracticeBatch(orderedCards,orderedReviews,[{id:'one',card_ids:orderedCards.map(c=>c.id)}],['E3a']);
+assert.deepEqual(ranked.cards.map(c=>c.id),['E3b','E3a','U3','U2','E1','E0']);
+assert.equal(JSON.stringify(orderedReviews),frozenBefore);
+const strongerScene=selectPracticeBatch(orderedCards,orderedReviews,[{id:'weaker',card_ids:['E0','E1','U2']},{id:'stronger',card_ids:['E3a','U3']}]);
+assert.equal(strongerScene.scene.id,'stronger');
+console.log('Passed: strongest-stage-first, Essential within stage, rotation only breaks ties, scene selection and unchanged familiarity.');

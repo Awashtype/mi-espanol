@@ -4,15 +4,20 @@ export function selectPracticeBatch(cards,reviews,scenarios,recent=[]){
     const r=reviews[c.id];
     return c.priority!=='extra'&&r&&Object.values(r.dirs||{}).some(d=>d.count>0&&['good','easy'].includes(d.lastGrade));
   });
+  // Familiarity is primary; Essential wins only within the same stage.
+  // Rotation breaks ties without sending shakier phrases to the front.
+  const tier=c=>{
+    const stage=reviews[c.id].stage;
+    const strength=Number.isInteger(stage)&&stage>=0&&stage<=3?stage:0;
+    return (3-strength)*2+(c.priority==='essential'?0:1);
+  };
   const scored=scenarios.map(scene=>{
     const pool=familiar.filter(c=>scene.card_ids.includes(c.published_id||c.id));
-    const rank=c=>{
-      const r=reviews[c.id];
-      return (r.stage===1||r.stage===2?0:r.stage===0?2:4)+(c.priority==='essential'?0:1)+(recent.includes(c.id)?8:0);
-    };
-    pool.sort((a,b)=>rank(a)-rank(b)||scene.card_ids.indexOf(a.published_id||a.id)-scene.card_ids.indexOf(b.published_id||b.id));
+    pool.sort((a,b)=>tier(a)-tier(b)||Number(recent.includes(a.id))-Number(recent.includes(b.id))||scene.card_ids.indexOf(a.published_id||a.id)-scene.card_ids.indexOf(b.published_id||b.id));
     const selected=pool.slice(0,6);
-    return {scene,cards:selected,score:selected.length*10-selected.reduce((n,c)=>n+rank(c),0)};
+    // At most six cards: base 7 makes a stronger tier outweigh every weaker tier.
+    const score=selected.reduce((n,c)=>n+7**(7-tier(c)),0)-selected.filter(c=>recent.includes(c.id)).length/100;
+    return {scene,cards:selected,score};
   }).filter(b=>b.cards.length>=2).sort((a,b)=>b.score-a.score);
   return scored[0]||null;
 }

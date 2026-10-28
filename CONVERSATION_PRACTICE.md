@@ -11,7 +11,7 @@ This is Thea's standing instruction, requested October 27, 2026. Read it wheneve
 
 ## Choose a coherent batch
 
-Use 4–6 targets when possible (2–3 is fine for a smaller available pool), already marked Good or Easy in at least one review direction. Prefer stage 1/2 phrases over fully fluent stage 3 material; stage 0 with a successful review is eligible, unseen stage 0 is not. Essential before Useful; optional Extras excluded by default. Group by a scene Thea actually struggled with. Reuse familiar older phrases when needed to make the scene coherent. Do not force six unrelated words into a contrived story. Rotate batches across the conversation; use the prior round's targets as context to avoid immediately repeating the same set.
+Use 4–6 targets when possible (2–3 is fine for a smaller available pool), already marked Good or Easy in at least one review direction. Start with the most familiar phrases: stage 3 first, then 2, then 1, then successfully reviewed stage 0. Within each familiarity level, Essential comes before Useful. Optional Extras and unseen cards are excluded. The opening question should elicit the first selected target; adapt the source scene starter when necessary. Move toward shakier phrases gradually after a confident opening. This familiarity-first policy was explicitly clarified on October 28, 2026. Group by a scene Thea actually struggled with. Reuse familiar older phrases when needed to make the scene coherent. Do not force six unrelated words into a contrived story. Rotate batches across the conversation; use the prior round's targets as context to avoid immediately repeating the same set.
 
 ## Run the conversation
 
