@@ -4198,7 +4198,231 @@
       "focus": [
         "Estoy rayada"
       ]
+    },
+    {
+      "id": "L20261118_01",
+      "type": "sentence",
+      "category": "cinema",
+      "priority": "useful",
+      "en": "I saw a film at its premiere.",
+      "es": "Vi una película en su estreno.",
+      "note": "El estreno = a premiere or first public release. Estar en el estreno / ir al estreno for attending the premiere. Adapted from the lesson's premiere discussion.",
+      "focus": [
+        "en su estreno"
+      ],
+      "grammar": [
+        {
+          "text": "Vi",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261118_02",
+      "type": "sentence",
+      "category": "cinema",
+      "priority": "essential",
+      "en": "The film made me reflect on identity.",
+      "es": "La película me hizo reflexionar sobre la identidad.",
+      "note": "Hacer reflexionar sobre + topic = make someone reflect on something. Me hizo + infinitive uses the preterite for a completed experience.",
+      "focus": [
+        "me hizo reflexionar sobre"
+      ],
+      "grammar": [
+        {
+          "text": "hizo",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261118_03",
+      "type": "sentence",
+      "category": "cinema",
+      "priority": "essential",
+      "en": "The film raises a question about memory.",
+      "es": "La película plantea una pregunta sobre la memoria.",
+      "note": "Plantear una pregunta / un problema / una cuestión = raise or pose a question/issue. Useful in discussions and at work.",
+      "focus": [
+        "plantea una pregunta"
+      ],
+      "grammar": [
+        {
+          "text": "plantea",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261118_04",
+      "type": "sentence",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "It's hard to distinguish a real memory from an artificial one.",
+      "es": "Es difícil distinguir un recuerdo real de uno artificial.",
+      "note": "Distinguir A de B = distinguish A from B. Un recuerdo = a memory; uno artificial refers back to recuerdo.",
+      "focus": [
+        "distinguir un recuerdo real de uno artificial"
+      ]
+    },
+    {
+      "id": "L20261118_05",
+      "type": "sentence",
+      "category": "philosophy",
+      "priority": "essential",
+      "en": "Memories don't completely define who we are.",
+      "es": "Los recuerdos no definen por completo quiénes somos.",
+      "note": "Definir + object = define; por completo = completely. This is a discussable interpretation from the lesson, not a universal fact.",
+      "focus": [
+        "no definen por completo"
+      ],
+      "grammar": [
+        {
+          "text": "definen",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "somos",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261118_06",
+      "type": "sentence",
+      "category": "daily",
+      "priority": "essential",
+      "en": "That scene caused a very strong reaction in me.",
+      "es": "Esa escena me provocó una reacción muy fuerte.",
+      "note": "Provocar (not probocar) = cause, bring about, provoke. Provocar una reacción / una discusión are frequent collocations.",
+      "focus": [
+        "me provocó una reacción"
+      ],
+      "grammar": [
+        {
+          "text": "provocó",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261118_07",
+      "type": "sentence",
+      "category": "cinema",
+      "priority": "useful",
+      "en": "Behind every miracle, there's a victim.",
+      "es": "Detrás de cada milagro hay una víctima.",
+      "note": "Un milagro = a miracle; una víctima = a victim. Adapted from the magician / The Prestige discussion, rather than a verified verbatim quote.",
+      "focus": [
+        "Detrás de cada milagro",
+        "una víctima"
+      ]
+    },
+    {
+      "id": "L20261118_08",
+      "type": "sentence",
+      "category": "daily",
+      "priority": "useful",
+      "en": "The bird escaped from the cage.",
+      "es": "El pájaro escapó de la jaula.",
+      "note": "Un pájaro = a bird; una jaula = a cage. Escaparse de / escapar de = escape from.",
+      "focus": [
+        "escapó de la jaula"
+      ],
+      "grammar": [
+        {
+          "text": "escapó",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261118_09",
+      "type": "sentence",
+      "category": "culture",
+      "priority": "useful",
+      "en": "A revolution can change society.",
+      "es": "Una revolución puede cambiar la sociedad.",
+      "note": "Una revolución = a revolution, political or more broadly transformative. Can also mean a radical change, as in una revolución tecnológica.",
+      "focus": [
+        "Una revolución",
+        "cambiar la sociedad"
+      ]
+    },
+    {
+      "id": "L20261118_10",
+      "type": "expression",
+      "category": "daily",
+      "priority": "useful",
+      "en": "What a nice problem to have!",
+      "es": "¡Bendito problema!",
+      "note": "An ironic or appreciative expression for a difficulty caused by something positive; also '¡Bendito sea el problema!' in some contexts.",
+      "focus": [
+        "Bendito problema"
+      ]
+    },
+    {
+      "id": "L20261118_11",
+      "type": "expression",
+      "category": "daily",
+      "priority": "useful",
+      "en": "It gives me a good feeling / good vibes.",
+      "es": "Me da buena espina.",
+      "note": "Common idiom for a positive first impression or intuition. A natural alternative to the Spanglish 'me da buenas vibes'; the two are not exact register matches.",
+      "focus": [
+        "Me da buena espina"
+      ]
+    },
+    {
+      "id": "L20261118_12",
+      "type": "expression",
+      "category": "slang-spain",
+      "priority": "extra",
+      "en": "I've been ghosted.",
+      "es": "Me han ghosteado.",
+      "note": "Informal English loanword: ghostear (not gostear) = abruptly stop replying or disappear from communication. Distinct from leaving one message on read (dejar en visto). 'Me dejaron de responder' is more neutral.",
+      "focus": [
+        "Me han ghosteado"
+      ],
+      "grammar": [
+        {
+          "text": "han ghosteado",
+          "tense": "present",
+          "mood": "indicative",
+          "aspect": "perfect"
+        }
+      ]
+    },
+    {
+      "id": "L20261118_13",
+      "type": "sentence",
+      "category": "cinema",
+      "priority": "essential",
+      "en": "The director criticizes society through cinema.",
+      "es": "El director critica la sociedad a través del cine.",
+      "note": "A través de + noun = through / by means of; reusable in discussions about art, politics and technology.",
+      "focus": [
+        "a través del cine"
+      ],
+      "grammar": [
+        {
+          "text": "critica",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
     }
   ],
-  "updated_at": "2026-11-17"
+  "updated_at": "2026-11-18"
 }
