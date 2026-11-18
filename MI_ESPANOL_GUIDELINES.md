@@ -389,3 +389,17 @@ For rebuilt conversations / review power sessions, start with the most familiar 
 ### Product success and free student pilot (October 28, 2026)
 
 Read [PRODUCT_SUCCESS_AND_PILOT.md](PRODUCT_SUCCESS_AND_PILOT.md). Keep delayed contextual transfer, willingness to speak, and human use distinct. Changed-context self-reports are not verified language scores. No opportunity and missing data are not failure. No everyday-conversation recording is required. Use volunteered excerpts or tutor observations when available, with uncertainty labels. The student pilot is a separate Site; do not change access to the personal app or copy its lesson archive into a shared curriculum. Familiarity-first conversation warm-ups remain in place; their easiest items should not be the entire assessment set.
+
+## 16. Gentle catch-up after a break (November 2026)
+
+**Quick Refresh** is a separate, optional, non-graded path on the Study page for a returning learner who feels overwhelmed by a backlog (for example 150 due cards plus 20 new ones). The invitation becomes especially prominent when 25 or more cards are due, but it remains available whenever previously studied cards exist.
+
+- It contains **only previously introduced, non-deleted cards**, including any introduced Extra cards; never push unseen cards into the passive warm-up. The selection helper is `selectGentleCards()` in `practice-core.mjs`.
+- It shows **Spanish and English together**, with optional hidden notes, in a calm browse-only interface. The normal stage-dependent reveal, dictation, and pronunciation restrictions continue to apply in graded Study, not this separate exposure mode.
+- All selected cards can be browsed, but a **break every 10** encourages the learner to stop without needing to finish the whole backlog. Due cards are shown before other learned cards, Essential first within each due/familiar group.
+- **No Again/Good/Easy, no new-card introduction, no automatic grading, no rescheduling, no due-list forgiveness, and no changes to stage, reviews, due dates, daily allowance, or the regular session's position.** A Quick Refresh is a confidence-building glance, not evidence of mastery. The regular due count remains truthful after it.
+- A separate device-local `mi-espanol-gentle-pass-v1` bookmark stores only ordered card IDs, the current index, and a timestamp so the learner can resume. This is not a synced review record; bookmarks expire after 30 days. It is safe for a saved bookmark to be absent on a different device.
+- Do not use app reset, schedule mutations, or mass-"Good" actions to reduce a backlog. If the user later wants a separate small *graded* review quota, design it explicitly without distorting spaced repetition or mixing it into Quick Refresh.
+- The offline GitHub Pages shell requires an `sw.js` cache bump whenever its HTML changes. The **private account Site has an independent app-shell deployment**: updating GitHub Pages alone does not publish this feature to the private Site. Publish a matching change there when that editing capability is available, without assuming its source automatically updates.
+
+The goal is to make resuming frictionless, not to reward completion or guilt the learner into clearing old reviews.
