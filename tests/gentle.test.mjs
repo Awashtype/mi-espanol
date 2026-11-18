@@ -42,6 +42,13 @@ test('Quick Refresh is distinct from graded study and survives offline shell ref
   assert.doesNotThrow(()=>new Function(script.replace(/^\s*import[^\n]*\n/,'')));
   assert.ok(script.includes("const GENTLE_STORAGE='mi-espanol-gentle-pass-v1'"));
   assert.ok(script.includes("if(gentleActive){speechLastKey=''"));
+  for(const id of ['gentleAutoAudio','gentleReplay','gentleAudioStatus','gentleSettingsStart','gentleLength','todayReviewLimit','todayNewLimit']){
+    assert.ok(html.includes('id="'+id+'"'),id+' exists');
+  }
+  assert.ok(script.includes("const b64=gentleClips.get(id)||await getClip(audioKey(c.es))"));
+  assert.ok(script.includes("const limitedDue=scope==='due'?due.slice(0,dueReviewSlots()):due"));
+  assert.ok(script.includes("state.daily.reviewLimit=review==='all'?'all':Number(review)"));
+  assert.ok(script.includes("if(!state.daily)state.daily={date:today(),newLimit:20,reviewLimit:'all'}"));
   assert.ok(html.includes('#studyPage.gentle-mode > :not(#gentleIntro):not(#gentlePass)'));
-  assert.ok(worker.includes("mi-espanol-shell-v15"));
+  assert.ok(worker.includes("mi-espanol-shell-v16"));
 });
