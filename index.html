@@ -37,6 +37,7 @@
 #playAudio:disabled{opacity:.35;cursor:default}
 @media(max-width:400px){.answer-feedback .answer-columns{grid-template-columns:1fr}}
 
+#studyPage.gentle-mode > :not(#gentleIntro):not(#gentlePass){display:none!important}
 .gentle-intro{margin-bottom:18px;padding:17px;border:1px solid #dee7dd;border-radius:15px;background:#f5f8f4}
 .gentle-intro strong{font-size:15px;color:#354c42}
 .gentle-intro p{font-size:13px;line-height:1.6;color:#647067}
@@ -558,11 +559,10 @@ function renderGentleIntro(){
 }
 function showGentle(active){
  gentleActive=active;
- for(const node of $('studyPage').children){
-  if(node.id==='gentleIntro'||node.id==='gentlePass')continue;
-  node.classList.toggle('hidden',active);
- }
+ // Hide graded-study controls without altering their individual visibility state.
+ $('studyPage').classList.toggle('gentle-mode',active);
  $('gentlePass').classList.toggle('hidden',!active);
+ document.querySelector('.stats').classList.toggle('hidden',active);
  if(active)cancelAudio();else{speechLastKey='';queueSpeech()}
  renderGentleIntro();
 }
