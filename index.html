@@ -364,7 +364,17 @@ function dueReviewSlots(){
 function renderDailyPlan(){
  ensureDaily();
  $('todayReviewLimit').value=String(state.daily.reviewLimit);
- $('todayNewLimit').value=String(state.daily.newLimit);
+ const newSelect=$('todayNewLimit');
+ const customOption=newSelect.querySelector('option[data-custom-limit]');
+ if(customOption)customOption.remove();
+ if(!Array.from(newSelect.options).some(opt=>opt.value===String(state.daily.newLimit))){
+  const option=document.createElement('option');
+  option.value=String(state.daily.newLimit);
+  option.textContent=state.daily.newLimit+' new (chosen earlier today)';
+  option.dataset.customLimit='true';
+  newSelect.append(option);
+ }
+ newSelect.value=String(state.daily.newLimit);
  const used=reviewedDueToday(),opened=introducedToday();
  $('todayPlanStatus').textContent=used+' graded reviews · '+opened+' new cards started today. Changing limits will not undo past reviews.';
 }
