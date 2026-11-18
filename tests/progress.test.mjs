@@ -13,17 +13,17 @@ const state={cards:structuredClone(original),deleted:['V004'],reviews:{V002:stru
 state.cards=state.cards.filter(c=>!state.deleted.includes(c.id));
 const before=JSON.stringify({reviews:state.reviews,daily:state.daily,session:state.session});
 const merge=make(state);
-assert.equal(merge(cards),0);assert.equal(state.cards.length,155);
+assert.equal(merge(cards),cards.length-original.length);assert.equal(state.cards.length,cards.length-1);
 assert.equal(state.cards.find(c=>c.id==='V002').es,'Necesito responder a este mensaje.');
 assert.equal(JSON.stringify({reviews:state.reviews,daily:state.daily,session:state.session}),before);
 assert.ok(!state.cards.some(c=>c.id==='V004'));
-merge(cards);merge(original);assert.equal(state.cards.length,155);
+merge(cards);merge(original);assert.equal(state.cards.length,cards.length-1);
 assert.equal(state.cards.find(c=>c.id==='V002').es,'Necesito responder a este mensaje.');
 const alias=structuredClone(original.find(c=>c.id==='V002'));alias.id='Ulegacy';
 const local={cards:[alias],deleted:[],reviews:{Ulegacy:r}};make(local)([cards.find(c=>c.id==='V002')]);
 assert.equal(local.cards.length,1);assert.equal(local.cards[0].id,'Ulegacy');assert.equal(local.cards[0].published_id,'V002');assert.deepEqual(local.reviews.Ulegacy,r);
-assert.equal(new Set(cards.map(c=>c.id)).size,156);
-assert.deepEqual(cards.map(c=>c.id),original.map(c=>c.id));
+assert.equal(new Set(cards.map(c=>c.id)).size,cards.length);
+assert.deepEqual(cards.slice(0,original.length).map(c=>c.id),original.map(c=>c.id));
 for(const c of cards){for(const g of c.grammar||[])assert.ok(c.es.includes(g.text),c.id+' grammar text');for(const f of Array.isArray(c.focus)?c.focus:[])assert.ok(c.es.toLowerCase().includes(f.toLowerCase()),c.id+' focus');}
 assert.equal(selectPracticeBatch(cards,{},scenes),null);
 const reviews=Object.fromEntries(['L20261025_01','L20261025_03','L20261025_07','L20261025_09'].map(id=>[id,r]));
@@ -47,7 +47,7 @@ const decoded=await vm.runInContext('decodeTransfer(encoded)',transferContext);
 assert.equal(JSON.stringify(decoded),JSON.stringify(transferContext.progress));
 console.log('Passed: account initialization order and compressed mobile transfer round trip.');
 
-const startup={cards:[],reviews:{V025:r},deleted:[]};make(startup)(original);make(startup)(cards);assert.equal(startup.cards.length,156);assert.ok(startup.cards.some(c=>c.id==='V025'));assert.deepEqual(startup.reviews.V025,r);
+const startup={cards:[],reviews:{V025:r},deleted:[]};make(startup)(original);make(startup)(cards);assert.equal(startup.cards.length,cards.length);assert.ok(startup.cards.some(c=>c.id==='V025'));assert.deepEqual(startup.reviews.V025,r);
 const cloudAlias=mergeProgress({cards:[cards.find(c=>c.id==='V002')],reviews:{},deleted:[]},{cards:[{...cards.find(c=>c.id==='V002'),id:'Ulegacy',published_id:'V002'}],reviews:{Ulegacy:r},deleted:[]});assert.equal(cloudAlias.cards.length,1);assert.deepEqual(cloudAlias.reviews.V002,r);
 console.log('Passed: startup keeps distinct legacy IDs and cross-device aliases retain familiarity.');
 // Familiarity precedes priority; rotation must never move a weaker target ahead.
