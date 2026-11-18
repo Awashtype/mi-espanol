@@ -559,6 +559,19 @@ function fillDeck(forceNew=false){
 }
 
 
+const gentleClips=new Map();
+function rememberGentleClip(id,b64){
+ gentleClips.delete(id);
+ gentleClips.set(id,b64);
+ if(gentleClips.size>4)gentleClips.delete(gentleClips.keys().next().value);
+}
+async function prefetchGentleClip(id){
+ if(!id||gentleClips.has(id))return;
+ const card=state.cards.find(c=>c.id===id);
+ if(!card)return;
+ const b64=await getClip(audioKey(card.es));
+ if(b64)rememberGentleClip(id,b64);
+}
 function gentleCardVisible(){
  return gentleActive&&!$('studyPage').classList.contains('hidden')&&
   !$('gentlePair').classList.contains('hidden')&&gentleIndex<gentleIds.length;
@@ -573,12 +586,15 @@ async function playGentleAudio(manual=false){
  cancelAudio();const seq=audioSeq;
  $('gentleAudioStatus').textContent='Loading pronunciation…';
  try{
-  const b64=await getClip(audioKey(c.es));
+  // Cached replay stays inside the click gesture on browsers that restrict autoplay.
+  const b64=gentleClips.get(id)||await getClip(audioKey(c.es));
   if(seq!==audioSeq||!gentleCardVisible()||gentleIds[gentleIndex]!==id)return false;
+  if(b64)rememberGentleClip(id,b64);
   if(!b64){
    $('gentleAudioStatus').textContent='Audio not downloaded yet. Connect online to load recordings.';
    return false;
   }
+  prefetchGentleClip(gentleIds[gentleIndex+1]); // Make Next / replay more reliable on mobile.
   const player=new Audio('data:audio/mpeg;base64,'+b64);
   currentAudio=player;
   player.onended=()=>{if(seq===audioSeq)$('gentleAudioStatus').textContent=''};
