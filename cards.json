@@ -3756,7 +3756,449 @@
           "mood": "subjunctive"
         }
       ]
+    },
+    {
+      "id": "L20261117_01",
+      "type": "sentence",
+      "category": "argentine",
+      "priority": "useful",
+      "en": "I was incredibly busy with work and moving.",
+      "es": "Estuve a mil con el trabajo y la mudanza.",
+      "note": "Estar a mil = be extremely busy; very natural colloquial Argentine Spanish.",
+      "focus": [
+        "Estuve a mil"
+      ],
+      "grammar": [
+        {
+          "text": "Estuve",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_02",
+      "type": "sentence",
+      "category": "daily",
+      "priority": "useful",
+      "en": "Now I can get to work without changing trains.",
+      "es": "Ahora voy al trabajo sin hacer transbordo.",
+      "note": "Hacer transbordo = transfer between trains or buses. Also: tomar un solo tren.",
+      "focus": [
+        "sin hacer transbordo"
+      ]
+    },
+    {
+      "id": "L20261117_03",
+      "type": "sentence",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "Even if it rains, we're going to the park.",
+      "es": "Aunque llueva, vamos a ir al parque.",
+      "note": "Aunque + present subjunctive (llueva) for an uncertain or hypothetical obstacle; compare 'aunque está lloviendo' when rain is known.",
+      "focus": [
+        "Aunque llueva"
+      ],
+      "grammar": [
+        {
+          "text": "llueva",
+          "tense": "present",
+          "mood": "subjunctive"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_04",
+      "type": "sentence",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "Even though it's raining, we're going to the park.",
+      "es": "Aunque está lloviendo, vamos a ir al parque.",
+      "note": "Aunque + indicative for a fact the speaker treats as known; contrast 'aunque llueva' for an uncertain possibility.",
+      "focus": [
+        "Aunque está lloviendo"
+      ],
+      "grammar": [
+        {
+          "text": "está lloviendo",
+          "tense": "present",
+          "mood": "indicative",
+          "aspect": "progressive"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_05",
+      "type": "sentence",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "Although it may seem easy, it takes practice.",
+      "es": "Aunque parezca fácil, requiere práctica.",
+      "note": "Parezca is the present subjunctive of parecer (yo parezco → que parezca). Here the impression is conceded without asserting it as a fact.",
+      "focus": [
+        "Aunque parezca fácil"
+      ],
+      "grammar": [
+        {
+          "text": "parezca",
+          "tense": "present",
+          "mood": "subjunctive"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_06",
+      "type": "sentence",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "No matter how much you travel, you don't always adapt to other cultures.",
+      "es": "Por más que viajes mucho, no siempre te adaptás a otras culturas.",
+      "note": "Por más que + subjunctive can introduce a hypothetical concession; adaptás is Argentine vos present indicative.",
+      "focus": [
+        "Por más que viajes mucho",
+        "te adaptás"
+      ],
+      "grammar": [
+        {
+          "text": "viajes",
+          "tense": "present",
+          "mood": "subjunctive"
+        },
+        {
+          "text": "adaptás",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_07",
+      "type": "sentence",
+      "category": "grammar",
+      "priority": "essential",
+      "en": "Although New York offers many opportunities, it's expensive to live in.",
+      "es": "Si bien Nueva York ofrece muchas oportunidades, es cara para vivir.",
+      "note": "Si bien + indicative commonly introduces an accepted fact followed by a contrasting point; close to 'although'.",
+      "focus": [
+        "Si bien"
+      ],
+      "grammar": [
+        {
+          "text": "ofrece",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_08",
+      "type": "expression",
+      "category": "daily",
+      "priority": "essential",
+      "en": "I don't entirely agree.",
+      "es": "No estoy del todo de acuerdo.",
+      "note": "Del todo = completely; a polite way to offer an objection without sounding confrontational.",
+      "focus": [
+        "del todo de acuerdo"
+      ]
+    },
+    {
+      "id": "L20261117_09",
+      "type": "expression",
+      "category": "argentine",
+      "priority": "useful",
+      "en": "A mix of positives and negatives.",
+      "es": "Una de cal y otra de arena.",
+      "note": "Idiom for contrasting good and bad sides or alternating experiences. Cal means lime (building material), not cabbage.",
+      "focus": [
+        "Una de cal y otra de arena"
+      ]
+    },
+    {
+      "id": "L20261117_10",
+      "type": "expression",
+      "category": "daily",
+      "priority": "useful",
+      "en": "It doesn't quite convince me.",
+      "es": "No termina de convencerme.",
+      "note": "No terminar de + infinitive = not quite / not fully manage to do something; a nuanced way to disagree.",
+      "focus": [
+        "No termina de convencerme"
+      ]
+    },
+    {
+      "id": "L20261117_11",
+      "type": "sentence",
+      "category": "daily",
+      "priority": "essential",
+      "en": "Last night I went to bed late because I had to study.",
+      "es": "Anoche me acosté tarde porque tenía que estudiar.",
+      "note": "Acostarse tarde (not 'acostarse el tarde'); me acosté = completed event, tenía que = background obligation.",
+      "focus": [
+        "me acosté tarde",
+        "tenía que estudiar"
+      ],
+      "grammar": [
+        {
+          "text": "acosté",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        },
+        {
+          "text": "tenía",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_12",
+      "type": "sentence",
+      "category": "work",
+      "priority": "useful",
+      "en": "I had to complete a self-assessment at work.",
+      "es": "Tuve que completar una autoevaluación en el trabajo.",
+      "note": "Una autoevaluación = self-assessment; evaluación de desempeño = performance review. Tuve que marks a specific past obligation.",
+      "focus": [
+        "completar una autoevaluación"
+      ],
+      "grammar": [
+        {
+          "text": "Tuve",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_13",
+      "type": "sentence",
+      "category": "fitness",
+      "priority": "essential",
+      "en": "I hadn't done strength training for weeks.",
+      "es": "Hacía semanas que no entrenaba fuerza.",
+      "note": "Hacía + period + que + imperfect for an elapsed span viewed from a past point. Compare present: Hace semanas que no entreno.",
+      "focus": [
+        "Hacía semanas que no entrenaba"
+      ],
+      "grammar": [
+        {
+          "text": "Hacía",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        },
+        {
+          "text": "entrenaba",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_14",
+      "type": "sentence",
+      "category": "fitness",
+      "priority": "essential",
+      "en": "Yesterday I lifted weights, and today I'm sore all over.",
+      "es": "Ayer levanté pesas y hoy me duele todo.",
+      "note": "Levantar pesas / entrenar fuerza = lift weights / strength train; me duele todo expresses general soreness.",
+      "focus": [
+        "levanté pesas",
+        "me duele todo"
+      ],
+      "grammar": [
+        {
+          "text": "levanté",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        },
+        {
+          "text": "duele",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_15",
+      "type": "sentence",
+      "category": "sports",
+      "priority": "useful",
+      "en": "I can swim breaststroke, but I still can't swim front crawl.",
+      "es": "Sé nadar a braza, pero todavía no sé nadar a crol.",
+      "note": "Nadar a braza = swim breaststroke; nadar a crol = swim front crawl (also estilo libre).",
+      "focus": [
+        "nadar a braza",
+        "nadar a crol"
+      ]
+    },
+    {
+      "id": "L20261117_16",
+      "type": "sentence",
+      "category": "daily",
+      "priority": "essential",
+      "en": "I struggle to put into practice what I see in videos.",
+      "es": "Me cuesta poner en práctica lo que veo en los videos.",
+      "note": "New target: poner en práctica = apply something in real life. Me cuesta is already practiced in earlier cards.",
+      "focus": [
+        "poner en práctica"
+      ]
+    },
+    {
+      "id": "L20261117_17",
+      "type": "sentence",
+      "category": "work",
+      "priority": "essential",
+      "en": "If I don't use my vacation days, I lose them.",
+      "es": "Si no uso mis días de vacaciones, los pierdo.",
+      "note": "Si + present indicative for a real condition; 'días de vacaciones' or 'días libres' for time off.",
+      "focus": [
+        "Si no uso",
+        "los pierdo"
+      ],
+      "grammar": [
+        {
+          "text": "uso",
+          "tense": "present",
+          "mood": "indicative"
+        },
+        {
+          "text": "pierdo",
+          "tense": "present",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_18",
+      "type": "sentence",
+      "category": "travel",
+      "priority": "essential",
+      "en": "I've never been to Mexico.",
+      "es": "Nunca he estado en México.",
+      "note": "Nunca he estado = have never been (common in Spain); in Argentina, Nunca estuve en México is also very natural.",
+      "focus": [
+        "Nunca he estado"
+      ],
+      "grammar": [
+        {
+          "text": "he estado",
+          "tense": "present",
+          "mood": "indicative",
+          "aspect": "perfect"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_19",
+      "type": "sentence",
+      "category": "daily",
+      "priority": "essential",
+      "en": "It wasn't as common to go to the gym before.",
+      "es": "Antes no era tan habitual ir al gimnasio.",
+      "note": "Era is imperfect for a general past habit or situation, not one isolated completed event.",
+      "focus": [
+        "no era tan habitual"
+      ],
+      "grammar": [
+        {
+          "text": "era",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_20",
+      "type": "sentence",
+      "category": "daily",
+      "priority": "useful",
+      "en": "They look older than their age.",
+      "es": "Se ven mayores para su edad.",
+      "note": "Verse + adjective describes how someone looks. Also: parecen mayores de lo que son.",
+      "focus": [
+        "Se ven mayores para su edad"
+      ]
+    },
+    {
+      "id": "L20261117_21",
+      "type": "expression",
+      "category": "informal",
+      "priority": "useful",
+      "en": "They left me on read.",
+      "es": "Me dejaron en visto.",
+      "note": "Dejar en visto = read a message and not reply; often said of messaging apps. Singular: Me dejó en visto.",
+      "focus": [
+        "dejaron en visto"
+      ],
+      "grammar": [
+        {
+          "text": "dejaron",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_22",
+      "type": "sentence",
+      "category": "daily",
+      "priority": "essential",
+      "en": "I forgot what I was going to say.",
+      "es": "Se me olvidó lo que iba a decir.",
+      "note": "Se me olvidó = it slipped my mind (unintentional lapse), distinct from no me acuerdo de = I don't remember.",
+      "focus": [
+        "Se me olvidó",
+        "iba a decir"
+      ],
+      "grammar": [
+        {
+          "text": "olvidó",
+          "tense": "past",
+          "form": "preterite",
+          "mood": "indicative"
+        },
+        {
+          "text": "iba",
+          "tense": "past",
+          "form": "imperfect",
+          "mood": "indicative"
+        }
+      ]
+    },
+    {
+      "id": "L20261117_23",
+      "type": "sentence",
+      "category": "slang-spain",
+      "priority": "extra",
+      "en": "I can't be bothered to do the homework.",
+      "es": "Me da palo hacer la tarea.",
+      "note": "Informal Spain: me da palo = I feel lazy/reluctant/awkward about doing something; not a literal stick.",
+      "focus": [
+        "Me da palo"
+      ]
+    },
+    {
+      "id": "L20261117_24",
+      "type": "sentence",
+      "category": "slang-spain",
+      "priority": "extra",
+      "en": "I'm overthinking this.",
+      "es": "Estoy rayada con este tema.",
+      "note": "Spain informal: estar rayado, rayada = be wound up/overthinking. Rayada agrees with a female speaker.",
+      "focus": [
+        "Estoy rayada"
+      ]
     }
   ],
-  "updated_at": "2026-10-28"
+  "updated_at": "2026-11-17"
 }
