@@ -1,4 +1,26 @@
 // Shared by the offline notebook and the private account service.
+
+/**
+ * A read-only, low-pressure pass through previously introduced cards.
+ * The review records are only inspected here; nothing is graded or rescheduled.
+ * Cards that are due appear before other familiar cards, then Essential first.
+ */
+export function selectGentleCards(cards,reviews,date){
+  const rank={essential:0,useful:1,extra:2};
+  const due=c=>{
+    const r=reviews[c.id];
+    if(!r)return false;
+    if(Object.values(r.dirs||{}).some(d=>d.last===date&&d.due>date))return false;
+    const stage=Number.isInteger(r.stage)?r.stage:0;
+    const direction=stage===0?'es':'en';
+    const dueDate=r.dirs?.[direction]?.due;
+    return !!dueDate&&dueDate<=date;
+  };
+  return cards.filter(c=>!!reviews[c.id]?.introducedOn)
+    .sort((a,b)=>Number(due(b))-Number(due(a))
+      ||(rank[a.priority]??1)-(rank[b.priority]??1));
+}
+
 export function selectPracticeBatch(cards,reviews,scenarios,recent=[]){
   const familiar=cards.filter(c=>{
     const r=reviews[c.id];
