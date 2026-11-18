@@ -50,5 +50,5 @@ test('Quick Refresh is distinct from graded study and survives offline shell ref
   assert.ok(script.includes("state.daily.reviewLimit=review==='all'?'all':Number(review)"));
   assert.ok(script.includes("if(!state.daily)state.daily={date:today(),newLimit:20,reviewLimit:'all'}"));
   assert.ok(html.includes('#studyPage.gentle-mode > :not(#gentleIntro):not(#gentlePass)'));
-  assert.ok(worker.includes("mi-espanol-shell-v16"));
+  assert.ok(worker.includes("mi-espanol-shell-v17"));
 });
